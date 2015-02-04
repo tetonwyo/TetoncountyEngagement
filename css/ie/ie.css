@@ -1,0 +1,89 @@
+.menu li div a {
+	*display:inline;
+}
+
+.menu_light_theme .menu .dropdown_1column, 
+.menu_light_theme .menu .dropdown_2columns, 
+.menu_light_theme .menu .dropdown_3columns, 
+.menu_light_theme .menu .dropdown_4columns,
+.menu_light_theme .menu .dropdown_5columns,
+.menu_light_theme .menu .dropdown_fullwidth {
+	-ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#FFEEEEEE, endColorstr=#FFBBBBBB)";	
+}
+
+.menu_dark_theme ul .dropdown_1column, 
+.menu_dark_theme ul .dropdown_2columns, 
+.menu_dark_theme ul .dropdown_3columns, 
+.menu_dark_theme ul .dropdown_4columns,
+.menu_dark_theme ul .dropdown_5columns,
+.menu_dark_theme ul .dropdown_fullwidth,
+.menu_dark_theme ul .levels li ul {
+	border: 1px solid #aaa;
+}
+
+
+/* IE7 Specific Styling */
+
+.wrapper_menu_full .menu li:hover .dropdown_fullwidth {
+	*margin-left:-430px;
+}
+.wrapper_menu_full .menu li.right:hover .dropdown_fullwidth {
+	*margin-right:-511px;
+}
+
+/* IE6 Specific Styling */
+
+body {
+	_behavior: url("css/ie/csshover3.htc");
+}
+.menu_dark_theme ul li.fullwidth:hover {
+	_background:#161616;
+}
+.menu_dark_theme ul li .drop,
+.menu_dark_theme .menu li.noactive .drop {
+	_background:url("ie_down2.png") no-repeat right 13px;
+}
+.menu_dark_theme ul li:hover .drop {
+	_background:url("ie_down2.png") no-repeat right 12px;
+}
+.menu_dark_theme ul .levels a.parent, 
+.menu_dark_theme ul .levels a.parent:hover {
+	_background: url("ie_right2.png") right center no-repeat;
+}
+.menu_light_theme ul li.fullwidth:hover {
+	_background:#eeeeee;
+}
+.menu_light_theme ul li .drop,
+.menu_light_theme .menu li.noactive .drop {
+	_background:url("ie_down1.png") no-repeat right 13px;
+}
+.menu_light_theme ul li:hover .drop {
+	_background:url("ie_down1b.png") no-repeat right 12px;
+}
+.menu_light_theme ul .levels a.parent, 
+.menu_light_theme ul .levels a.parent:hover {
+	_background: url("ie_right1.png") right center no-repeat;
+}
+.menu_light_theme ul li.right:hover,
+.menu_dark_theme ul li.right:hover {
+	_margin-right:0px;
+}
+.menu li.nodrop:hover {
+	_padding: 0;
+}
+.menu li:hover .align_right {
+	_right:-2px;
+}
+.menu li.right:hover .dropdown_fullwidth {
+	_right:21px;
+}
+.wrapper_menu_full .menu li:hover .dropdown_fullwidth {
+	_margin-left:-490px;
+}
+.wrapper_menu_full .menu li.right:hover .dropdown_fullwidth {
+	_margin-right:-490px;
+}
+
+.menu li {
+	margin-right: 8px !important;
+}

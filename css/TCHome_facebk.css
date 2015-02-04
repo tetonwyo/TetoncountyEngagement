@@ -1,0 +1,297 @@
+﻿/* Style sheet for Teton County home page */
+
+/* Base elements */
+h1
+{
+	padding-top: 2px;
+	font-family: "Monotype Corsiva","Brush Script MT", "URW Chancery L", Verdana, Helvetica; /* http://www.codestyle.org/css/font-family/sampler-Cursive.shtml */
+	font-size: 20px;
+	font-weight: normal;
+	color: #7b9386;	
+}
+.panelcontent h2
+{
+	margin-top: 10px;
+	padding-top: 2px;
+	padding-bottom: 2px;
+	padding-left: 5px;
+	color: #ffffff;
+	font-size: 19px;
+}
+.panelContent h3
+{
+	font-size: 16px;
+	font-weight: 500;
+margin-bottom:0px;
+}
+
+.panelContent ul
+{
+	list-style: none outside none;
+	margin: 0px;
+	padding: 0px;
+}
+
+.panelContent li{
+	margin-bottom: 7px;
+	font-size: 16px;
+	font-weight:500;
+}
+.panelContent li:hover{
+	background-color:#fff
+}
+
+h4
+{
+	font-size: 16px;
+	font-weight: bold;	
+}
+p
+{
+	margin-top: 0px;
+	margin-bottom: 2px;
+	color: #666666;
+	font-size: 14px;
+	margin-left:1px;
+}
+
+/* Page layout */
+div#page
+{
+	padding: 10px;
+	overflow: hidden;
+}
+div#pageColumnLeft
+{
+	float: left;
+	width: 430px;
+	margin-right: 10px;
+}
+div#pageColumnRight
+{
+	float: left;
+	width: 490px;
+}
+div#pageColumnLeft a, div#pageColumnLeft h3 
+{
+	color: #0058a1;
+}
+div#pageColumnRight a
+{
+	color: #87a395;
+}
+
+/* Panel layouts and styles */
+div#weatherPanel
+{
+	width: 175px;
+	height: 121px;
+	padding: 3px;
+}
+div#weatherPanel select
+{
+	font-size: 11px;
+}
+div#headlinesPanel h2
+{
+/*	background: url("/images/style/hdr-bg-one.gif") repeat scroll 0 0 transparent; */
+background: #2A6FB4;
+}
+
+/* div#headlinesPanel h3
+{	
+	font-size: 13px;
+	font-weight: normal;
+}
+*/
+
+div#headlinesPanel table
+{
+	border: none;
+}
+div#headlinesPanel td
+{
+	vertical-align: top;
+}
+div#headlinesPanel img
+{
+}
+div#featuredPanel h2
+{
+	background: url("/images/style/hdr-bg-three.gif") repeat scroll 0 0 transparent;
+}
+div#featuredPanel img
+{
+	float: left;
+	padding-right: 5px;
+}
+div#featuredPanel .featuredInfo
+{
+	width: 410px;
+	padding: 10px;
+	background: url("/images/style/widget-bg.gif") repeat-x scroll 0 0 #ffffff;	
+}
+div#featuredPanel .featuredContent
+{
+}
+div#featuredPanel .panelFooter .prevButton
+{
+	float: left;
+}
+div#featuredPanel .panelFooter .nextButton
+{
+	float: right;
+}
+div#faqPanel h2
+{
+	background: url("/images/style/hdr-bg-one.gif") repeat scroll 0 0 transparent;
+}
+div#faqPanel li {
+font-size: 16px;
+font-weight: 500;
+}
+div#faqPanel .panelFooter
+{
+	text-align: center;
+}
+div#faqPanel .panelFooter a
+{
+	float: none;
+}
+div#alertPanel
+{
+
+}
+div#alertPanel a
+{
+	color: #f07000;
+}
+div#alertPanel h3
+{
+	color: #f07000;
+	font-size: 12px;
+	font-weight: bold;	
+}
+div#alertPanel h4
+{
+	color: #666666;
+	font-size: 10px;
+	font-weight: normal;	
+	font-style: italic;
+}
+div#facebookPanel h2
+{
+	background: url("/images/style/hdr-bg-one.gif") repeat scroll 0 0 transparent;
+}
+div#facebookPanel .panelContent
+{
+	clear: both;
+	padding-top: 0px;
+	padding-left: 0px;
+	padding-right: 0px;			
+	padding-bottom: 10px;
+	background: #F5F5F5;
+	/* background: url("/images/style/widget-bg.gif") repeat-x scroll 0 0 #ffffff; */
+}
+div#eventsPanel h2
+{
+	background: url("/images/style/hdr-bg-two.gif") repeat scroll 0 0 transparent;
+}
+div#slideshowPanel
+{
+	width: 465px;
+	height: 300px;
+	border: 1px solid #d8d9dd;
+}
+div#eventsPanel h3
+{
+	padding-top: 2px;
+	padding-bottom: 2px;
+	padding-left: 5px;
+	background: url("/images/style/cal-date-bg.gif") repeat scroll 0 0 #1c5ea0;
+	color: #ffffff;
+	font-size: 16px;	
+}
+div#eventsPanel h4
+{
+	font-size: 16px;
+	font-weight: 600;
+	margin: 0 0 0 0;	
+}
+div#eventsPanel h5
+{
+	color: #666666;
+	font-size: 15px;
+	font-weight: normal;	
+	font-style: italic;
+}
+div#calendarPanel
+{
+	padding-top: 5px;
+	padding-top: 8px;
+}
+div#calendar
+{
+	float: left;
+	width: 225px;
+}
+div#calendarEvents
+{
+	float: left;
+	width: 240px;
+	height: 135px;
+	background: url("/images/style/calendar-pointer.gif") no-repeat scroll 0 0 #e6f1eb;/*#e4f6d1;*/
+}
+div#calendarEvents ul
+{
+	list-style: none outside none;
+	margin: 0px;
+	padding: 0px;	
+}
+div#calendarEvents li
+{
+	margin-left: 20px;
+	margin-right: 5px;
+	margin-top: 5px;
+	font-size: 8pt;
+	color: #999999;
+}
+div#calendarEventList
+{
+	margin-left: 20px;
+	margin-top: 5px;
+	margin-right: 5px;
+	margin-bottom: 5px;
+}
+div#gisPanel
+{
+	padding-top: 10px;
+	text-align: center;	
+}
+div#gisPanel p
+{
+	margin-bottom: 10px;
+}
+.panelContent
+{
+	clear: both;
+	padding: 10px;
+	background: #F5F5F5;
+/*	background: url("/images/style/widget-bg.gif") repeat-x scroll 0 0 #ffffff; */
+}
+.panelFooter
+{
+	clear: both;
+	height: 21px;
+	padding-right: 5px;
+	padding-left: 5px;
+	/*margin-bottom: 10px;*/
+	background: url("/images/style/btm-fade-bg.gif") repeat-x scroll 0 0 #dadada;
+}
+.panelFooter a
+{
+	float: right;
+	font-size: 15px;
+	padding-bottom: 3px;
+	font-weight:500;
+}

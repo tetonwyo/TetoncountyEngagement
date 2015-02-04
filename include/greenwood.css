@@ -1,0 +1,18 @@
+.but0	{ font-size : 11px; width : auto; height : auto; }
+
+.but1	{ font-size : 11px; width : 140; height : 25; margin-top : 2px; margin-left : 2px; margin-right : 2px; margin-bottom : 2px;}
+
+.gm	{ font-size : 11px; font-family: times, serif; font-weight : bolder; color : #47785A; text-decoration : none;}
+
+.txt11px { font-size: 11px; font-family: verdana, arial, sans-serif; text-decoration: none }
+
+.txt_comic { font-family: "Comic Sans MS", arial, helvetica, cursive; }
+
+input, select { color: #333333; font-size: 11px; font-family: verdana, arial, sans-serif; text-decoration: none }
+
+/* below from teton county global.css */
+
+.body { color: #333333; font-size: 11px; font-family: verdana, arial, sans-serif; text-decoration: none  }
+
+body, td { color: #333333; font-size: 11px; font-family: verdana, arial, sans-serif; text-decoration: none }
+

@@ -1,0 +1,9 @@
+﻿/*	This file 'overrides' any css styles for the ckEditor tool, such as 'body', that have specified in the main css file
+	for the site.  The TCconfig.js file will need this file specified as the second css	file in the array.
+	The body tag style(s) should likely reflect the styles that will be used for the element that will containing the
+	html created by the ckEditor tool.
+*/
+body
+{
+	background-color: #ffffff;
+}

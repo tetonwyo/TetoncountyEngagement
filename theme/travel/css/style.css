@@ -1,0 +1,711 @@
+/*================================================================================
+
+ - TABLE OF CONTENTS:
+
+	1. 			Load Fonts
+	2. 			CSS Reset
+	3. 			&Global
+	4. 			&Header
+	5. 			&Homepage
+	6. 			&Internal Pages
+	7.			&Events Page
+	8. 			&Sidebar
+	9.	 		&Footer
+
+
+ - CONSTANTS:
+
+	[Color Codes]
+	
+		Top Bar Text:			#fff
+		Navigation Items:		#48533C
+		Page Sub-Nav Items:		#003366
+					 hover:		#882C00
+		Text:					#736357
+		h1 Span:				#999
+		Footer Copywrite:		#fff 
+		
+		
+	[Typography]
+		
+						
+
+================================================================================*/
+
+
+
+/* 1. LOAD FONTS			 						
+================================================================================*/
+
+@font-face {
+	font-family: chunkfive;
+	src: url('fonts/chunk-webfont.eot');
+    src: url('fonts/chunk-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/chunk-webfont.woff') format('woff'),
+         url('fonts/chunk-webfont.ttf') format('truetype'),
+         url('fonts/chunk-webfont.svg#chunkfive') format('svg');	
+}
+
+
+
+/* 2. CSS Reset & Clearfix - http://meyerweb.com/eric/tools/css/reset/
+================================================================================*/
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td { margin: 0; padding: 0; border: 0; outline: 0; font-size: 100%; vertical-align: baseline; background: transparent; } body { line-height: 1; } ul { list-style: none; } blockquote, q { quotes: none; } blockquote:before, blockquote:after, q:before, q:after { content: ''; content: none; } :focus { outline: 0; } ins { text-decoration: none; } del { text-decoration: line-through; } table { border-collapse: collapse; border-spacing: 0; }
+
+.clearfix:after { content: "."; display: block; height: 0; clear: both; visibility: hidden; } .clearfix { display: inline-block; } /* Hide from IE Mac \*/ .clearfix { display: block; } /* End hide from IE Mac */ .none { display: none; } /* End Clearfix */
+
+
+
+/* 3. $GLOBAL STYLES
+================================================================================*/
+
+body {
+	background: #191101;
+		font-family: droid sans, arial;
+	
+}
+
+#wrapper {
+	width: 960px;
+	margin: 0 auto 0;	
+}
+	
+h1 {
+	font-weight: normal;
+	font-size: 30px;
+	color: #333;
+	margin: 10px 10px 10px 0;
+	font-family: chunkfive;
+	border-bottom: 1px solid #ddd;
+	padding-bottom: 20px;	
+}
+
+#wrapper h5 {
+	font-weight: normal;
+	font-size: 30px;
+	color: #333;
+	margin: 10px 0px 5px 0;
+	font-family: chunkfive;
+	border-bottom: 1px solid #ddd;
+	padding-bottom: 20px;	
+}
+
+#sidebar h5 {
+	font-size: 24px;
+	margin: 0px 0 10px 0;
+	padding-bottom: 10px;
+}
+
+
+h2 {
+	font-weight: normal;
+	font-size: 20px;
+	color: #444;
+	margin: 20px 0 10px 0;
+	font-family: chunkfive;
+}
+
+h2.inline {
+	padding-left: 15px;
+    margin: 30px 0 10px;
+}
+
+p  {
+	font-size: 14px;
+	color: #333;
+	line-height: 22px; 
+	margin: 0;
+	padding-left: 15px;
+	font-family: droid sans, sans-serif;
+	padding-bottom: 25px;	
+}
+
+#page {
+	font-family: droid sans, sans-serif;
+	line-height: 22px;
+	font-size: 14px;
+	color: #333;
+}
+
+
+a {
+	font-size: 16px;
+	font-family: chunkfive;
+	color: #b20838;
+	text-decoration: none;
+	transition: all .5s ease;
+	-moz-transition: all .5s ease; /* Firefox 4 */
+	-webkit-transition: all .5s ease; /* Safari and Chrome */
+	-o-transition: all .5s ease; /* Opera */
+	text-decoration: none;		
+}
+
+span {
+	font-family: droid sans, sans-serif;	
+}
+
+.left {
+	float: left;	
+}
+
+
+ol{
+margin-left:20px;
+}
+
+div.top_box_two {
+background-color: #87a395;
+height: 40px;
+overflow: hidden;
+padding-left: 12px;
+padding-top: 3px;
+}
+
+/* 4. &HEADER STYLES
+================================================================================*/
+
+#top_bar {
+	height: 30px;
+	width: 100%;
+	background: url('images/top_bar_bg.jpg') repeat-x #333;
+	position: absolute;
+	top: 0;
+	z-index: 9999;	
+}
+
+.top_nav {
+	width: 960px;
+	margin: 0 auto;	
+}
+
+.top_nav li {
+	float: left;
+	padding: 0px 10px 1px;
+	border-left: 1px solid #000 !important;
+	border-right: 1px solid #676767 !important;
+	margin: 0 !important;	
+}
+
+.top_nav li a {
+	font-family: droid sans, sans-serif;
+	color: #a4a4a3;
+	font-size: 12px !important;
+	font-weight: normal !important;
+	color: #A4A4A3 !important;	
+}
+
+.resultslist li a,#resultslist li a{
+font-family:droid sans, sans-serif;
+}
+.resultslist li,#resultslist li{
+width: 100%;
+}
+.top_nav li.county_logo {
+	padding: 0 10px 0 0;
+	border-left: none !important;
+	height: 29px;
+}
+
+header#banner {
+	width: 100%;
+	margin-top: 0px	
+}
+
+.logo {
+	width: 230px;
+	height: 181px;
+	background: url('images/logo.png');
+	margin-left: 10px;
+	z-index: 999;
+	position: relative;
+	display: block;
+	margin-top: 15px;	
+}
+
+.sf-navbar {
+	border-radius: 0 0 10px 10px;	
+	-moz-border-radius: 0 0 10px 10px;
+	-webkit-border-radius: 0 0 10px 10px;
+	padding-left: 230px;
+	width: 730px;	
+}
+
+.sf-navbar li ul {
+	border-radius: 0 0 10px 10px;	
+	-moz-border-radius: 0 0 10px 10px;
+	-webkit-border-radius: 0 0 10px 10px;		
+}
+
+ul.sf-menu li.main-menu-li-2 {
+  width : 170px;
+}
+
+ul.sf-menu li.main-menu-li-3 {
+	width: 140px;
+}
+
+ul.sf-menu li.main-menu-li-4 {
+	width: 210px;		
+}
+
+
+ul.levels {
+	padding: 0;	
+}
+
+.sf-menu li ul.levels li {
+	height: 30px;	
+}
+
+.sf-menu li ul.levels li ul li a {
+	text-align: left;
+	width: 180px;
+	}
+	
+.sf-menu li ul.levels li ul {
+	height: auto;
+	padding: 0px;
+	width: auto;	
+}
+
+li.grandsub {
+	width: 100% !important;
+	height: auto !important;
+}
+
+li.grandsub:last-child {
+	border-radius: 0 0 10px 10px !important;
+	-o-border-radius: 0 0 10px 10px !important;
+	-moz-border-radius: 0 0 10px 10px !important;
+	-webkit-border-radius: 0 0 10px 10px !important;
+}
+
+li.grandsub:last-child a {
+	border-radius: 0 0 10px 10px;
+	-o-border-radius: 0 0 10px 10px;
+	-moz-border-radius: 0 0 10px 10px;
+	-webkit-border-radius: 0 0 10px 10px;
+}
+
+
+
+/* 5.	&HOMEPAGE STYLES
+================================================================================*/
+
+#wrapper_content {
+	background: #fff;
+	border-radius: 10px;
+	-moz-border-radius: 10px;
+	-webkit-border-radius: 10px;
+	width: 900px;
+	height: auto;
+	padding: 20px 20px 20px 40px;
+	margin-top: 250px;
+	float: left;		
+}
+
+section {
+	width: 600px;
+	height: auto;
+	padding-right: 20px;
+	float: left;
+	position: relative;	
+}
+
+section ul {
+	width: 100%;	
+}
+
+
+section ul li {
+	list-style: none;
+	width: auto;
+	float: left;
+	margin: 8px;	
+}
+
+ul.hp_boxes {
+	margin: 10px 0;
+	}
+	
+ul.hp_boxes li {
+	padding: 10px 0;
+	float: none;
+	display: inline-table;
+	margin: 0px 10px 0 0;
+	}
+	
+	
+section.project_boxes_home_wrapper {
+	width: 580px;
+	border-top: 1px solid #ddd;
+}
+
+
+.project_boxes {
+	float: left;
+	margin-bottom: 10px;	
+}
+
+
+
+/* 6. &INTERNAL PAGE STYLES
+================================================================================*/
+
+#wrapper_page_content {
+	background: #fff;
+	border-radius: 10px;
+	-moz-border-radius: 10px;
+	-webkit-border-radius: 10px;
+	width: 900px;
+	height: auto;
+	padding: 20px 20px 20px 30px;
+	margin-top: 70px;
+	float: left;		
+}
+
+section#page {
+	min-height: 700px;	
+}
+
+section.project_boxes_wrapper {
+	position: absolute;
+	bottom: 0;
+	width: 580px;
+	border-top: 1px solid #ddd;
+}
+
+/* 7. &MEETING PAGE STYLES
+================================================================================*/
+
+.meeting_body a {
+	font-family: helvetica, sans-serif;
+	color: #333333;
+}
+.meeting_body ul{
+margin-left:8px;
+float:none;
+list-style:disc;
+}
+.meeting_body ul li{
+margin-left:8px;
+float:none;
+}
+
+/* 7. &EVENTS PAGE STYLES
+================================================================================*/
+
+.events_search {
+	background: #f4f1eb;
+	border: 1px solid #dcd3c8;
+	width: 838px;
+	padding: 10px 10px 9px 40px;
+	display: table;
+	color: #58492b;
+	font-size: 16px;
+}
+
+.events_search li {
+	float: left;
+	margin-right: 10px;
+	padding-top: 3px;	
+}
+
+.events_search li input {
+	border: 1px solid #DCD3C8;
+    margin-right: 20px;
+    margin-top: -5px;
+    padding: 5px;
+    color: #656565;
+    font-size: 12px;
+    font-weight: bold;	
+}
+
+.events_search li select {
+    background: none repeat scroll 0 0 #FFFFFF;
+    border: 1px solid #DCD3C8;
+    color: #656565;
+    font-size: 12px;
+    font-weight: bold;
+    margin-right: 20px;
+    margin-top: -5px;
+    padding: 3px;
+    width: 160px;	
+}
+
+.events_search li img {
+    margin-top: -3px;	
+}
+
+h2.category_title {
+    border-bottom: 1px dashed #DDDDDD;
+	color: #B20838;
+    font-size: 24px;
+    padding-bottom: 10px;
+}
+
+.events_list {
+	padding-right: 10px;		
+}
+
+.events_list li {
+	border-bottom: 1px dashed #d1d1d1;
+	margin: 30px 0;
+	clear: both;
+	display: table;
+	
+}
+
+.events_list li:last-child {
+	border: none;
+}
+
+.events_list li img{
+	float: left;
+	margin: 0 30px 30px 0;
+	border: 1px solid #c3bcaf;
+	box-shadow: 0 0 5px #999;
+}
+
+.event_title {
+	border-bottom: 1px solid #ECEAE5;
+    float: left;
+    margin: 0 0 10px;
+    padding: 0 0 5px;
+    width: 675px;
+}
+
+.event_title h2 {
+	margin: 0 0 5px 0;
+}
+
+.event_title span {
+	font-family: droid sans;
+	font-size: 12px;
+	color: #666;
+	margin-bottom: 5px;	
+}
+
+.events_list li p {
+	float: left;
+	padding: 0;
+	width: 675px;
+	margin-bottom: 20px;
+}
+
+.event_info {
+	width: 675px;
+	font-size: 14px;
+	display: table;
+	float: right;
+	margin-bottom: 20px;
+}
+
+.event_info li {
+	clear: none;
+	float: left;
+	border: none;
+	margin: 0;
+	padding: 0 30px 0 0 ;	
+}
+
+.event_email {
+	font-family: chunkfive;
+	color: #B20838;
+}
+
+.event_email a {
+	font-family: helvetica, sans-serif;
+	color: #333333;
+}
+
+.event_phone {
+	font-family: chunkfive;
+	color: #B20838;
+}
+
+.event_phone span {
+	font-family: helvetica, sans-serif;
+	color: #333333;
+}
+
+
+
+
+/* 8. &SIDEBAR STYLES
+================================================================================*/
+
+aside#sidebar {
+	width: 280px;
+	float: left;	
+}
+
+aside#sidebar h2 {
+	font-size: 26px;
+	color: #b20838;
+	margin: 0 0 20px;
+}
+
+
+aside#sidebar h2 span {
+	font-family: droid sans, sans-serif;
+	font-size: 14px;
+	color: #676767;
+}
+
+aside#sidebar .box {
+	border: 1px solid #dcd3c8;
+	border-radius: 10px;
+	background: url('images/sidebar_bg.jpg') repeat-x;
+	background-size: auto 100%;	
+}
+
+aside#sidebar .box li {
+	border-top: 1px solid #f6f4ee;
+	border-bottom: 1px solid #dcd3c8;	
+	padding: 10px;
+	min-height: 60px;
+	position: relative;
+	display: table;
+}
+
+aside#sidebar .box li:first-child {
+	border-top: none;
+}
+
+aside#sidebar .box li:last-child {
+	border-bottom: none;	
+}
+
+aside#sidebar .box li img {
+	float: left;
+	margin-right: 10px;
+	height: 60px;
+	width: 100px;
+	border: 1px solid #666;
+}
+
+aside#sidebar .box li h4 {
+	font-family: droid sans, sans-serif;
+	font-size: 16px;
+	color: #2c2c2c;
+	margin-bottom: 5px;
+	float: left;
+	width: 120px;
+}
+
+aside#sidebar .box li .date {
+	font-size: 12px;
+	color: #666666;
+	float: left;
+		width: 120px;
+
+}
+
+aside#sidebar .box li a {
+	font-size: 12px;
+	position: absolute;
+	bottom : 11px;
+	left: 122px;
+	font-family: droid sans, sans-serif;
+}
+
+aside#sidebar .box li.view_all {
+	min-height: 0px;
+	text-align: center;
+}
+
+aside#sidebar .box li.view_all a {
+    position: relative;
+    bottom: 0;
+    left: 55px;
+    font-family: 'chunkfive';
+    font-size: 18px;
+    color: #2c2c2c;
+}
+
+aside#sidebar .box li.view_all a:hover {
+    color: #b20838;
+}
+
+.module_rcbox_wrapper {
+	padding: 10px;
+	background: #f5f5f5;
+	margin: 20px 0;
+	}
+	
+/* 8. &FOOTER STYLES
+================================================================================*/
+
+footer {
+	width: 960px;
+	float: left;	
+}
+
+footer .footer_pic {
+	width: 100%;
+	height: 216px;
+	background: url('images/footer_pic.jpg');
+	margin-top: 10px;	
+}
+
+footer ul {
+	width: 760px;
+	margin: 10px auto;
+	clear: both;
+	height: 30px;
+		
+}
+
+footer ul li {
+	float: left;
+	list-style: none;
+	padding-left: 26px;	
+}
+
+footer ul li a {
+	color: #ccc;
+	text-decoration: none;
+	font-family: droid sans, sans-serif;
+	color: #9e876b;
+	font-size: 12px;	
+}
+
+footer ul li a:hover {
+	color: #999;	
+}
+
+p.copywrite {
+	margin: 20px auto 10px;
+	text-align: center;
+	color: #524b42;
+	width: 500px;
+	font-size: 12px;
+	text-transform: uppercase;
+	border: none;	
+}
+
+
+
+input.countysearch {
+font-family: 'Archivo Narrow', sans-serif;
+font-size: 16px;
+text-transform: uppercase;
+border-radius: 5px;
+width: 70%;
+margin: auto;
+border-color: #ccc;
+height: 30px;
+margin-top: 7px;
+margin-bottom: 7px;
+padding-left: 32px;
+background-image: url(/images/countynav/search-ico.png);
+background-position: 4px 4px;
+background-repeat: no-repeat;
+}
+
+#slidecaption {
+display:none;
+}
+

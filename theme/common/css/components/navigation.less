@@ -1,0 +1,144 @@
+@import '../variables';
+
+
+/************************************************************************
+ * Navigation styles (see variables.less for bootstrap overrides)
+ * @note: dropdown submenus aren't supported by bootstrap, this
+ * is using stuff from http://stackoverflow.com/questions/18023493/bootstrap-3-dropdown-sub-menu-missing
+ ***********************************************************************/
+.nav.navbar-default {height:auto;font-size:inherit;font-family:inherit;background-color:@navbar-default-bg;
+  // hidden by default!
+  li.sidebar-closer {display:none;}
+
+  .dropdown-submenu{position:relative;}
+  .dropdown-submenu>.dropdown-menu{top:0;left:100%;margin-top:-6px;margin-left:-1px;-webkit-border-radius:0 6px 6px 6px;-moz-border-radius:0 6px 6px 6px;border-radius:0 6px 6px 6px;}
+  .dropdown-submenu:hover>.dropdown-menu{display:block;}
+  .dropdown-submenu>a:after{display:block;content:" ";float:right;width:0;height:0;border-color:transparent;border-style:solid;border-width:5px 0 5px 5px;border-left-color:#cccccc;margin-top:5px;margin-right:-10px;}
+  .dropdown-submenu:hover>a:after{border-left-color:#ffffff;}
+  .dropdown-submenu.pull-left{float:none;}.dropdown-submenu.pull-left>.dropdown-menu{left:-100%;margin-left:10px;-webkit-border-radius:6px 0 6px 6px;-moz-border-radius:6px 0 6px 6px;border-radius:6px 0 6px 6px;}
+
+  &:not(.sidebar-if-mobile){
+    li.dropdown:hover .dropdown-menu.nest-1 {display:block;}
+  }
+
+  &.sidebar-if-mobile {
+    li.dropdown {
+      &.expanded .dropdown-menu.nest-1 {display:block;}
+      &:after {content:"";display:block;position:absolute;top:14px;right:10px;border-right:8px solid #fff;border-top:8px solid transparent;-webkit-transform:rotate(45deg);-moz-transform:rotate(45deg);-ms-transform:rotate(45deg);transform:rotate(45deg);}
+    }
+  }
+}
+
+@media screen and (max-width:@grid-float-breakpoint){
+  .nav {
+    font-family: "futura-pt", sans-serif;
+
+    .navbar-header {
+      padding:10px;
+
+      button {
+        float:none;
+        display:block;
+        text-align:left;
+        width:100%;
+        margin:0;
+        background-repeat:no-repeat;
+        background-position:37px 50%;
+        background-color:transparent;
+        background-size:auto 30px;
+        .clearfix;
+
+        .icon-bar-group {
+          display:block;
+          position:absolute;
+          top:50%;
+          margin-top:-7px;
+        }
+
+        .department {
+          display:block;
+          margin-left:63px;
+        }
+      }
+    }
+
+    .collapse.navbar-collapse {
+      background: @navbar-default-bg;
+      border:0;
+      z-index:99;
+      display:block;
+      position:fixed;
+      top:0;
+      left:-100%;
+      bottom:0;
+      height:100% !important;
+      max-height:none;
+      padding-right:0;
+      overflow-y:scroll;
+      overflow-x:hidden;
+      -webkit-overflow-scrolling:touch;
+      .transition(left .35s ease);
+
+      ul.nav.navbar-nav {
+        position:relative;
+        min-width:280px;
+        max-width:280px;
+        width:100%;
+        /*min-height:100% !important;*/
+        margin:0;
+        border-right:1px solid @navbar-default-toggle-border-color;
+
+        li.sidebar-closer {
+          display:block;
+          text-align:center;
+          font-size:90%;
+          background:#112233;
+        }
+
+        .dropdown-submenu>.dropdown-menu {
+          padding-left:15px;
+        }
+
+        li:hover, li:focus, li.expanded {
+          a {
+            background-color:transparent;
+            color:@navbar-default-link-active-color;
+            -webkit-tap-highlight-color:@navbar-default-link-active-bg;
+          }
+
+          .dropdown-menu {
+            position: static;
+            float: none;
+            width: auto;
+            margin-top: 0;
+            background-color: transparent;
+            border: 0;
+            box-shadow: none;
+            > li > a, .dropdown-header {
+              padding: 5px 15px 5px 25px;
+            }
+            > li > a {
+              line-height: @line-height-computed;
+              &:hover,
+              &:focus {
+                background-image: none;
+              }
+            }
+          }
+        }
+
+        a {color:#fff;}
+
+        li, li a {
+          -webkit-tap-highlight-color: #cc9900;
+        }
+      }
+    }
+  }
+
+  .nav.sidebar-if-mobile {
+    .collapse.navbar-collapse {
+      left:0;
+    }
+  }
+}

@@ -1,0 +1,690 @@
+/* TGR main Style Sheet */
+
+/* @group Global styles */
+body {
+	background: #212121;
+	font-family: Arial,Helvetica,sans-serif;
+}
+
+a {
+	text-decoration: none;
+}
+
+a img {
+	border: none;
+}
+
+.shadow {
+	-webkit-box-shadow: 0px 0px 5px rgba(50, 50, 50, 0.75);
+	-moz-box-shadow: 0px 0px 5px rgba(50, 50, 50, 0.75);
+	box-shadow: 0px 0px 5px rgba(50, 50, 50, 0.75);
+}
+.clear {
+	clear: both;
+}
+
+#content_wrapper {
+	width : 990px;
+	margin: 0 auto;
+}
+
+/* @end */
+
+/* @group header */
+
+#header_wrapper {
+    background: url(images/tgr_header_bg.jpg);
+	background: #212121 url(/images/tgr_header_bg.jpg) no-repeat left top;
+	height: 132px;
+}
+
+#header{
+}
+
+#header #logo a {
+	display: block;
+	padding: 20px 0 0 0;
+	width : 214px;
+	float: left;
+}
+
+#header #login_area {
+	float: right;
+	height: 15px;
+	line-height: 15px;
+	padding: 5px 0;
+	color: #fff;
+	font-size: 12px;
+	font-family: Helvetica Neue,Arial,Helvetica,sans-serif;
+	width : 330px;
+}
+
+#header #login_area a {
+	color: #f5f5f5;
+}
+#header #login_area a:hover {
+	color: #ddd;
+}
+#header #fb_link {
+	background: #212121 url(images/fb_icon.png) no-repeat left top;
+	height: 15px;
+	width: 14px;
+	float: right;
+	margin: 0 5px 0 5px;
+}
+
+#header #twitter_link {
+	background: #212121 url(images/twitter_icon.png) no-repeat left top;
+	height: 15px;
+	width: 14px;
+	float : right;
+}
+#header .sign_in {
+	float: right;
+	padding : 0 20px;
+}
+
+#header .newsletter {
+	float: left;
+}
+
+#header #hp_adblock {
+	width: 728px;
+	height : 90px;
+	background: #ccc;
+	float: right;
+}
+
+/* @end */
+
+/* @group main nav */
+#main_nav {
+	
+}
+
+#sub_nav_wrapper {
+	height: 28px;
+	width: 100%;
+	background-color: #006699;
+}
+
+#sub_nav ul {
+	list-style: none;
+	height: 28px;
+	line-height: 28px;
+}
+#sub_nav ul li {
+	display: inline;
+}
+#sub_nav ul li a {
+	display: block;
+	float: left;
+	line-height: 28px;
+	padding: 0 20px;
+	color: #fff;
+	font-size: 12px;
+	text-transform: uppercase;
+}
+#sub_nav ul li a:hover {
+	color: #fffff7;
+	background: #0273ab;
+}
+/* @end */
+
+/* @group content */
+#content {
+	background: #fff;
+	padding: 10px;
+}
+
+
+/* @end */
+
+/* @group footer */
+#footer_wrapper {
+	background: #000 url(images/tgr_footer_bg.png) no-repeat left top;
+	padding: 28px 0 10px 0;
+	-webkit-border-bottom-right-radius: 10px;
+	-webkit-border-bottom-left-radius: 10px;
+	-moz-border-radius-bottomright: 10px;
+	-moz-border-radius-bottomleft: 10px;
+	border-bottom-right-radius: 10px;
+	border-bottom-left-radius: 10px;
+}
+#footer {
+	padding: 20px;
+	color : #fff;
+}
+
+#footer #fb_footer {
+	float: right;
+}
+
+ul.footer_list {
+	width: 80px;
+	list-style: none;
+	margin: 0 15px 0 0;
+	float: left;
+}
+ul.footer_list.last {
+	margin: 0px;
+}
+ul.footer_list li {
+	list-style: none;
+}
+ul.footer_list li a {
+	display: block;
+	font-size: 11px;
+	color: #666;
+	padding: 3px 0 3px 5px;
+}
+ul.footer_list li a:hover {
+	color: #fff;
+	background: #333;
+}
+ul.footer_list h4 {
+	font-size: 12px;
+	color: #fff;
+	font-weight: normal;
+}
+
+#footer .copywrite_footer {
+	font-weight: normal;
+	font-size: 10px;
+	color: #666;
+}
+/* @end */
+
+/* @group login_drop */
+
+
+#panel {
+    width: 290px;
+    position: relative;
+    top: 1px;
+    height: 0px;
+    z-index: 10;
+    overflow: hidden;
+    text-align: left;
+}
+
+#panel_contents {
+    padding: 20px;
+    width: 250px;
+    z-index: -1;
+    color: #fff;
+    background: #222;
+    filter:alpha(opacity=90);
+    -moz-opacity:0.90;
+    -khtml-opacity: 0.90;
+    opacity: 0.90;
+    height: 100%;
+
+
+}
+
+.panel_button {
+    width: 130px;
+    font-size: 12px;
+    height: 15px;
+    line-height: 15px;
+    z-index: 20;
+    cursor: pointer;
+    float :right;
+}
+#login_area #open a {
+    text-decoration: none;
+    font-size: 12px;
+    position: relative;
+    font-family: Arial, Helvetica, sans-serif;
+    background: url("images/icon_down.png") no-repeat scroll 3px center transparent;
+    padding: 0 0 0 23px;
+    color : #ddd;
+}
+#login_area #hide_button a  {
+	background: #666 url("images/icon_close.png") no-repeat scroll 5px center;
+	font-size: 12px;
+    position: relative;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 0 0 0 23px;
+    width : 100px;
+    display: block;
+    color : #ddd;
+}
+
+.panel_button a:hover {
+	color: #999999;
+}
+.panel_button img{
+	position: relative;
+	top: 10px;
+	border: none;
+}
+
+/* @end */
+
+/* @group Gear_store */
+
+#breadcrumb_nav ul#breadcrumb {
+	list-style: none;
+	margin: 0 0 10px 0;
+}
+#breadcrumb_nav ul#breadcrumb li {
+	list-style: none;
+	display: inline;
+	color: #333;
+	height: 20px;
+	line-height: 20px;
+	font-size: 12px;
+}
+#breadcrumb_nav ul#breadcrumb li a{
+	color: #006699;
+	height: 20px;
+	line-height: 20px;
+	padding: 0 5px;
+}
+#breadcrumb_nav ul#breadcrumb li a:hover {
+	text-decoration: underline;
+}
+
+#ad_160_600 {
+	margin: 5px 0;
+}
+/* @group category page */
+
+#gear_store_categorymain {
+	width : 800px;
+	float: right;
+	margin: 0 0px 0 10px ;
+}
+
+#gear_store_categorymain h1 {
+	font-size: 24px;
+	font-weight: normal;
+	margin: 0 0 10px 0;
+}
+
+#gear_store_categorymain  #search_box {
+	background: #ccc;
+	float: right;
+	padding: 3px 10px;
+}
+
+#gear_store_categorymain .sort_bar {
+	height: 30px;
+	width: 100%;
+	margin: 0 0 10px 0;
+	background-color: #f5f5f5;
+}
+
+#gear_store_categorymain #product_grid .product_wrapper {
+	width: 190px;
+	float: left;
+	border: 1px solid #ccc;
+	margin: 0 3px 3px 0;
+	padding: 2px;
+	height: 310px;
+	overflow: hidden;
+}
+#gear_store_categorymain #product_grid .product_wrapper:hover {
+	background-color: #f5f5f5;
+}
+#gear_store_categorymain #product_grid .product_wrapper .tgrbadge {
+		background: url(images/tgr_approved.png) no-repeat center center;
+		height: 33px;
+		width: 33px;
+		position: absolute;
+}
+#gear_store_categorymain #product_grid .product_wrapper .media_badge{
+	width: 54px;
+	height: 20px;
+	margin: 0 auto;
+	text-align: center;
+	background: url(images/media_bg.png) no-repeat center center;
+} 
+
+#gear_store_categorymain #product_grid .product_wrapper .stars{
+	width: 141px;
+	height: 20px;
+	margin: 0 auto;
+	text-align: center;
+	background: url(images/stars_bg.png) no-repeat center center;
+	margin-bottom: 5px;
+} 
+
+#gear_store_categorymain #product_grid .product_wrapper h4
+{
+		text-align: center;
+			line-height: 16px;
+	height: 32px;
+	overflow: hidden;
+		margin : 5px 0;
+
+
+}
+#gear_store_categorymain #product_grid .product_wrapper h4 a {
+	color: #006699;
+	font-size: 14px;
+	font-weight: normal;
+	line-height: 16px;
+	height: 32px;
+	overflow: hidden;
+}
+
+#gear_store_categorymain #product_grid .product_wrapper p.price {
+	font-size: 16px;
+	font-weight: bold;
+	color: #333;
+	text-align: center;
+	margin-bottom: 5px;
+}
+
+#gear_store_categorymain #product_grid .product_wrapper span.retail_price {
+	color: #666;
+	font-size: 12px;
+	line-height: 16px;
+	padding: 2px 0;
+	font-weight: normal;
+}
+#gear_store_categorysidebar {
+	width: 160px;
+	float: left;
+}
+
+#token_list ul#tokens{
+	list-style: none;
+}
+
+#token_list ul#tokens li {
+	list-style: none;
+	padding: 0px;
+	margin: 0 0 2px;
+}
+#token_list ul#tokens li a {
+	background: #000 url(images/token_bg.png) no-repeat 5px center;
+	height: 20px;
+	line-height: 20px;
+	font-size: 12px;
+	color: #fff;
+	padding: 0 0 0 22px;
+	display: block;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+}
+#token_list ul#tokens li a:hover {
+	background: #333 url(images/token_bg.png) no-repeat 5px center;
+	}
+
+	
+#cat_nav ul#cat_nav_items{
+	list-style: none;
+	margin: 5px 0;
+}
+
+#cat_nav ul#cat_nav_items li {
+	list-style: none;
+	padding: 0px;
+	}
+	
+#cat_nav ul#cat_nav_items li.heading {
+	font-size: 12px;
+	font-weight: bold;
+	padding: 0 10px;
+	background-color: #006699;
+	color: #fff;
+	height: 20px;
+	line-height: 20px;
+}
+#cat_nav ul#cat_nav_items li a {
+	background: #ccc;
+	height: 20px;
+	line-height: 20px;
+	font-size: 12px;
+	color: #333;
+	padding: 0 10px;
+	display: block;
+	border-bottom: 1px solid #f5f5f5;
+	border-top: 1px solid #ccc;
+
+}
+#cat_nav ul#cat_nav_items li a:hover {
+	background: #999 ;
+	border-top: 1px solid #848484;
+	color : #000;
+
+		}
+
+
+
+
+/* @end */
+
+/* @group product page */
+
+#gear_store_productmain {
+	width : 660px;
+	float: left;
+	margin: 0 10px 0 0px ;
+}
+
+#gear_store_productsidebar {
+	width: 300px;
+	float: left;
+}
+
+/* @end */
+
+/* @group homepage */
+
+#gear_store_hpmain {
+	width : 660px;
+	float: left;
+	margin: 0 10px 0 0 ;
+}
+
+#gear_store_hpsidebar {
+	width: 300px;
+	float: right;
+}
+
+#gear_store_hpmain #hp_slideshow {
+	border: 1px solid #ccc;
+	width: 100%;
+	height: 295px;
+	margin : 0 0 10px 0;
+}
+
+/* @group HP_cat */
+
+#gear_store_hpmain #hp_cat_block {
+	border: 1px solid #ccc;
+	width: 620px;
+	margin : 0 0 10px 0;
+	padding: 20px;
+}
+
+#gear_store_hpmain #hp_cat_block .group {
+	width: 190px;
+	float: left;
+	margin: 0 10px 20px 0;
+}
+
+#gear_store_hpmain #hp_cat_block .group .prod_img {
+	float: left;
+	margin: 0 10px 0 0;
+}
+
+#gear_store_hpmain #hp_cat_block .group ul.hp_gearcat {
+	float: left;
+	list-style: none;
+}
+#gear_store_hpmain #hp_cat_block .group ul.hp_gearcat h5 {
+	color: #333;
+	font-weight: bold;
+	font-size: 14px;
+	margin: 0 0 8px 0;
+}
+#gear_store_hpmain #hp_cat_block .group ul.hp_gearcat li {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	line-height: 15px;
+}
+#gear_store_hpmain #hp_cat_block .group ul.hp_gearcat li a {
+	color: #006699;
+	text-decoration: none;
+	font-size: 12px;
+	margin: 0;
+	padding: 0;
+}
+
+/* @end */
+
+/* @group hp_pro list */
+
+#gear_store_hpmain #hp_pro_list {
+	border: 1px solid #ccc;
+	width: 660px;
+	margin : 0 0 10px 0;
+}
+
+#gear_store_hpmain #hp_pro_list h4 {
+	background: #0099cc url(images/bg.png) repeat-x left bottom;
+	width: 100%;
+	text-align: center;
+	color: #fff;
+	font-size: 16px;
+	line-height: 30px;
+}
+
+#gear_store_hpmain #hp_pro_list .skiers, #gear_store_hpmain #hp_pro_list .snowboard {
+	padding: 20px;
+	float: left;
+	width: 280px;
+}
+
+#gear_store_hpmain #hp_pro_list .skiers ul.hp_prolist, #gear_store_hpmain #hp_pro_list .snowboard ul.hp_prolist {
+	float: left;
+	list-style: none;
+	margin: 0 30px 0 0;
+	width: 110px;
+}
+#gear_store_hpmain #hp_pro_list .skiers h5, #gear_store_hpmain #hp_pro_list .snowboard h5 {
+	color: #333;
+	font-weight: bold;
+	font-size: 14px;
+	margin: 0 0 8px 0;
+}
+#gear_store_hpmain #hp_pro_list .skiers ul.hp_prolist li, #gear_store_hpmain #hp_pro_list .snowboard ul.hp_prolist li {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	line-height: 15px;
+}
+#gear_store_hpmain #hp_pro_list .skiers ul.hp_prolist li a, #gear_store_hpmain #hp_pro_list .snowboard ul.hp_prolist li a {
+	color: #006699;
+	text-decoration: none;
+	font-size: 12px;
+	margin: 0;
+	padding: 0;
+}
+
+
+/* @end */
+
+
+/* @group hp_forums */
+
+#gear_store_hpmain #hp_forum {
+	border: 1px solid #ccc;
+	width: 660px;
+	margin : 0 0 10px 0;
+}
+#gear_store_hpmain #hp_forum h4 {
+	background: #f5f5f5 url(images/bg.png) repeat-x left bottom;
+	width: 100%;
+	text-align: center;
+	color: #333;
+	font-size: 16px;
+	line-height: 30px;
+}
+
+#gear_store_hpmain #hp_forum #tech_talk, #gear_store_hpmain #hp_forum #gear_swap  {
+	padding: 10px;
+	float: left;
+	width: 310px;
+}
+
+#gear_store_hpmain #hp_forum #tech_talk h5, #gear_store_hpmain #hp_forum #gear_swap h5  {
+	color: #333;
+	border-bottom: 1px solid #999;
+	font-size: 16px;
+	font-weight: normal;
+	}
+#gear_store_hpmain #hp_forum ul.forum_list {
+	list-style: none;
+}
+
+#gear_store_hpmain #hp_forum ul.forum_list li {
+	list-style: none;
+	padding: 10px 5px;
+	border-bottom: 1px dotted #ccc;
+}
+#gear_store_hpmain #hp_forum ul.forum_list li:hover {
+	background: #f5f5f5;
+}
+
+#gear_store_hpmain #hp_forum ul.forum_list li .thread_title a {
+	font-size: 12px;
+	color: #006699;
+}
+
+#gear_store_hpmain #hp_forum ul.forum_list li .small {
+	font-size: 10px;
+	color: #666;
+}
+
+/* @end */
+
+
+/* @end */
+
+/* @group widgets */
+
+/* @group Homepage */
+
+#gear_store_hpsidebar #tgr_approved {
+	border: 1px solid #ccc;
+	width: 300px;
+	margin : 0 0 10px 0;
+	height: 295px;
+}
+
+#gear_store_hpsidebar #tgr_approved h4 {
+	background: #0099cc url(images/bg.png) repeat-x left bottom;
+	width: 100%;
+	text-align: center;
+	color: #fff;
+	font-size: 16px;
+	line-height: 30px;
+}
+
+#gear_store_hpsidebar #ad_unit {
+	width: 300px;
+	height: 250px;
+	background: #ccc;
+	margin: 0 0 10px 0;
+}
+/* @end */
+
+
+
+/* @end */
+
+
+/* @end */
+
+
+
+

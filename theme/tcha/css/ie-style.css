@@ -1,0 +1,48 @@
+/*sidebar menu icons*/
+.logo img {
+	/*max-width: 225px;*/
+	width: 225px;
+	height:37px;
+}
+a:active, a:focus {
+    outline:none;
+}
+.submenu{
+display:none;
+}
+.nav > li > a:hover, .nav > li > a:focus {background: none;} /* Remove bootstrap background color */
+ul#sidebar-menu li a {
+	display: block; 
+	height: 30px; 
+	margin: 0px 0 4px -7px;
+	padding: 10px 0 0 50px;
+	position: relative;
+	background-image: url(img/ico_employeers.png);
+	background-repeat: no-repeat;
+	background-position: top left;
+	background-size: auto 30px;
+	transition: background-size 0.2s, height 0.2s, font-size 0.2s, padding 0.2s, margin 0.2s;
+	-webkit-transition: background-size 0.2s, height 0.2s, font-weight 0.2s, padding 0.2s, margin 0.2s;
+	border: none;
+}
+ul#sidebar-menu li a:hover, ul#sidebar-menu li a:focus {
+	cursor: pointer;
+	height: 34px;
+	background-size: auto 34px;
+	padding: 12px 0 0 55px;
+	font-weight: bold;
+	margin: 0px 0 6px -10px;
+	
+}
+ul#sidebar-menu li a.developers {	background-image: url(img/ico_developers_ie.png);}
+ul#sidebar-menu li a.lenders {background-image: url(img/ico_lenders_ie.png);}
+ul#sidebar-menu li a.homeowners {background-image: url(img/ico_homeowners_ie.png);}
+ul#sidebar-menu li a.renters {background-image: url(img/ico_renters_ie.png);}
+ul#sidebar-menu li a.buyers {background-image: url(img/ico_buyers_ie.png);}
+ul#sidebar-menu li a.business {background-image: url(img/ico_employeers_ie.png);}
+ul#sidebar-menu li a.newsletter {background-image: url(img/ico_newsletter_ie.png);}
+ul#sidebar-menu li a.compplan {background-image: url(img/ico_compplan_ie.png);}
+ul#sidebar-menu li a.forms {background-image: url(img/ico_forms_ie.png);}
+ul#sidebar-menu li a.faq {background-image: url(img/ico_faq_ie.png);}
+ul#sidebar-menu li a.contact {background-image: url(img/ico_contact_ie.png);}
+ul#sidebar-menu li a.facebook {background-image: url(img/ico_facebook_ie.png);}

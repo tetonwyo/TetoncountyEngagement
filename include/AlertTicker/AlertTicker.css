@@ -1,0 +1,62 @@
+/* Alert ticker styles */
+#Alert 
+{
+	width: 220px;
+	padding-bottom:10px;
+	font-family:Verdana, sans-serif;
+    color:#880000;
+}
+#AlertCaption
+{
+	height:20px;
+	padding-left:5px;
+	padding-top:3px;
+	background-color:#880000;
+	color:#ffffff;
+	font-weight:bold;
+	font-size:13px;
+}
+#AlertTicker {
+    border-left:1px solid #ccc;
+    border-right:1px solid #ccc;
+    border-bottom:1px solid #ccc;
+	height:110px;
+	display:block;
+	overflow:hidden;
+	position:relative;
+    font-size:11px;
+}
+#AlertTickerVertical {
+	width:220px;
+	height:110px;
+	display:block;
+	list-style:none;
+	margin:0px;
+	padding:0px;
+}
+#AlertTickerVertical li
+{
+    display:block;
+	width:208px;
+	margin:0px;
+	padding:5px 0px 0px 5px;
+	float:left;
+}
+#AlertTickerVertical li div.item
+{
+    border:1px solid #ddd;
+    background:#eee;
+}
+#AlertTickerVertical li div.itemTitle
+{
+	font-weight:bold;
+}
+#AlertTickerVertical li div.itemContent
+{
+}
+#AlertTickerVertical li div.itemContent a
+{
+	text-decoration:underline;
+	font-weight:normal;
+	color:#880000;
+}

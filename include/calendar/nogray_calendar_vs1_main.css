@@ -1,0 +1,113 @@
+﻿/*
+	Style for the nogray calendar on the main calendar page
+*/
+
+/* the main header table */
+.ng-cal-header-table {
+	border-collapse:collapse;
+	background:#0058a1;
+	border:solid #cccccc 1px;
+	width:100%}
+	
+/* the previous and next table cells */
+.ng-cal-previous-td, .ng-cal-next-td {width:20px;
+	height:20px;
+	color:#ffffff;
+	border:solid #cccccc 1px;
+	text-align:center;}
+	
+.ng-cal-previous-td a, .ng-cal-next-td a
+{
+	color: #ffffff;
+}
+.ng-cal-previous-td a:hover, .ng-cal-next-td a:hover
+{
+	color: #ffffff;
+}	
+
+/* the calendar header table cell (the area where the month and year is displayed) */
+.ng-cal-header-td {text-align:center;
+	font-weight:bold;
+	color: #ffffff;
+	padding:3px;}
+	
+/* the main month table */
+.ng-cal
+{
+	border-left:solid #cccccc 1px;
+	border-right:solid #cccccc 1px;
+	border-bottom:solid #cccccc 1px;
+	border-collapse:collapse;
+	margin-bottom:5px;
+	background-color:#FFFFFF;
+	width:100%}
+
+.ng-cal * {font-size:8pt; vertical-align:top}
+.ng-cal td {padding:3px;
+	border:solid #cccccc 1px;}
+.ng-cal td .ng-calDateEvent
+{
+	cursor: pointer;
+	font-size: 7pt;
+}
+.ng-cal td .ng-calDateEvent:hover
+{
+	text-decoration:underline;
+}
+.ng-cal td .ng-calDateEventAlt
+{
+	cursor: pointer;
+	font-size: 7pt;
+	background-color: #e3e3e3;
+}
+.ng-cal td .ng-calDateEventAlt:hover
+{
+	text-decoration:underline;
+}
+.ng-cal td .ng-calDate
+{
+	background-color: #f4f4f4; /*#e6ecf1;*/
+	color: #0058a1;
+/*	font-weight: bold;
+	float: left; */
+	width: 16px;
+	height: 16px;
+/*	text-align: center; */
+}
+	
+/* the days name table cells */
+.ng-cal .ng-days-name-td {background:#e6ecf1;
+	border:solid #cccccc 1px;}
+	
+/* the month name table cell */
+.ng-month-name-th {background: #ffffff;
+	font-size: 1px;
+	padding: 0px;
+	color: #ffffff;
+	text-align:center;}
+	
+/* weekends, days off, dates off (holidays) */
+.ng-weekend, .ng-dayOff, .ng-dateOff {color:#999999;}
+
+/* out of range days (previous or next month) */
+.ng-outOfRange {color:#999999;
+	background:#efefef;
+}
+
+/* the style for the table cell when the mouse is over it */
+.ng-mouse-over {background:#faedd6;}
+	
+/* selected day */
+.ng-selected-day {background:#ffbb45;
+		font-weight:bold;}
+		
+/* the close and clear buttons in the bottom of the calendar */
+.ng-close-link, .ng-clear-link  {padding:3px;
+	text-align:center;
+	color:#666666;
+	text-decoration:none;
+	font-size:8pt;
+	background:#efefef;
+	border:solid #cccccc 1px;
+	float:right;
+	margin-right:5px;}

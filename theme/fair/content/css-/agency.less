@@ -1,0 +1,236 @@
+﻿@import "../../../common/bootstrap_src/css/bootstrap";
+@import "../../../common/css/variables";
+@import "../../../common/css/components/navigation";
+
+// Font import (better to inline in markup w/ <link> tag for prod)
+@import url(http://fonts.googleapis.com/css?family=Graduate);
+
+// Variables
+@themeImages: '/theme/fair/content/images/';
+@theme-blue: #0058A1;
+@theme-blue-background: #0058A1;
+@theme-blue-alt-red:#B21212;
+@theme-light-yellow:#FFd766;
+@body-bg: #e1e1e1;
+
+html {height:100%;}
+body {position:relative;min-height:100%;font-family: 'Graduate', cursive;}
+@font-size-h1:            floor((@font-size-base * 2.6)); // ~36px
+@font-size-h2:            floor((@font-size-base * 2.15)); // ~30px
+@font-size-h3:            ceil((@font-size-base * 1.7)); // ~24px
+@font-size-h4:            ceil((@font-size-base * 1.25)); // ~18px
+@font-size-h5:            @font-size-base;
+@font-size-h6:            ceil((@font-size-base * 0.85)); // ~12px
+
+.border-radius-all(@value){
+  .border-top-radius(@value);
+  .border-bottom-radius(@value);
+}
+
+.nav.navbar-default {.box-shadow(0 0 10px #000);
+  > li{
+      &.navevent > a{background-color: #b21212;color: #fff;}
+      &.navboard > a{background-color: #0058A1;font-size: 85%;color: #fff;}
+ }
+}
+
+.carousel {
+  .logo-static {right:10px;top:10px;display:block;font-size:0;line-height:0;position:absolute;z-index:1;
+    img {max-width:100px;}
+  }
+  .carousel-inner .item {height:275px;background-position:50% 50%;background-size:cover;
+    .gradient {position:absolute;left:0;right:0;bottom:0;height:auto;
+      background: -moz-linear-gradient(top,  rgba(0,0,0,0) 0%, rgba(0,0,0,0.81) 49%, rgba(0,0,0,0.81) 100%);
+      background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(0,0,0,0)), color-stop(49%,rgba(0,0,0,0.81)), color-stop(100%,rgba(0,0,0,0.81)));
+      background: -webkit-linear-gradient(top,  rgba(0,0,0,0) 0%,rgba(0,0,0,0.81) 49%,rgba(0,0,0,0.81) 100%);
+      background: -o-linear-gradient(top,  rgba(0,0,0,0) 0%,rgba(0,0,0,0.81) 49%,rgba(0,0,0,0.81) 100%);
+      background: -ms-linear-gradient(top,  rgba(0,0,0,0) 0%,rgba(0,0,0,0.81) 49%,rgba(0,0,0,0.81) 100%);
+      background: linear-gradient(to bottom,  rgba(0,0,0,0) 0%,rgba(0,0,0,0.81) 49%,rgba(0,0,0,0.81) 100%);
+      filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', endColorstr='#cf000000',GradientType=0 );
+    }
+    .carousel-caption {position:static;padding-bottom:50px;
+      h3 {margin:0;padding:15px 10px 0;font-size:140%;}
+    }
+  }
+}
+
+// Main page content
+#container-primary {position:relative;font-family:'Open Sans', Helvetica, sans-serif;top:-46px;padding-bottom:40px;
+  h1 {text-align:center;margin:30px 0;}
+  .pagetitle{margin-left:100px;}
+  .box-inner, .module_rcbox_wrapper, .contact_text {display:block;background:#f5f5f5 url('@{themeImages}sos.png') repeat;overflow:hidden;.box-shadow(0 0 5px rgba(0,0,0,.55));/*.border-radius-all(5px);*/}
+  #home-featured {font-size:0;line-height:0;
+    .box {padding:0 2px;display:inline-block;width:25%;font-size:@font-size-base;line-height:@line-height-computed;
+      .box-inner, .module_rcbox_wrapper, .contact_text {text-align:center;color:@theme-blue-background;
+        span {display:block;padding:8px;font-size:115%;}
+        img {.img-responsive();}
+        .descr {padding:10px;font-size:.875em;}
+        // on hovering the whole box
+        &:hover {background:#fff;text-decoration:none;}
+      }
+    }
+    h1{color:@theme-blue;}
+  }
+  #home-boxes {
+    .box-inner, .module_rcbox_wrapper, .contact_text {margin-bottom:15px;padding:10px;
+      h3, h5 {margin:-15px -15px 15px;text-align:center;padding:12px 0;background:@theme-blue-background;color:#fff;}
+    }
+  }
+}
+
+// Footer style
+#cFooter {background:@theme-blue-background;color:#fff;font-size:12px;position:absolute;left:0;bottom:0;right:0;height:auto;
+  span {display:block;padding:12px 0;}
+}
+
+
+/***********************************************************************
+ * Fair internal
+ **********************************************************************/
+ body.fair-internal {
+   /* @note: REFACTOR THESE TO USE GENERATED MARKUP FROM CMS?
+   .carousel {
+     .logo-static {display:none;bottom:10px;height:auto;width:auto;max-width:none !important;
+       img {width:auto;height:100%;max-width:none !important;}
+     }
+     .carousel-inner .item {height:auto;color:#fff;
+       .gradient {position:relative;width:100%;
+         h1 {margin:0;padding:30px;}
+       }
+     }
+   }
+   #container-primary {top:0;padding-top:15px;}*/
+ }
+
+.bodyinternal{top:0;padding-top:15px;}
+
+.headinternal {
+    .carousel {
+        .logo-static {
+            display: none;
+            bottom: 10px;
+            height: auto;
+            width: auto;
+            max-width: none !important;
+
+            img {
+                width: auto;
+                height: 100%;
+                max-width: none !important;
+            }
+        }
+
+        .carousel-inner .item {
+            height: auto;
+            color: #fff;
+
+            .gradient {
+                position: relative;
+                width: 100%;
+
+                h1 {
+                    margin: 0;
+                    padding: 30px;
+                }
+            }
+        }
+    }
+}
+.logo-static {
+   position:absolute;
+   padding-left:20px;
+   z-index:1200;
+
+    img {
+        width: auto;
+        height: 120px;
+        max-width: none !important;
+    }
+}
+.headcarousel{
+      .carousel {
+        .carousel-inner .item {
+            height: auto;
+            color: #fff;
+
+            .gradient {
+                position: relative;
+                width: 100%;
+
+                h1 {
+                    margin: 0;
+                    padding: 30px;
+                    color:@theme-light-yellow;
+                }
+            }
+        }
+    }
+}
+
+
+
+/***********************************************************************
+ * Fair internal
+    Topics
+ **********************************************************************/
+#bg-carousel {position:fixed;top:0;left:0;width:100%;height:100%;
+  .carousel-inner, .carousel-inner .item {height:100%;}
+}
+
+#container-L1 {position:static;z-index:2;}
+
+#landing-header {color:#fff;
+  h1 {margin:30px 0 15px;text-shadow:0 0 8px #000;}
+  .logo {right:10px;top:10px;display:block;font-size:0;line-height:0;position:absolute;z-index:99;
+    img {max-width:82px;}
+  }
+}
+  
+	
+.breadcrumbs {
+	margin: 5px 0;
+	}
+	
+.breadcrumbs ul {
+	float: left;
+	list-style-type: none;
+	margin-left: 0;
+	margin-bottom: 0;
+	padding-left: 0;
+	}
+	
+.breadcrumbs ul li {
+	float: left;
+	font-size: 12px;
+	/*text-transform: uppercase;*/
+	margin-right: 5px;
+	}	
+
+.breadcrumbs ul li.active {
+	font-weight:bold;
+	}
+.breadcrumbs ul li a {
+	color: #bbb;
+	}
+	
+
+///////////////////////////// RESPONSIVE STUFF /////////////////////////////
+@media screen and (min-width:@grid-float-breakpoint){
+  .nav.navbar-default {position:relative;z-index:2;background:#fff;
+    ul.nav.navbar-nav {background:none;
+      /*li a {color:@theme-blue-alt-red}*/
+      li.active a {color:#e1e1e1;}
+    }
+  }
+  .carousel {
+    .logo-static img {max-width:140px;}
+    .carousel-inner .item {height:350px;}
+  }
+}
+
+@media screen and (min-width:@screen-md){
+  .carousel {
+    .logo-static img {max-width:180px;}
+    .carousel-inner .item {height:425px;}
+  }
+}

@@ -1,0 +1,136 @@
+@import "init";
+@import "colors";
+@import "mixins";
+
+@base-size: 15em;
+
+/* Basics */
+html
+{
+  font-family: 'Open Sans', verdana, helvetica, sans-serif;
+  font-size: @base-size;
+}
+body
+{
+  background: @main-color;
+}
+h1
+{
+  font-size: @base-size + 10px;
+}
+h2
+{
+  font-size: @base-size + 4px;
+}
+h3
+{
+  font-size: @base-size + 2px;
+}
+
+/* Layout */
+#container
+{
+  margin-top:5px;
+  width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  background: #FFF;
+  padding: 5px;
+  .rounded-corners;
+  color: darken(@main-color, 10%);
+}
+
+/* Sections */
+header h1
+{
+  font-size: 24px;
+  font-family: 'Share', cursive;
+  color: Blue;
+}
+nav
+{
+  font-size: 14px;
+  font-weight: bold;
+  float: right;
+  ul
+  {
+    list-style-type: none;
+    li
+    {
+      float: left;
+      margin: 2px;
+      a
+      {
+        text-decoration: none;
+        &:hover
+        {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+}
+
+footer
+{
+  font-size: 9px;
+  text-align: center;
+  color: Blue;
+  nav
+  {
+    float: none;
+    display: inline-block;
+    font-size: 9px;
+    vertical-align: middle;
+  }
+}
+
+@app-root: "http://localhost:8000/";
+
+#contact-module {
+  .fonts() {
+    font-family: "Open Sans", Verdana, Helvetica, sans-serif;
+    font-size: @base-size;
+  }
+}
+
+/* Forms */
+#contact-form
+{
+  background-image: url("@{app-root}images/background.jpg");
+  @base-size: 24px;
+  background: #f8f8f8;
+  width: 400px;
+  margin-left: auto;
+  margin-right: auto;
+  border: black 1px solid;
+  .rounded-corners(10px);
+  padding: 5px;
+  input[type=textbox], textarea
+  {
+    #contact-module > .fonts();
+    background: #ffffe0;
+    width: 250px;
+    display: block;
+    border: 1px #000 solid;
+    .rounded-corners(2px);
+    padding: 2px;
+  }
+  textarea
+  {
+    height: 150px;
+    font-family: "Open Sans", Verdana, Helvetica, sans-serif;
+  }
+  label
+  {
+    width: 150px;
+  }
+  .validation
+  {
+    display: none;
+  }
+}
+
+.mytestclass{
+    font-size:25px;
+}

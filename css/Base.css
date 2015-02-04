@@ -1,0 +1,43 @@
+﻿body
+{
+	width: 100%;
+	margin: 0px;
+	padding: 0px;
+}
+div
+{
+	-moz-box-sizing: content-box; /* Box-sizing standardizes padding/borders across browsers */
+	box-sizing: content-box; 
+	margin: 0px; 
+	padding: 0px;
+}
+form
+{
+	margin: 0px; /* Margin sizes remove extra vertical spacing from forms in IE */
+}
+img
+{
+	border-style: none;
+}
+a
+{
+	text-decoration: none
+}
+a:hover
+{
+	text-decoration: underline
+}
+h1,h2,h3,h4,h5,h6
+{
+	margin: 0px;
+}
+p 
+{
+	margin: 0 0 1em 0
+}
+ul
+{
+	margin-top: 0px;
+	margin-bottom: 1em;
+}
+

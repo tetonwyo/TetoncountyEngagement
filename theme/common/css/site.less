@@ -1,0 +1,42 @@
+// Search for @mod in the markup for corresponding changes.
+@import "../bootstrap_src/css/bootstrap";
+@import "variables";
+@import "components/navigation";
+
+/************************************************************************
+ * RESET (overriding legacy styles: clear these from other stylesheets)
+ ***********************************************************************/
+div { .box-sizing(border-box); } // reset the box model
+
+
+/************************************************************************
+ * GIS-specific (for now)
+ ***********************************************************************/
+div#contentWrap {
+  width:auto;
+  max-width:960px;
+  overflow-x:hidden;
+}
+
+#agencyHeader, #body, #footer {
+  width:100% !important;
+}
+
+#main_content {
+  img {.img-responsive;}
+}
+
+
+/************************************************************************
+ * iframe tools to make iframes responsive
+ ***********************************************************************/
+
+    .iframe-container {
+    position: relative; /* keeps the aspect ratio */
+    padding-bottom: 56.25%; /* fine tunes the video positioning */
+    padding-top: 60px; overflow: hidden;
+    }
+    .iframe-container iframe,
+    .iframe-container object,
+    .iframe-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+    }

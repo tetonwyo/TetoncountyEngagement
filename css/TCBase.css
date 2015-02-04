@@ -1,0 +1,306 @@
+﻿/* Base elements */
+body
+{
+	background-color: #dee3e0;
+	font-size: 11px;
+	/*font-size: 62.5%;*/  /* Sets base font size to 10px.  See http://css-tricks.com/css-font-size/ */
+	/*text-align: center; */ /* Horizontal content centering for IE */
+}
+div
+{
+}
+a
+{
+	color: #0058a1;
+}
+select
+{
+	font-family: Verdana, Arial;
+}
+textarea
+{
+	font-family: Verdana, Arial;
+}
+input
+{
+	font-family: Verdana, Arial;
+	font-size: 12px;
+}
+h1
+{
+	color: #0058A1;
+	font-size: 22px;
+	margin: 0px 0px 6px;		
+}
+
+/* For horizontal page center */
+div#contentWrap
+{
+	width: 960px;
+	margin-left: auto;
+    margin-right: auto;
+    text-align: left;
+}
+
+/* Header section */
+div#header
+{
+	width: 960px;
+	height: 121px;
+	overflow: hidden;	
+	background: transparent url(/images/TetonHeader.jpg) no-repeat;
+}
+div#headerLogo
+{
+	float: left;
+	padding-top: 11px;
+	padding-left: 11px;	
+}
+div#headerContent
+{
+	float: right;
+/*	
+	width: 135px;
+	padding-top: 11px;
+	margin-right: .5em;*/ /*8px;*/
+}
+div#weatherPanel
+{
+	width: 175px;
+	height: 121px;
+	padding: 3px;
+}
+div#weatherPanel select
+{
+	font-size: 11px;
+}
+div#headerMenu
+{
+	width: 950px;
+	height: 26px;
+	background: url('/images/style/top-nav-bg.gif') repeat-x scroll 0 0 #2c69a7;
+}
+div#headerMenu a
+{
+	color: #ffffff;
+}
+div#headerMenu ul
+{
+	margin: 0px;
+	padding: 0px;
+}
+div#headerMenu li
+{
+	float: left;
+	height: 21px;
+	padding-top: 5px;
+	padding-left: 12px;
+	padding-right: 12px;
+	list-style: none outside none;
+}
+div#headerMenu li a
+{
+	font-family: 'Archivo Narrow', sans-serif, "Arial Narrow","URW Chancery L",Arial;
+	font-size: 13px;
+	font-weight: bold;
+	text-decoration: none;		
+}
+div#headerMenu li:hover, div#headerMenu li.active
+{
+	background: url("/images/style/top-nav-bg-over.gif") repeat scroll 0 0 #81A767;
+	text-decoration: none;
+}
+div#searchPanel
+{
+	float: right;
+	font-size: 12px;
+}
+div#searchPanel a
+{
+	font-family: 'Archivo Narrow', sans-serif, "Arial Narrow","URW Chancery L",Arial;
+	font-size: 13px;
+	font-weight: bold;
+	text-decoration: none;	
+}
+div#searchPanel td
+{
+	height: 26px;
+	padding-right: 5px;
+}
+div#noScriptPanel
+{
+	float: right;
+	width: 200px;
+	color: #880000;
+}
+
+/* Body section */
+div#body
+{
+	clear: both;
+	width: 960px;
+	background: #ffffff;
+}
+div#bodyHeader
+{
+}
+div#bodyContent
+{
+	clear: both;
+}
+div#page
+{
+	padding: 0px;
+	overflow: hidden;	
+}
+div#bodyFooter
+{
+    margin-top:10px;
+}
+
+/* Footer section */
+div#footer
+{
+	clear: both;
+	width: 960px;
+	padding: 8px 0px;
+	overflow: hidden;
+	color: #ffffff;	
+}
+div#footerLinks
+{
+	float: left;
+	margin-left: 10px;
+}
+div#footerLinks a
+{
+	color: #0058A1;	
+	font-weight: bold
+}
+div#footerCopyright
+{
+	float: right;
+	margin-right: 10px;
+	font-size: 9px	
+}
+
+ul#resultslist
+{
+padding:0
+}
+ul#resultslist li
+{
+    list-style-type:none;
+}
+
+/* Event Blocks */
+
+div.date {
+  font-weight:700;
+}
+
+.event_card {
+  background:#F5F5F5;
+  border-radius:5px;
+  padding:15px;
+  font-size:1.0714em;
+  min-height:100px;
+}
+    
+.event_card .meta {
+  width:6em;
+  float:right;
+  font-family:"futura-pt", inherit;
+  font-weight:500;
+  font-style:normal;
+}
+    
+.event_card .info {
+  margin-right:8em;
+}
+    
+.event_card .date_time {
+  text-align:center;
+  width:6em;
+  text-align:center;
+  margin-bottom:1em;
+}
+.event_card .card {
+  color:#fff;
+  margin-bottom:.2em;
+}
+.event_card .day {
+  background:#e90022;
+  line-height:1.75em;
+  overflow:hidden;
+  border-radius:5px 5px 0 0;
+  box-shadow: 2px 2px 3px 0px rgba(0, 0, 0, .5);
+      
+}
+    
+    
+.event_card .title {
+  font-family:"futura-pt", inherit;
+  font-weight:500;
+  font-style:normal;
+  background:#E8E8E8;
+  color:#0058a1;
+  padding:.3em .7em;
+  margin-left:-15px;
+  text-transform:uppercase;
+}
+.event_card .date_month {
+  border-radius:0 0 5px 5px;
+  background:#2A6FB4;      
+  box-shadow: 2px 2px 3px 0px rgba(0, 0, 0, .5);
+}
+.event_card .caltitle{
+display:none;
+}
+.event_card .date {
+  font-size:2em;
+  line-height:1em;
+  padding-top:.1em;
+  font-weight:500;
+}
+.event_card .month {
+  text-transform:uppercase;
+  line-height:1em;
+  padding-bottom:.5em;
+}
+.event_card .time {
+/*      color:#e90022;*/
+}
+/*      ENd Events*/
+    
+ /* Page Column Setup */
+ div.pageTwoColumnLeft
+{
+	float: left;
+	width: 430px;
+	margin-right: 10px;
+}
+div.pageTwoColumnRight
+{
+	float: left;
+	width: 490px;
+}
+.breadcrumbs{
+font-size:11px;
+}
+input.countysearch {
+font-family: 'Archivo Narrow', sans-serif;
+font-size: 16px;
+text-transform: uppercase;
+border-radius: 5px;
+width: 70%;
+margin: auto;
+border-color: #ccc;
+height: 30px;
+margin-top: 7px;
+margin-bottom: 7px;
+padding-left: 32px;
+background-image: url(/images/countynav/search-ico.png);
+background-position: 4px 4px;
+background-repeat: no-repeat;
+}

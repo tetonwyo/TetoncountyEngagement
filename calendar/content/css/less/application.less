@@ -1,0 +1,179 @@
+@import '_prefixer';
+@import '_mixins-custom';
+@import '_reset';
+@import '_fullcalendar';
+@import 'calendry';
+
+// Theming variables
+@tetonWyoBlue: #0058A1;
+.tetonWyoBlueBg(@alpha) {
+  background:rgba(0, 88, 161, @alpha);
+}
+
+html, body {font-family:Arial, Verdana, sans-serif;min-width:100%;height:100%;font-size:14px;}
+*::-webkit-input-placeholder {font-weight:100;color:#e1e1e1;font-style:italic;}
+body {background:transparent url('../../images/bg2.jpg') no-repeat 0 0;background-size:cover;background-attachment:fixed;}
+
+
+/* For vertica/horizontal centering */
+.tabular {display:table;width:100%;height:100%;
+  .cellular {width:100%;height:100%;display:table-cell;vertical-align:middle;text-align:center;}
+}
+
+
+/* Containers */
+#c-l1 {width:100%;height:100%;position:relative;}
+#c-l2 {position:relative;.transition(all 0.5s ease);
+  .toggle-filters {display:block;margin:0;padding:8px;width:100%;border:0;background:#3a3a3a;color:#9d9d9d;}
+}
+
+
+/* Event view custom overlay */
+#event-view {display:none;z-index:-1;color:#fff;position:fixed;top:0;right:0;bottom:0;left:0;width:100%;height:100%;overflow-x:hidden;overflow-y:auto;
+  .inner-1 {position:relative;width:100%;height:100%;
+    .gmap {position:absolute;top:0;right:0;bottom:0;left:0;z-index:1;}
+  }
+  .inner-2 {left:0;position:relative;height:100%;z-index:9;.gradient();.transition(all 0.5s ease);
+    &.open-map {left:100%;}
+    .close-map {white-space:nowrap;padding:10px;position:absolute;right:100%;top:5px;margin-right:5px;display:block;background:#219161;.box-shadow(0 0 10px rgba(0,0,0,0.65));}
+  }
+  .inner-3 {position:relative;height:100%;overflow:hidden;overflow-y:auto;
+    .content {padding:20px;
+      .btn-controls {margin:-15px -15px 20px;.box-shadow(0 0 10px rgba(0,0,0,.65));.clearfix();}
+      .btn-controls .btn {display:block;float:left;width:50%;padding:10px;text-align:center;background:rgba(255,255,255,.9);}
+      .btn-controls .btn.view-map {background:#219161;}
+      .btn-controls .btn.close {background:#b92c28;}
+      header {text-align:center;}
+      header .dept {font-size:11px;text-transform:uppercase;color:#aaa;margin-bottom:2px;}
+      header h2 {font-size:1.8rem;font-weight:100;margin:0;line-height:1.25em;}
+      header .date-time {font-size:1.2em;margin-top:5px;color:#219161;}
+      section,
+      footer {border-top:1px dotted #555;margin-top:20px;}
+    }
+  }
+}
+
+
+/* Body class makes #event-view visible */
+body.event-view-open #event-view {display:block;z-index:99;}
+body.event-view-open {overflow:hidden;}
+
+
+/* Filter section */
+aside {font-size:1.1rem;font-weight:100;color:#fff;position:absolute;z-index:22;height:100%;width:100%;top:-100%;overflow:hidden;overflow-y:auto;.tetonWyoBlueBg(0.9);.transition(all 0.5s ease);
+  .closer {padding:8px;display:block;text-align:center;display:block;background:#112233;color:#00d4b4;}
+  form {padding-top:15px;.clearfix();
+    .filter-group {padding:0 15px 15px;
+      select.event-types {color:#fff;height:34px;padding:6px 12px;width:100%;display:block;margin:0;border:0;background:rgba(255,255,255,0.35);.box-shadow(0 0 6px rgba(0,0,0,.35));.border-radius(4px);}
+      input[type="text"] {color:#fff;height:34px;margin:0;padding:6px 12px;width:100%;display:block;border:0;background:rgba(255,255,255,0.35);.box-shadow(0 0 6px rgba(0,0,0,.35));.border-radius(4px);}
+
+      &.lists {
+        h4 {margin-top:0;}
+        ul {list-style:none;}
+      }
+    }
+//    .filter-lists {margin:0 -15px;.clearfix();
+//      .col {width:50%;padding:15px;display:inline-block;float:left;}
+//      .col h4 {margin:0;font-weight:inherit;border-bottom:1px dotted rgba(255,255,255,0.5);padding-bottom:8px;}
+//      .col ul {padding:5px 0;margin:0;list-style:none;}
+//      .col ul li {display:block;}
+//      .col ul li label {display:block;padding:5px 0;}
+//    }
+    .apply-btn {position:absolute;bottom:15px;left:15px;right:15px;}
+    .apply-btn button {color:#fff;border:0;display:block;width:100%;margin:0;padding:8px;background:#219161;}
+  }
+}
+
+
+body.view-filters aside {top:0;}
+body.view-filters #c-l2 {top:0;}
+
+
+/* Calendar wrapper and the directive */
+.calendar-wrap, .calendar-instance {width:100%;height:100%;box-sizing:border-box;}
+.calendar-wrap {}
+
+
+/*******************************************************************************
+ * FullCalendar overrides (don't modify fullcalendar.css defaults, do here).
+ ******************************************************************************/
+.calendar-instance {
+  .fc-header {display:none;
+    td {vertical-align:middle;padding:5px;background:#e1e1e1;}
+    h2 {margin:0;}
+    .fc-header-space {display:none;padding:0;}
+    .fc-button {margin:0;border-radius:0;padding:6px 20px;height:auto;text-transform:uppercase;border:0;}
+  }
+  .fc-content {
+    thead th {padding:4px 2px;text-transform:uppercase;font-weight:100;}
+    .fc-event {padding:3px;line-height:1.2em;cursor:pointer;.border-radius(0);}
+    .fc-day-number {padding:2px 3px;background:#e1e1e1;font-size:12px;}
+  }
+
+  /* Specific event classes */
+  .event-type-general {background:#97A1A5;color:#f1f1f1;border-color:transparent;}
+  .event-type-meeting {background:#3D6676;color:#f1f1f1;border-color:transparent;}
+}
+
+
+/*******************************************************************************
+* Calendry Overrides
+******************************************************************************/
+@headerBg: rgba(255,255,255,0.5);
+@headerButtonBg: rgba(255,255,255,0.5);
+@headerButtonBgHover: rgba(255,255,255,0.85);
+@weekdaysBg: rgba(255,255,255,0.25);
+@calendarBorder: 1px dotted rgba(255,255,255,0.25);
+@dateNumBg: rgba(255,255,255,0.2);
+@dateNumColor: #3f3f3f;
+@eventCellBg: rgba(255,255,255,0.35);
+@eventCellBgHover: rgba(255,255,255,0.55);
+@eventCellColor: #112233;
+
+
+/*******************************************************************************
+* Media Queries
+******************************************************************************/
+@media screen and (min-width:640px){
+  .calendar-instance .fc-header {display:table;}
+}
+
+@media screen and (min-width:768px){
+  aside {position:fixed;top:0;left:0;bottom:0;width:200px;height:100%;
+    .closer {display:none;}
+    form {height:100%;
+      .filter-lists {
+        .col {width:auto;float:none;display:block;}
+      }
+    }
+  }
+  #c-l2 {height:100%;top:0;padding-left:200px;
+    .toggle-filters {display:none;}
+  }
+}
+
+
+/*******************************************************************************
+* Custom Scrollbars
+******************************************************************************/
+::-webkit-scrollbar {
+  width:6px;
+  //background-color:rgba(0,0,0,0.12);
+  .tetonWyoBlueBg(0.12);
+}
+
+::-webkit-scrollbar-track {
+  .tetonWyoBlueBg(0.12);
+
+  &:hover {
+    .tetonWyoBlueBg(0.4);
+  }
+}
+
+::-webkit-scrollbar-thumb {
+  .tetonWyoBlueBg(0.85);
+
+  &:hover {
+    .tetonWyoBlueBg(1);
+  }
+}

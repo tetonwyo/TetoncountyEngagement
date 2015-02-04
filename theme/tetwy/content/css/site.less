@@ -1,0 +1,159 @@
+// Search for @mod in the markup for corresponding changes.
+@import "../bootstrap_src/css/bootstrap";
+@import "variables";
+
+/************************************************************************
+ * RESET (overriding legacy styles: clear these from other stylesheets)
+ ***********************************************************************/
+.nav {
+  height:auto;
+  font-size:inherit;
+  background-color:@navbar-default-bg;
+}
+
+// reset the box model
+div {
+  .box-sizing(border-box);
+}
+
+p{
+    font-size:16px;
+}
+
+/************************************************************************
+ * Navigation styles (see variables.less for bootstrap overrides)
+ * @note: dropdown submenus aren't supported by bootstrap, this
+ * is using stuff from http://stackoverflow.com/questions/18023493/bootstrap-3-dropdown-sub-menu-missing
+ ***********************************************************************/
+.nav {
+  // hidden by default!
+  li.sidebar-closer {display:none;}
+
+  font-family:inherit;
+  .dropdown-submenu{position:relative;}
+  .dropdown-submenu>.dropdown-menu{top:0;left:100%;margin-top:-6px;margin-left:-1px;-webkit-border-radius:0 6px 6px 6px;-moz-border-radius:0 6px 6px 6px;border-radius:0 6px 6px 6px;}
+  .dropdown-submenu:hover>.dropdown-menu{display:block;}
+  .dropdown-submenu>a:after{display:block;content:" ";float:right;width:0;height:0;border-color:transparent;border-style:solid;border-width:5px 0 5px 5px;border-left-color:#cccccc;margin-top:5px;margin-right:-10px;}
+  .dropdown-submenu:hover>a:after{border-left-color:#ffffff;}
+  .dropdown-submenu.pull-left{float:none;}.dropdown-submenu.pull-left>.dropdown-menu{left:-100%;margin-left:10px;-webkit-border-radius:6px 0 6px 6px;-moz-border-radius:6px 0 6px 6px;border-radius:6px 0 6px 6px;}
+
+  li.dropdown:hover {
+    .dropdown-menu.nest-1 {display:block;}
+  }
+}
+
+@media screen and (max-width:@grid-float-breakpoint){
+  .nav {
+    font-family: "futura-pt", sans-serif;
+
+    .navbar-header {
+      padding:10px;
+
+      button {
+        float:none;
+        display:block;
+        text-align:left;
+        width:100%;
+        margin:0;
+        background-repeat:no-repeat;
+        background-position:37px 50%;
+        background-color:transparent;
+        background-size:auto 30px;
+        .clearfix();
+
+        .icon-bar-group {
+          display:block;
+          position:absolute;
+          top:50%;
+          margin-top:-7px;
+        }
+
+        .department {
+          display:block;
+          margin-left:63px;
+        }
+      }
+    }
+
+    .collapse.navbar-collapse {
+      border:0;
+      z-index:99;
+      display:block;
+      position:fixed;
+      top:0;
+      left:-100%;
+      bottom:0;
+      height:100% !important;
+      max-height:none;
+      .transition(left .35s ease);
+
+      ul.nav.navbar-nav {
+        position:relative;
+        min-width:280px;
+        max-width:320px;
+        width:100%;
+        height:100%;
+        margin:0;
+        border-right:1px solid @navbar-default-toggle-border-color;
+
+        li.sidebar-closer {
+          display:block;
+          text-align:center;
+          font-size:90%;
+          background:#112233;
+        }
+
+        .dropdown-submenu>.dropdown-menu {
+          padding-left:15px;
+        }
+
+        li:hover, li:focus {
+          .dropdown-menu {
+            position: static;
+            float: none;
+            width: auto;
+            margin-top: 0;
+            background-color: transparent;
+            border: 0;
+            box-shadow: none;
+            > li > a,
+            .dropdown-header {
+              padding: 5px 15px 5px 25px;
+            }
+            > li > a {
+              line-height: @line-height-computed;
+              &:hover,
+              &:focus {
+                background-image: none;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .nav.sidebar-if-mobile {
+    .collapse.navbar-collapse {
+      left:0;
+    }
+  }
+}
+
+
+/************************************************************************
+ * GIS
+ ***********************************************************************/
+div#contentWrap {
+  width:auto;
+  max-width:960px;
+  overflow-x:hidden;
+}
+
+#agencyHeader, #body, #footer {
+  width:100% !important;
+}
+
+#main_content {
+  img {.img-responsive;}
+}

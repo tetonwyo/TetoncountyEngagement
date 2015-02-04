@@ -1,0 +1,46 @@
+body {
+	margin: 0;
+	padding: 0;
+	background: #DEE3E0;
+}
+
+#wrapper {
+	width: 960px;
+	margin: 0 auto;	
+}
+
+#header {
+	height: 120px;
+	width: 960px;
+	background: url('images/header.png');	
+}
+
+#top {
+	height: 100px;
+	width: 960px;
+	background: url('images/header_b.jpg');	
+}
+
+#top2 {
+	height: 85px;
+	width: 960px;
+	background: url('images/header_c.jpg');	
+}
+
+#content {
+	height: 650px;
+	width: 960px;
+	background: url('images/content.png');	
+}
+
+#treasurer {
+	height: 610px;
+	width: 960px;
+	background: url('images/treasurer.jpg');		
+}
+
+#column {
+	height: 936px;
+	width: 960px;
+	background: url('images/treasurer6.jpg');		
+}

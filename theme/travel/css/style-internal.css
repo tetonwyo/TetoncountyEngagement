@@ -1,0 +1,10 @@
+body {
+	background: url('../images/bg6.jpg') no-repeat  center -75px #191101 !important;
+	background-size: 1600px 600px;
+	
+}
+.content_meeting p
+{
+    	line-height:14px;
+    	padding-bottom:0px;
+}

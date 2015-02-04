@@ -1,0 +1,266 @@
+﻿body{
+    margin: 0px;
+    padding: 0px;
+    
+}
+
+#admin_panel {
+    background:white;
+    font-size:12px;
+    font-family:Arial,Helvetica,sans-serif;
+    min-width:706px;
+}
+#admin_panel #header{
+    width:100%;
+    background-color:#006699;
+    display:block;
+    /*border-bottom:2px solid #212121;*/
+    border-bottom:2px solid #ffffff;
+    min-height:115px;
+}
+
+#admin_panel #media_info{
+    width:30%;
+    padding:5px;
+    background-color:#006699;
+    color:#ffffff;
+    float:left;
+}
+#admin_panel .MediaTitle{
+    font: 24px/100% Arial,Helvetica,sans-serif;
+    font-weight:bold;
+    color:#ffffff;
+}
+#admin_panel .MediaTitleBlack{
+    font: 24px/100% Arial,Helvetica,sans-serif;
+    font-weight:bold;
+    color:#000000;
+}
+#admin_panel .MediaTitleSub{
+    font-size:12px;
+    font-weight:bold;
+    color:#ffffff;
+}
+#admin_panel .MediaItem{
+    font-size:12px;
+    color:#ffffff;
+}
+
+#admin_panel #admin_tags{
+    width:42%;
+    float:left;
+    padding:5px;
+    background-color:#006699;
+}
+#admin_panel #other_buttons{
+    width:255px;
+    padding:5px;
+    position:absolute;
+    right:5px;
+    top:5px;
+    background-color:#006699;
+    clear:both;
+}
+
+
+
+/*
+/*____________________Current Tags_____________________*/
+
+.current_tags{
+    float:left;
+    float:left;
+    margin-left:5px
+}
+.current_tags a {
+	/*background: #333 url(../images/token_bg.png) no-repeat 5px center;*/
+    color:#ffffff;
+    cursor:hand;
+    text-decoration:none;
+}
+.current_tags a:hover {
+	/*background: #333 url(../images/token_bg.png) no-repeat 5px center;*/
+    cursor:hand;
+    text-decoration:none;
+}
+
+
+
+
+
+
+#admin_panel #EditAdminTags{
+    //padding:5px;
+}
+
+#admin_panel #gear_list{
+    float:right;
+    padding-bottom:5px;
+    clear:both;
+}
+
+#admin_panel #forum_threads{
+    float:right;
+    clear:both;
+}
+
+#admin_panel fieldset{
+    border:thin solid black;
+}
+
+#edit_admin_tag_filter_section{
+    clear:both;
+    width:auto;
+    padding:5px;
+    margin:0 auto;
+    border:thin solid black;
+    text-align:center;
+    background-color:#006699;
+}
+
+#edit_video_section{
+   clear:both;
+    font-weight:bold;
+    width:auto;
+    padding:5px;
+    margin:17px 5px 5px 5px;
+    border:thin solid black;
+    text-align:center;
+    background-color:#ffffff;
+}
+
+/*---------------Tag Format----------------------------*/
+.tag_category{
+ font-size:14px;
+ line-height:22px;
+ text-decoration:underline;
+ font-weight:bolder;
+ font-family:Arial,Helvetica,sans-serif;
+ color:silver;
+}
+.tag_category_black{
+ font-size:14px;
+ font-weight:bolder;
+ font-family:Arial,Helvetica,sans-serif;
+ color:black;
+}
+
+.tag_list{
+    margin:0px;
+    font-size:12px;
+    line-height:13px;
+    color:#ffffff;
+}
+
+.add_tags{
+    clear:both;
+    width:auto;
+    padding:5px;
+}
+
+.add_tags ul{
+    width:600px;
+    position: relative; float: left; display: block; left: 50%;
+    list-style:none;
+    padding:0px;
+    margin:20px;
+    left: 0px;
+}
+.add_tags li{
+    display: block;
+    line-height: 20px;
+    float:left;
+    list-style: none inside none;
+    width:150px;
+    padding: 0 0 0 12px;
+    margin:0 2px 2px 0;
+    right:50%;
+    background: url("../images/token_bg_add.png") no-repeat scroll 5px center #000000;
+        border-radius: 5px 5px 5px 5px;
+    float:left;
+    }
+.add_tags li a{
+
+    text-decoration:none;
+    color: #FFFFFF;
+    display: inline;
+    font-size: 12px;
+    height: 20px;
+    line-height: 20px;
+    width:150px;
+
+    padding: 0 0 0 12px;
+    list-style: none inside none;
+    position:relative;
+}
+
+.add_tags li a:hover{
+	background: #333 url(../images/token_bg_add.png) no-repeat 5px center;
+    cursor:hand;
+}
+
+
+.shadow {
+    -moz-box-shadow: 3px 3px 4px #fff;
+    -webkit-box-shadow: 3px 3px 4px #fff;
+    box-shadow: 3px 3px 4px #fff;
+    /* For IE 8 */
+    -ms-filter: "progid:DXImageTransform.Microsoft.Shadow(Strength=4, Direction=135, Color='#fff')";
+    /* For IE 5.5 - 7 */
+    filter: progid:DXImageTransform.Microsoft.Shadow(Strength=4, Direction=135, Color='#fff');
+}
+
+
+/*---------------CSS3/HTML 5 Button----------------------------*/
+.button {
+    border-radius: 0.5em 0.5em 0.5em 0.5em;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    display: inline-block;
+    font: 14px/100% Arial,Helvetica,sans-serif;
+    margin: 0 2px;
+    outline: medium none;
+    padding: 0.5em 2em 0.55em;
+    text-align: center;
+    text-decoration: none;
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.3);
+    vertical-align: baseline;
+}
+ 
+.button:hover {
+    text-decoration: none;
+}
+ 
+.button:active {
+     position: relative;
+     top: 1px;
+}
+ 
+/*Gradient Color*/
+.black {
+	color: #d7d7d7;
+	border: solid 1px #333;
+	background: #333;
+	background: -webkit-gradient(linear, left top, left bottom, from(#666), to(#000));
+	background: -moz-linear-gradient(top,  #666,  #000);
+	filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#666666', endColorstr='#000000');
+}
+.black:hover {
+	background: #000;
+	background: -webkit-gradient(linear, left top, left bottom, from(#444), to(#000));
+	background: -moz-linear-gradient(top,  #444,  #000);
+	filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#444444', endColorstr='#000000');
+}
+.black:active {
+	color: #666;
+	background: -webkit-gradient(linear, left top, left bottom, from(#000), to(#444));
+	background: -moz-linear-gradient(top,  #000,  #444);
+	filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#000000', endColorstr='#666666');
+}
+
+/*Button Size*/
+.small {
+    font-size: 11px;
+    padding: 0.2em 1em 0.275em;
+}
+

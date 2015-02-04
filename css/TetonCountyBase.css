@@ -1,0 +1,926 @@
+﻿body
+{
+	background-color: #dee3e0;
+	color: #333333;	
+	font-family: Verdana, Arial, Sans-Serif;
+	font-size: 11px;
+}
+a
+{
+	color: #0058a1;
+}
+select
+{
+	font-family: Verdana, Arial, Sans-Serif;
+	font-size: 11px;
+}
+textarea
+{
+	font-family: Verdana, Arial, Sans-Serif;
+	font-size: 11px;
+}
+input
+{
+	font-family: Verdana, Arial, Sans-Serif;
+	font-size: 11px;
+}
+h1
+{
+	color: #808080;
+	font-size: 18px;
+	font-weight: bold;
+}
+h2
+{
+	font-size: 13px;
+	font-weight: bold;
+}
+h3
+{
+	font-size: 11px;
+	font-weight: bold;
+}
+div#header
+{
+	width: 950px;
+	height: 121px;
+	background: transparent url(/images/TetonHeader.jpg) no-repeat;
+}
+div#headerLogo
+{
+	float: left;
+	padding-top: 11px;
+	padding-left: 11px;	
+}
+div#headerContent
+{
+	float: right;
+	width: 135px;
+	padding-top: 11px;
+	margin-right: 8px;
+}
+div#page
+{
+	width: 940px;
+	padding: 5px;
+	background-color: #ffffff;
+}
+div#footer
+{
+	float: left;
+	width: 950px;
+	padding-top: 7px;
+	padding-bottom: 7px;
+	margin-top: 16px;
+	color: #ffffff;
+	background-color: #87a395;
+	font-size: 10px;
+	text-align: center;
+}
+div#pageHeader
+{
+	width: 934px;
+	height: 25px;
+	padding-left: 3px;
+	padding-right: 3px;
+	background-image: url(/images/Box940CapHeaderTop.png);
+	background-repeat: no-repeat;
+}
+div#pageTitle
+{
+	float: left;
+	width: 894px;
+	height: 100%;
+}
+div#pageHeader .ImageButton
+{
+	float: left;
+	width: 20px;
+	height: 25px;
+	line-height: 25px;
+	display: table-cell;
+	vertical-align: middle; 	
+}
+div#pageHeader .ImageButton * {
+    vertical-align: middle;
+}
+div#pageHeader .ImageButton span
+{
+	height: 100%;
+	display: inline-block;
+	vertical-align: middle;
+}
+div#pageContent /*, body.mceContentBody, body#content   body tags needed for TinyMCE edit and preview */
+{
+	width: 938px;
+	border-left: #e9e9e9 1px solid;
+	border-right: #e9e9e9 1px solid;
+	background-color: #fdfdfd;
+	background-image: url(/images/Box940Background.png);
+	background-repeat: no-repeat;
+}
+div#pageContent .paddedContent
+{
+	padding: 5px;
+}
+div#pageFooter
+{
+	width: 940px;
+	background-image: url(/images/Box940CapBottom.png);
+	background-repeat: no-repeat;
+}
+div#pageHelp
+{
+	width: 932px;
+	padding-left: 3px;	
+	padding-right: 3px;
+	border-left: #e9e9e9 1px solid;
+	border-right: #e9e9e9 1px solid;
+	background-color: #f3f3f3;
+}
+div#pageHelpTop
+{
+	width: 912px;
+	background-image: url(/images/Popup932Top.png);
+	background-repeat: no-repeat;
+	padding-top: 10px;
+	padding-left: 10px;
+	padding-right: 10px;
+}
+div#pageHelpBottom
+{
+	width: 932px;
+	height: 20px;
+	background-image: url(/images/Popup932Bottom.png);
+	background-repeat: no-repeat;
+}
+
+div.navigationPanel
+{
+	width: 928px;
+	height: 24px;
+}
+div.pageNavigation
+{
+	float: left;
+	width: 600px;
+}
+div.pageNumber
+{
+	float: right;
+	width: 128px;
+	line-height: 24px;	
+	color: #808080;
+	text-align: right;
+}
+
+/* Home page editing */
+div#bannerImage, div#bannerCaption, div#noticePanel, div#navigationMenu, div#contactInfo, div.columnPanel, div.activeColumnPanel
+{
+	border: solid 1px #e9e9e9;
+	margin: 3px;
+}
+div#leftColumn
+{
+	float: left;
+}
+div#centerColumn
+{
+	float: left;
+	width: 476px; /* 300px; 476*/
+}
+div#rightColumn
+{
+	float: left;
+}
+div#navigationMenu, div#noticePanel, div#contactInfo
+{
+	width: 190px;
+}
+div#navigationMenu, div#noticePanel
+{
+	color: #0058a1;
+	font-weight: bold;
+}
+div#noticePanel
+{
+	text-align: center;
+}
+div#contactInfo
+{
+	color: #006633;
+}
+div#centerColumn div.columnPanel
+{
+	width: 466px;
+}
+div#centerColumn div.activeColumnPanel
+{
+	width: 466px;
+	border: solid 1px #0058a1;
+}
+div#rightColumn div.activeColumnPanel
+{
+	width: 210px;
+	border: solid 1px #0058a1;
+}
+div#rightColumn div.columnPanel
+{
+	width: 210px;
+}
+div#alertPanel
+{
+	width:210px;
+	height:50px;
+	border: solid 1px #880000;	
+}
+div#homeEditPanel h1
+{
+	color:#0058a1;
+}
+div#homeEditPanel h2
+{
+	color:#ffffff;
+	background-color:#d0d0d0;
+}
+div#centerColumn div.activeColumnPanel h2
+{
+	background-color:#0058a1;
+}
+div#rightColumn h2
+{
+	text-align: center;
+}
+div#rightColumn div.activeColumnPanel h2
+{
+	background-color:#0058a1;
+	text-align: center;
+}
+div#navigationMenu h2
+{
+/*	color:#ffffff;
+	background-color:#0058a1; */
+}
+div#contactInfo h2
+{
+/*	color:#ffffff;
+	background-color:#006633; */
+}
+div#alertPanel h2
+{
+	color:#ffffff;
+	background-color:#880000;
+}
+div#noticePanel div.content
+{
+	border: none;
+}
+div#noticePanel div.activeContent
+{
+	border-top: solid 1px #ff0000;
+	border-bottom: solid 1px #ff0000;
+}
+
+body.mceContentBody, body#content /* body tags needed for TinyMCE edit and preview */
+{
+	background-color: #fdfdfd;
+	background-image: url(/images/Box740Background.png);
+	background-repeat: no-repeat;	
+}
+
+.Grid
+{
+	width: 100%;
+}
+.Grid .Header
+{
+	background-color: #f5f5f5;
+}
+.Grid .Header th
+{
+	padding-left: 5px;
+	padding-right: 5px;
+}
+.Grid .Footer
+{
+}
+.Grid .Pager
+{
+	background-color: #f0f8ff;
+}
+.Grid .Pager td
+{
+	padding-left: 2px;
+}
+.Grid .Row td					/* Set row borders here */
+{
+	padding-left: 5px;
+	padding-right: 5px;	
+}
+.Grid .AlternatingRow
+{
+	background-color: #f5f5f5;
+}
+.Grid .AlternatingRow td
+{
+	padding-left: 5px;
+	padding-right: 5px;	
+}
+.Grid .EditRow
+{
+	background-color: #f0f8ff;
+}
+.Grid .EmptyDataRow
+{
+	background-color: #99ccff;
+}
+.Grid .EmptyDataRow td
+{
+	padding-left: 5px;
+}
+.Grid .SelectedRow
+{
+	background-color: #f0f8ff;
+}
+.GridFilterBar
+{
+	height: 24px;
+	line-height: 24px;
+	background-color: #f0f8ff;
+}
+.GridFilterBar .Title
+{
+	width: 80px;
+	float: left;
+	padding-left: 5px;
+}
+.GridFilterBar .Filter
+{
+	vertical-align: middle;
+}
+.GridSearchBar
+{
+	height: 24px;
+	line-height: 24px;
+	background-color: #f0f8ff;
+	display: none;
+}
+.GridSearchBar .Title
+{
+	width: 80px;
+	float: left;
+	padding-left: 5px;	
+}
+.GridNewBar
+{
+	height: 16px;
+	line-height: 16px;
+	padding-top: 4px;
+	padding-bottom: 4px;
+	padding-left: 5px;		
+	background-color: #f0f8ff;
+	display: none;
+}
+
+/* For images used in link tags */
+.LinkTag
+{
+	height: 16px;
+	line-height: 16px;
+	padding-top: 4px;
+	padding-bottom: 4px;	
+}
+.LinkImage
+{
+	display: block;
+	float: left;
+	padding-right: 3px;
+	vertical-align: middle;
+}
+
+/* Link buttons */
+a.homeBtn:link
+{
+/*	margin: 0px 0px 0px 0px;*/
+	padding-left: 18px;
+	padding-top: 4px;
+	background: url(/images/16x16/Cool/Desktop.png) left center no-repeat;
+	line-height: 24px;	
+/*
+	font-weight: normal;
+	letter-spacing: 0px;
+*/
+}
+a.homeBtn:visited
+{
+	padding-left: 18px;
+	padding-top: 4px;
+	background: url(/images/16x16/Cool/Desktop.png) left center no-repeat;
+	line-height: 24px;	
+}
+a.homeBtn:hover
+{
+	background: url(/images/16x16/Hot/Desktop.png) left center no-repeat;
+}
+a.backBtn:link
+{
+	padding-left: 18px;
+	padding-top: 4px;	
+	background: url(/images/16x16/Cool/Back.png) left center no-repeat;
+	line-height: 24px;	
+}
+a.backBtn:hover
+{
+	background: url(/images/16x16/Hot/Back.png) left center no-repeat;
+}
+a.nextBtn:link
+{
+	padding-left: 18px;
+	padding-top: 4px;	
+	background: url(/images/16x16/Cool/Forward.png) left center no-repeat;
+	line-height: 24px;	
+}
+a.nextBtn:hover
+{
+	background: url(/images/16x16/Hot/Forward.png) left center no-repeat;
+}
+a.viewTagsBtn:link
+{
+	padding-left: 18px;
+	padding-top: 4px;	
+	background: url(/images/16x16/Cool/Tags.png) left center no-repeat;
+	line-height: 24px;	
+}
+a.saveBtn:link
+{
+	padding-left: 18px;
+	padding-top: 4px;	
+	background: url(/images/16x16/Cool/Save.png) left center no-repeat;
+	line-height: 24px;	
+}
+a.saveBtn:visited
+{
+	padding-left: 18px;
+	padding-top: 4px;	
+	background: url(/images/16x16/Cool/Save.png) left center no-repeat;
+	line-height: 24px;	
+}
+a.saveBtn:hover
+{
+	background: url(/images/16x16/Hot/Save.png) left center no-repeat;
+}
+a.cancelBtn:link
+{
+	padding-left: 18px;
+	padding-top: 4px;	
+	background: url(/images/16x16/Cool/Cross.png) left center no-repeat;
+	line-height: 24px;	
+}
+a.cancelBtn:visited
+{
+	padding-left: 18px;
+	padding-top: 4px;	
+	background: url(/images/16x16/Cool/Cross.png) left center no-repeat;
+	line-height: 24px;	
+}
+a.cancelBtn:hover
+{
+	background: url(/images/16x16/Hot/Cross.png) left center no-repeat;
+}
+a.previewBtn:link
+{
+	padding-left: 18px;
+	padding-top: 4px;	
+	background: url(/images/16x16/Cool/Preview.png) left center no-repeat;
+	line-height: 24px;	
+}
+a.previewBtn:hover
+{
+	background: url(/images/16x16/Hot/Preview.png) left center no-repeat;
+}
+a.newEventBtn:link
+{
+	padding-left: 18px;
+	padding-top: 4px;	
+	background: url(/images/16x16/Cool/Calendar-New.png) left center no-repeat;
+	line-height: 24px;	
+}
+a.newEventBtn:visited
+{
+	padding-left: 18px;
+	padding-top: 4px;	
+	background: url(/images/16x16/Cool/Calendar-New.png) left center no-repeat;
+	line-height: 24px;	
+}
+a.newEventBtn:hover
+{
+	background: url(/images/16x16/Hot/Calendar-New.png) left center no-repeat;
+}
+a.newNewsBtn:link
+{
+	padding-left: 18px;
+	padding-top: 4px;	
+	background: url(/images/16x16/Cool/News-New.png) left center no-repeat;
+	line-height: 24px;	
+}
+a.newNewsBtn:visited
+{
+	padding-left: 18px;
+	padding-top: 4px;	
+	background: url(/images/16x16/Cool/News-New.png) left center no-repeat;
+	line-height: 24px;	
+}
+a.newNewsBtn:hover
+{
+	background: url(/images/16x16/Hot/News-New.png) left center no-repeat;
+}
+a.newMeetingBtn:link
+{
+	padding-left: 18px;
+	padding-top: 4px;	
+	background: url(/images/16x16/Cool/Meeting-New.png) left center no-repeat;
+	line-height: 24px;	
+}
+a.newMeetingBtn:hover
+{
+	background: url(/images/16x16/Hot/Meeting-New.png) left center no-repeat;
+}
+a.newWebLinkBtn:link
+{
+	padding-left: 18px;
+	padding-top: 4px;	
+	background: url(/images/16x16/Cool/Link-New.png) left center no-repeat;
+	line-height: 24px;	
+}
+a.newWebLinkBtn:hover
+{
+	background: url(/images/16x16/Hot/Link-New.png) left center no-repeat;
+}
+a.newFormBtn:link
+{
+	padding-left: 18px;
+	padding-top: 4px;	
+	background: url('/images/16x16/Cool/Note Book-New.png') left center no-repeat;
+	line-height: 24px;	
+}
+a.newFormBtn:hover
+{
+	background: url('/images/16x16/Hot/Note Book-New.png') left center no-repeat;
+}
+a.newJobBtn:link
+{
+	padding-left: 18px;
+	padding-top: 4px;	
+	background: url('/images/16x16/Cool/Members-New.png') left center no-repeat;
+	line-height: 24px;	
+}
+a.newJobBtn:hover
+{
+	background: url('/images/16x16/Hot/Members-New.png') left center no-repeat;
+}
+a.newFAQBtn:link
+{
+	padding-left: 18px;
+	padding-top: 4px;	
+	background: url('/images/16x16/Cool/Help-New.png') left center no-repeat;
+	line-height: 24px;	
+}
+a.newFAQBtn:hover
+{
+	background: url('/images/16x16/Hot/Help-New.png') left center no-repeat;
+}
+a.newServiceBtn:link
+{
+	padding-left: 18px;
+	padding-top: 4px;	
+	background: url('/images/16x16/Cool/Tools-New.png') left center no-repeat;
+	line-height: 24px;	
+}
+a.newServiceBtn:hover
+{
+	background: url('/images/16x16/Hot/Tools-New.png') left center no-repeat;
+}
+a.newContactBtn:link
+{
+	padding-left: 18px;
+	padding-top: 4px;	
+	background: url('/images/16x16/Cool/Contact-New.png') left center no-repeat;
+	line-height: 24px;	
+}
+a.newContactBtn:hover
+{
+	background: url('/images/16x16/Hot/Contact-New.png') left center no-repeat;
+}
+a.eventListBtn:link
+{
+	padding-left: 18px;
+	padding-top: 4px;
+	background: url(/images/16x16/Cool/Calendar.png) left center no-repeat;
+	line-height: 24px;
+	
+}
+a.eventListBtn:visited
+{
+	padding-left: 18px;
+	padding-top: 4px;
+	background: url(/images/16x16/Cool/Calendar.png) left center no-repeat;
+	line-height: 24px;
+}
+a.eventListBtn:hover
+{
+	background: url(/images/16x16/Hot/Calendar.png) left center no-repeat;
+}
+a.newsListBtn:link
+{
+	padding-left: 18px;
+	padding-top: 4px;
+	background: url(/images/16x16/Cool/News.png) left center no-repeat;
+	line-height: 24px;
+	
+}
+a.newsListBtn:visited
+{
+	padding-left: 18px;
+	padding-top: 4px;
+	background: url(/images/16x16/Cool/News.png) left center no-repeat;
+	line-height: 24px;
+}
+a.newsListBtn:hover
+{
+	background: url(/images/16x16/Hot/News.png) left center no-repeat;
+}
+a.meetingListBtn:link
+{
+	padding-left: 18px;
+	padding-top: 4px;
+	background: url(/images/16x16/Cool/Meeting.png) left center no-repeat;
+	line-height: 24px;
+}
+a.meetingListBtn:visited
+{
+	padding-left: 18px;
+	padding-top: 4px;
+	background: url(/images/16x16/Cool/Meeting.png) left center no-repeat;
+	line-height: 24px;
+}
+a.meetingListBtn:hover
+{
+	background: url(/images/16x16/Hot/Meeting.png) left center no-repeat;
+}
+a.webLinkListBtn:link
+{
+	padding-left: 18px;
+	padding-top: 4px;
+	background: url(/images/16x16/Cool/Link.png) left center no-repeat;
+	line-height: 24px;
+}
+a.webLinkListBtn:visited
+{
+	padding-left: 18px;
+	padding-top: 4px;
+	background: url(/images/16x16/Cool/Link.png) left center no-repeat;
+	line-height: 24px;
+}
+a.webLinkListBtn:hover
+{
+	background: url(/images/16x16/Hot/Link.png) left center no-repeat;
+}
+a.formListBtn:link
+{
+	padding-left: 18px;
+	padding-top: 4px;
+	background: url('/images/16x16/Cool/Note Book.png') left center no-repeat;
+	line-height: 24px;
+}
+a.formListBtn:visited
+{
+	padding-left: 18px;
+	padding-top: 4px;
+	background: url('/images/16x16/Cool/Note Book.png') left center no-repeat;
+	line-height: 24px;
+}
+a.formListBtn:hover
+{
+	background: url('/images/16x16/Hot/Note Book.png') left center no-repeat;
+}
+a.jobListBtn:link
+{
+	padding-left: 18px;
+	padding-top: 4px;
+	background: url('/images/16x16/Cool/Members.png') left center no-repeat;
+	line-height: 24px;
+}
+a.jobListBtn:visited
+{
+	padding-left: 18px;
+	padding-top: 4px;
+	background: url('/images/16x16/Cool/Members.png') left center no-repeat;
+	line-height: 24px;
+}
+a.jobListBtn:hover
+{
+	background: url('/images/16x16/Hot/Members.png') left center no-repeat;
+}
+a.faqListBtn:link
+{
+	padding-left: 18px;
+	padding-top: 4px;
+	background: url('/images/16x16/Cool/Help.png') left center no-repeat;
+	line-height: 24px;
+}
+a.faqListBtn:visited
+{
+	padding-left: 18px;
+	padding-top: 4px;
+	background: url('/images/16x16/Cool/Help.png') left center no-repeat;
+	line-height: 24px;
+}
+a.faqListBtn:hover
+{
+	background: url('/images/16x16/Hot/Help.png') left center no-repeat;
+}
+a.serviceListBtn:link
+{
+	padding-left: 18px;
+	padding-top: 4px;
+	background: url('/images/16x16/Cool/Tools.png') left center no-repeat;
+	line-height: 24px;
+}
+a.serviceListBtn:visited
+{
+	padding-left: 18px;
+	padding-top: 4px;
+	background: url('/images/16x16/Cool/Tools.png') left center no-repeat;
+	line-height: 24px;
+}
+a.serviceListBtn:hover
+{
+	background: url('/images/16x16/Hot/Tools.png') left center no-repeat;
+}
+a.contactListBtn:link
+{
+	padding-left: 18px;
+	padding-top: 4px;
+	background: url('/images/16x16/Cool/Contact.png') left center no-repeat;
+	line-height: 24px;
+}
+a.contactListBtn:visited
+{
+	padding-left: 18px;
+	padding-top: 4px;
+	background: url('/images/16x16/Cool/Contact.png') left center no-repeat;
+	line-height: 24px;
+}
+a.contactListBtn:hover
+{
+	background: url('/images/16x16/Hot/Contact.png') left center no-repeat;
+}
+
+/* DatePicker styles */
+.dpSelectedDayStyle
+{
+}
+.dpDisabledDayStyle
+{
+	color:#808080;
+}
+.dpCalendarStyle
+{
+	background-color:#f3f3f3;
+	border-bottom-color:#e9e9e9;border-bottom-style:solid;border-bottom-width:1px;
+	border-left-color:#e9e9e9;border-left-style:solid;border-left-width:1px;
+	border-right-color:#e9e9e9;border-right-style:solid;border-right-width:1px;
+	border-top-color:#e9e9e9;border-top-style:solid;border-top-width:1px;
+}	
+.dpDayHoverStyle
+{
+}
+.dpMonthStyle
+{
+	cursor: pointer;
+}
+.dpTitleStyle
+{
+	padding-right: 3px; 
+	padding-left: 3px; 
+	font-weight: bold; 
+	padding-bottom: 3px; 
+	color: black; 
+	padding-top: 3px; 
+	background-color: transparent;
+}
+.dpDayHeaderStyle
+{
+	font-weight: bold; 
+	color: black; 
+	border-bottom: black 1px solid;
+}
+.dpPickerStyle
+{
+	font-family:Verdana,Arial,Sans-Serif;
+	font-size:11px;
+}
+
+/* Essential Objects menu styles */
+.menuTopGroupStyle
+{
+	cursor:pointer;
+	font-family:Verdana;
+	font-size:11px;	
+}
+.menuNormalSeparator
+{
+	background-color:#e0e0e0;
+	height:1px;
+	width:1px;	
+}
+.menuHoverItem
+{
+	color:#F7B00A;
+	padding-left:5px;
+	padding-right:5px;	
+}
+.menuNormalItem
+{
+	padding-left:5px;
+	padding-right:5px;	
+}
+.menuDisabledItem
+{
+	color:#c0c0c0;
+	padding-left:5px;
+	padding-right:5px;	
+}
+.submenuStyle
+{
+	border-right: #e0e0e0 1px solid; 
+	padding-right: 3px; 
+	border-top: #e0e0e0 1px solid; 
+	padding-left: 3px; 
+	font-size: 11px; 
+	padding-bottom: 3px; 
+	border-left: #e0e0e0 1px solid; 
+	cursor: hand; 
+	color: #606060; 
+	padding-top: 3px; 
+	border-bottom: #e0e0e0 1px solid; 
+	font-family: verdana; 
+	background-color: #f7f8f9
+}
+
+/* Essential Objects menu styles */
+.dialogHeaderActive
+{
+	padding-right: 4px; 
+	padding-left: 4px;
+	padding-bottom: 3px; 
+	padding-top: 3px; 
+	font-size: 11px; 
+}
+.dialogContentActive
+{
+	border-top: #335c88 1px solid;
+	background-color: #e5f1fd;
+	padding: 4px;
+}
+.dialogFooterActive
+{
+	background-color: #e5f1fd;
+	padding-bottom: 8px;
+}
+
+.treeText
+{
+	/*float: left;
+	background-color: #f3f3f3;
+	border: #e9e9e9 1px solid;*/
+}
+.treeButton
+{
+	float: left;
+	padding-top: 2px;
+	padding-left: 4px;
+	padding-right: 4px;
+	margin-left: 4px;
+/*	
+	border: #e9e9e9 1px solid;
+	color: #808080;
+	background-color: #f3f3f3;*/
+}
+/*
+.treeButton a
+{
+	color: #808080;	
+}*/
+/*.treeButtonSpacer
+{
+	float: left;
+	width: 4px;
+}*/
+.treeText
+{
+	float: left;
+	padding: 2px;
+	/*background-color: #f3f3f3;
+	border: #e9e9e9 1px solid;*/
+}

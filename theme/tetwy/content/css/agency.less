@@ -1,0 +1,97 @@
+﻿@import '../bootstrap_src/css/mixins';
+@import '../bootstrap_src/css/variables';
+@import 'variables';
+
+#agencyHeader {
+  .clearfix();
+
+  a {
+    display:block;
+    float:left;
+
+    img {
+      margin-top:8px;
+    }
+  }
+
+  #agencyHeaderName {
+    margin:15px;
+    float:right;
+
+    a {
+      float:none;
+      display:block;
+      padding:3px 8px 6px;
+      font-size:190%;
+      color:#005da4; // @todo: refactor into variable
+      text-decoration:none;
+      border:1px solid #fff;
+      .border-right-radius(8px);
+      .opaque-white-80();
+
+      img {
+        margin:0;
+      }
+
+      span {
+        position:relative;
+        top:2px;
+        line-height:1;
+        display:inline-block;
+      }
+    }
+  }
+}
+
+/*********** DEPRECATED STYLES ***********
+#agencyHeader {
+  padding: 7px 11px;
+  height: 71px;
+  width: 938px;
+  position: relative;
+}
+
+#agencyHeaderName a {
+  position: absolute;
+}
+
+#agencyHeaderName a {
+  float: right;
+  font-family: arial;
+  font-size: 20pt;
+  font-weight: normal;
+  color: #005da4;
+  text-align: right;
+  margin-top: -70px;
+  overflow: hidden;
+  text-decoration: none;
+  padding: 3px 20px 3px 5px;
+  background: url('/theme/tetwy/images/filter-bg.png') repeat scroll 0 0 transparent;
+  border: 1px solid #fff;
+  border-bottom-right-radius: 2.5em;
+  border-top-right-radius: 2.5em;
+  right: -16px;
+  box-shadow: 1px 2px 5px rgba(0, 0, 0, 0.3);
+  font-weight: bold;
+  font-style: italic;
+}*/
+
+.agencynav a.bodyb, .agencynav a.parent {
+  text-transform: capitalize;
+}
+
+.topicsul {
+  margin-left: -20px;
+}
+
+@media screen and (max-width:@grid-float-breakpoint){
+  #agencyHeader {
+    a, #agencyHeaderName {
+      float:none;
+      text-align:center;
+    }
+    #agencyHeaderName a {
+      .border-right-radius(0);
+    }
+  }
+}
