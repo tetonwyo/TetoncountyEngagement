@@ -1,0 +1,217 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta name="viewport" content="user-scalable=yes, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi"/>
+    <title>DOCUMENT TITLE</title>
+    <link href="content/css/application.css" rel="stylesheet"/>
+    <style>
+        .wide {
+            width: 100px;
+        }
+    </style>
+</head>
+
+    <body >
+        <div>
+            <div style="width:300px" class="wide">
+                <div ng-app="tyo-mobile" ng-class="{'event-view-open':_route.current.templateUrl,'view-filters':_showFilters}">
+
+                    <!-- inline template -->
+                    <script type="text/ng-template" id="template/event-view">
+                        <div class="inner-1">
+
+                            <div class="gmap" googlemap="mapSettings"></div>
+
+                            <div class="inner-2" ng-class="{'has-map':eventObj.validLocation,'open-map':openMap}">
+                                <a class="close-map" ng-click="toggleMapView()">Back</a>
+
+                                <div class="inner-3">
+                                    <div class="content" ng-show="eventObj">
+                                        <div class="btn-controls">
+                                            <a class="btn view-map" ng-click="toggleMapView()">View Location</a>
+                                            <a class="btn close" ng-click="backToCalendar()">Close</a>
+                                        </div>
+
+                                        <header>
+                                            <p class="dept">{{eventObj.organizationName}}</p>
+                                            <h2>{{eventObj.title}}</h2>
+                                            <p class="date-time">{{eventObj.displayDate}}</p>
+                                        </header>
+
+                                        <section ng-show="eventObj.meeting">
+                                            <h3>Agenda Text</h3>
+                                            <div ng-bind-html="eventObj.meeting.agendaText"></div>
+                                        </section>
+
+                                        <footer>
+                                            <h3>Contact Info</h3>
+                                        </footer>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Vertical/Horizontally center the loading icon -->
+                            <div class="tabular" ng-hide="eventObj">
+                                <div class="cellular">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="100" height="100" fill="white">
+                                        <circle transform="translate(8 0)" cx="0" cy="16" r="0">
+                                            <animate attributeName="r" values="0; 4; 0; 0" dur="1.2s" repeatCount="indefinite" begin="0"
+                                                     keytimes="0;0.2;0.7;1" keySplines="0.2 0.2 0.4 0.8;0.2 0.6 0.4 0.8;0.2 0.6 0.4 0.8"
+                                                     calcMode="spline" />
+                                        </circle>
+                                        <circle transform="translate(16 0)" cx="0" cy="16" r="0">
+                                            <animate attributeName="r" values="0; 4; 0; 0" dur="1.2s" repeatCount="indefinite" begin="0.3"
+                                                     keytimes="0;0.2;0.7;1" keySplines="0.2 0.2 0.4 0.8;0.2 0.6 0.4 0.8;0.2 0.6 0.4 0.8"
+                                                     calcMode="spline" />
+                                        </circle>
+                                        <circle transform="translate(24 0)" cx="0" cy="16" r="0">
+                                            <animate attributeName="r" values="0; 4; 0; 0" dur="1.2s" repeatCount="indefinite" begin="0.6"
+                                                     keytimes="0;0.2;0.7;1" keySplines="0.2 0.2 0.4 0.8;0.2 0.6 0.4 0.8;0.2 0.6 0.4 0.8"
+                                                     calcMode="spline" />
+                                        </circle>
+                                    </svg>
+                                </div>
+                            </div>
+                        </div>
+                    </script>
+
+                    <!-- checkbox-list template -->
+                    <script type="text/ng-template" id="template/checkbox-list">
+                        <ul>
+                            <li ng-repeat="item in listData">
+                                <label>
+                                    <input type="checkbox" ng-checked="selectedItems[item]" ng-click="applySelection(item)" />
+                                    <span ng-transclude></span>
+                                </label>
+                            </li>
+                        </ul>
+                    </script>
+
+                    <script type="text/ng-template" id="template/calendry">
+                        <div class="calendry-instance" ng-class="{'list-view':forceListView}">
+                            <header>
+                                <div class="header-columns">
+                                    <div class="col left">
+                                        <div class="tb">
+                                            <div class="cl">
+                                                <a class="btn-nav" ng-click="prevMonth()">Previous</a>
+                                                <a class="btn-nav" ng-click="nextMonth()">Next</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col middle">
+                                        <div class="tb">
+                                            <div class="cl">
+                                                <span class="current" ng-click="currentMonth()">{{settings.currentMonth.format('MMM YYYY')}}</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col right">
+                                        <div class="tb">
+                                            <div class="cl">
+                                                <a class="btn-nav toggle-list-view" ng-click="toggleListView()">
+                                                    <span ng-hide="forceListView">List View</span>
+                                                    <span ng-show="forceListView">Calendar View</span>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="weekdays">
+                                    <div class="day-label" ng-repeat="weekday in settings.daysOfWeek">{{weekday}}</div>
+                                </div>
+                            </header>
+                            <section>
+                                <div class="calendar-render"></div>
+                            </section>
+                        </div>
+                    </script>
+
+                    <!-- Main page stuff -->
+                    <div id="c-l1" ng-controller="CtrlMain">
+                        <aside>
+                            <a class="closer" ng-click="toggleFilters()">Close</a>
+
+                            <form ng-submit="submitFilters()">
+                                <div class="filter-group">
+                                    <select class="event-types" ng-model="refinements.event_type" ng-options="opt as opt for opt in eventTypes">
+                                        <option value="">-- Event Type --</option>
+                                    </select>
+                                </div>
+                                <div class="filter-group">
+                                    <input ng-model="refinements.search" type="text" placeholder="Search" />
+                                </div>
+                                <div class="filter-group lists">
+                                    <h4>Filter By Tags</h4>
+                                    <ul checkbox-list="availableTags" selected="refinements.tag_list">
+                                        {{item['title']}}
+                                    </ul>
+                                </div>
+                                <div class="filter-group lists">
+                                    <h4>Filter By Department</h4>
+                                    <ul checkbox-list="availableDepartments" selected="refinements.dept_list">
+                                        {{item['title']}}
+                                    </ul>
+                                </div>
+
+                                <!--<div class="filter-lists filter-group">
+                                    <div class="col">
+                                        <h4>Filter By Tags</h4>
+                                        <ul checkbox-list="availableTags" selected="refinements.tag_list">
+                                            {{item['title']}}
+                                        </ul>
+                                    </div>
+                                    <div class="col">
+                                        <h4>Filter By Department</h4>
+                                        <ul checkbox-list="availableDepartments" selected="refinements.dept_list">
+                                            {{item['title']}}
+                                        </ul>
+                                    </div>
+                                </div>-->
+                                <div class="apply-btn">
+                                    <button type="submit">Apply</button>
+                                </div>
+                            </form>
+                        </aside>
+
+                        <div id="c-l2">
+                            <button type="button" class="toggle-filters" ng-click="toggleFilters()">Filters</button>
+
+                            <div class="calendar-wrap">
+                                <!-- Note: transclusion of items *inside* cally represent the EVENT objects on the day cells. -->
+                                <div calendry="calendarSettings" data-shared-ctrl="sharedController">
+                                    <a class="event-cell" href="event/{{eventObj.eventID}}">
+                                        <span class="dt">{{eventObj._moment.format('h:mm a')}}</span> {{eventObj.title}} something appended on!
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- router views -->
+                        <div id="event-view" ng-view></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- @todo: load this via async and have the GoogleMap service return a promise -->
+        <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyANFxVJuAgO4-wqXOeQnIfq38x7xmhMZXY&sensor=TRUE"></script>
+        <script type="text/javascript" src="js/components/moment-2.7.min.js"></script>
+
+        <!-- Angular -->
+        <script type="text/javascript" src="js/components/angular.js"></script>
+        <script type="text/javascript" src="js/components/angular-route.js"></script>
+        <script type="text/javascript" src="js/components/angular-sanitize.js"></script>
+
+        <!-- Main application code -->
+        <script type="text/javascript" src="app/application.js"></script>
+        <script type="text/javascript" src="app/calendry/calendry.js"></script>
+        <script type="text/javascript" src="app/common/services/data_context.js"></script>
+        <script type="text/javascript" src="app/common/ctrl_main.js"></script>
+        <script type="text/javascript" src="app/events/ctrl_event_view.js"></script>
+        <script type="text/javascript" src="app/directives/checkbox_list.js"></script>
+        <script type="text/javascript" src="app/googlemap/services/googlemap.js"></script>
+        <script type="text/javascript" src="app/googlemap/directives/googlemap.js"></script>
+    </body>
+</html>
