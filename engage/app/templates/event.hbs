@@ -1,0 +1,6 @@
+<h3>{{model.title}}</h3>
+{{#if model.allDay}}
+All day
+{{else}}
+<span class="event-start">{{model.start}}</span> - <span class="event-end">{{model.end}}</span>
+{{/if}}
