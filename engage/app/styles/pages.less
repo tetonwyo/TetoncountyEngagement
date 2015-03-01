@@ -1,8 +1,29 @@
 .page-header {
   text-transform: uppercase;
+  border:none;
 }
 
 /* about page */
 .page--about img + p {
   margin-top: 2rem;
+}
+
+/* related pages */
+
+.engage-list-group-item {
+  border-left: none;
+  border-right: none;
+
+  &:hover .related-pages-url {
+    text-decoration: underline;
+  }
+}
+/* fighting against a bootstrap default */
+a.list-group-item .list-group-item-heading.related-pages-name {
+  color: @theme1;
+}
+.related-pages-url {
+  color: @theme2;
+  font-style: italic;
+  font-size: .8em;
 }

@@ -14,6 +14,7 @@ Router.map(function() {
     this.route('mentions');
     this.route('news');
     this.route('timeline');
+    this.route('related');
   //});
 });
 
