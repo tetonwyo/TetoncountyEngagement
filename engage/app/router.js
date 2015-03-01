@@ -11,6 +11,7 @@ Router.map(function() {
     this.route('calendar');
     this.route('media');
     this.route('meetings');
+    this.route('mentions');
     this.route('news');
     this.route('timeline');
   //});
