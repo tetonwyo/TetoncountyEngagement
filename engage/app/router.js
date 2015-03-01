@@ -6,9 +6,14 @@ var Router = Ember.Router.extend({
 });
 
 Router.map(function() {
-  this.route('event', {path: 'events/:id'});
-  this.route('organization', {path: 'organizations/:id'});
-  this.route('tag');
+  //this.resource('project', { path: '/project/:id'}, function () {
+    this.route('about');
+    this.route('calendar');
+    this.route('media');
+    this.route('meetings');
+    this.route('news');
+    this.route('timeline');
+  //});
 });
 
 export default Router;
