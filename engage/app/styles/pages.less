@@ -8,6 +8,7 @@
   margin-top: 2rem;
 }
 
+
 /* related pages */
 
 .engage-list-group-item {
@@ -26,4 +27,22 @@ a.list-group-item .list-group-item-heading.related-pages-name {
   color: @theme2;
   font-style: italic;
   font-size: .8em;
+}
+
+/* Media page */
+.media-container {
+  position: relative;
+  &::before {
+    content: "";
+    position: absolute;
+    left: 0; right: 0; bottom: 0;
+    height: 300px;
+    width: 100%;
+    background-image: linear-gradient(to top, #FFF, #FFF 30%, rgba(255, 255, 255, 0));
+    z-index: 100;
+  }
+}
+
+.media-item {
+  padding: 15px;
 }

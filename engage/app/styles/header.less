@@ -3,10 +3,17 @@
   background-image: linear-gradient(to top, rgba(0,0,0,.8), rgba(0,0,0,0) 40%), url('images/tetons_1800.jpg');
   color: #fff;
 }
-
+.project-title {
+  a {
+    color: inherit;
+    &:hover, &:active, &:visited, &:link {
+      text-decoration: none;
+      color: inherit;
+    }
+  }
+}
 .project-title, .project-desc{
   text-align: center;
-
 }
 .project-desc{
   max-width: 65%;
