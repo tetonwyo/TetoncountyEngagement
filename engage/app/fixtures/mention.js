@@ -1,37 +1,44 @@
 export default [
   {
-    description: `I've been wondering what is going on with the pathway bridge across the Snake River`,
-    source: 'Fitzgeralds Bicycles',
+    id: 1,
+    body: `I've been wondering what is going on with the pathway bridge across the Snake River`,
+    title: 'Fitzgeralds Bicycles',
     date: 'January 28, 2014'
   },
   {
-    description: `I've been wondering what is going on with the pathway bridge across the Snake River`,
-    source: 'Fitzgeralds Bicycles',
+    id: 2,
+    body: `I've been wondering what is going on with the pathway bridge across the Snake River`,
+    title: 'Fitzgeralds Bicycles',
     date: 'January 28, 2014'
   },
   {
-    description: `I've been wondering what is going on with the pathway bridge across the Snake River`,
-    source: 'Fitzgeralds Bicycles',
+    id: 3,
+    body: `I've been wondering what is going on with the pathway bridge across the Snake River`,
+    title: 'Fitzgeralds Bicycles',
     date: 'January 28, 2014'
   },
   {
-    description: `I've been wondering what is going on with the pathway bridge across the Snake River`,
-    source: 'Fitzgeralds Bicycles',
+    id: 4,
+    body: `I've been wondering what is going on with the pathway bridge across the Snake River`,
+    title: 'Fitzgeralds Bicycles',
     date: 'January 28, 2014'
   },
   {
-    description: `I've been wondering what is going on with the pathway bridge across the Snake River`,
-    source: 'Fitzgeralds Bicycles',
+    id: 5,
+    body: `I've been wondering what is going on with the pathway bridge across the Snake River`,
+    title: 'Fitzgeralds Bicycles',
     date: 'January 28, 2014'
   },
   {
-    description: `I've been wondering what is going on with the pathway bridge across the Snake River`,
-    source: 'Fitzgeralds Bicycles',
+    id: 6,
+    body: `I've been wondering what is going on with the pathway bridge across the Snake River`,
+    title: 'Fitzgeralds Bicycles',
     date: 'January 28, 2014'
   },
   {
-    description: `I've been wondering what is going on with the pathway bridge across the Snake River`,
-    source: 'Fitzgeralds Bicycles',
+    id: 7,
+    body: `I've been wondering what is going on with the pathway bridge across the Snake River`,
+    title: 'Fitzgeralds Bicycles',
     date: 'January 28, 2014'
   }
 ];
