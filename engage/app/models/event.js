@@ -1,18 +1,12 @@
 import DS from 'ember-data';
-import fixtures from 'engage/fixtures/events';
+import Ember from 'ember';
 
-var Eventz = DS.Model.extend({
-  title: DS.attr(),
-  start: DS.attr('date'),
-  end: DS.attr('date'),
+export default DS.Model.extend({
   allDay: DS.attr('boolean'),
-  type: DS.attr(),
-  source: DS.attr(),
-  organization: DS.belongsTo('organization')
-});
+  description: DS.attr('string'),
+  end: DS.attr('date'),
+  start: DS.attr('date'),
+  title: DS.attr('string'),
 
-Eventz.reopenClass({
-  FIXTURES: fixtures
+  date: Ember.computed.alias('start')
 });
-
-export default Eventz;

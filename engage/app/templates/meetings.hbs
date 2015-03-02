@@ -2,195 +2,22 @@
   <div class="col-md-8 main-left">
     <h2 class="page-header">Meetings</h2>
     <section class="row">
+      {{#each model as |meeting|}}
       <article class="content-item col-md-6">
         <div class="content-item-image">
-          <img src="http://lorempixel.com/400/200/business/1">
+          <img {{bind-attr src=meeting.media.url}}>
         </div>
-        <h3 class="content-item-title h4">Board of County Commissioners Regular Meeting</h3>
-        <time class="content-item-date">Jan 20, 2014</time>
+        <h3 class="content-item-title h4">{{meeting.title}}</h3>
+        <time class="content-item-date">{{meeting.date}}</time>
         <ul class="content-item-list">
+          {{#each meeting.links as |link|}}
           <li>
-            <a href="#">Some link</a>
+            <a {{bind-attr href=link.url}}>{{link.description}}</a>
           </li>
-          <li>
-            <a href="#">Staff Report</a>
-          </li>
-          <li>
-            <a href="#">Video Archive</a>
-          </li>
+          {{/each}}
         </ul>
       </article>
-
-      <article class="content-item col-md-6">
-        <div class="content-item-image">
-          <img src="http://lorempixel.com/400/200/business/0">
-        </div>
-        <h3 class="content-item-title h4">Joint information meeting with town council</h3>
-        <time class="content-item-date">Jan 20, 2014</time>
-        <ul class="content-item-list">
-          <li>
-            <a href="#">Some link</a>
-          </li>
-          <li>
-            <a href="#">Staff Report</a>
-          </li>
-          <li>
-            <a href="#">Video Archive</a>
-          </li>
-        </ul>
-      </article>
-
-      <article class="content-item col-md-6">
-        <div class="content-item-image">
-          <img src="http://lorempixel.com/400/200/business/3">
-        </div>
-        <h3 class="content-item-title h4">Board of County Commissioners Regular Meeting</h3>
-        <time class="content-item-date">Jan 20, 2014</time>
-        <ul class="content-item-list">
-          <li>
-            <a href="#">Some link</a>
-          </li>
-          <li>
-            <a href="#">Staff Report</a>
-          </li>
-          <li>
-            <a href="#">Video Archive</a>
-          </li>
-        </ul>
-      </article>
-
-      <article class="content-item col-md-6">
-        <div class="content-item-image">
-          <img src="http://lorempixel.com/400/200/business/4">
-        </div>
-        <h3 class="content-item-title h4">Joint information meeting with town council</h3>
-        <time class="content-item-date">Jan 20, 2014</time>
-        <ul class="content-item-list">
-          <li>
-            <a href="#">Some link</a>
-          </li>
-          <li>
-            <a href="#">Staff Report</a>
-          </li>
-          <li>
-            <a href="#">Video Archive</a>
-          </li>
-        </ul>
-      </article>
-
-      <article class="content-item col-md-6">
-        <div class="content-item-image">
-          <img src="http://lorempixel.com/400/200/business/5">
-        </div>
-        <h3 class="content-item-title h4">Board of County Commissioners Regular Meeting</h3>
-        <time class="content-item-date">Jan 20, 2014</time>
-        <ul class="content-item-list">
-          <li>
-            <a href="#">Some link</a>
-          </li>
-          <li>
-            <a href="#">Staff Report</a>
-          </li>
-          <li>
-            <a href="#">Video Archive</a>
-          </li>
-        </ul>
-      </article>
-
-      <article class="content-item col-md-6">
-        <div class="content-item-image">
-          <img src="http://lorempixel.com/400/200/business/7">
-        </div>
-        <h3 class="content-item-title h4">Joint information meeting with town council</h3>
-        <time class="content-item-date">Jan 20, 2014</time>
-        <ul class="content-item-list">
-          <li>
-            <a href="#">Some link</a>
-          </li>
-          <li>
-            <a href="#">Staff Report</a>
-          </li>
-          <li>
-            <a href="#">Video Archive</a>
-          </li>
-        </ul>
-      </article>
-
-      <article class="content-item col-md-6">
-        <div class="content-item-image">
-          <img src="http://lorempixel.com/400/200/business/9">
-        </div>
-        <h3 class="content-item-title h4">Board of County Commissioners Regular Meeting</h3>
-        <time class="content-item-date">Jan 20, 2014</time>
-        <ul class="content-item-list">
-          <li>
-            <a href="#">Some link</a>
-          </li>
-          <li>
-            <a href="#">Staff Report</a>
-          </li>
-          <li>
-            <a href="#">Video Archive</a>
-          </li>
-        </ul>
-      </article>
-
-      <article class="content-item col-md-6">
-        <div class="content-item-image">
-          <img src="http://lorempixel.com/400/200/business/10">
-        </div>
-        <h3 class="content-item-title h4">Joint information meeting with town council</h3>
-        <time class="content-item-date">Jan 20, 2014</time>
-        <ul class="content-item-list">
-          <li>
-            <a href="#">Some link</a>
-          </li>
-          <li>
-            <a href="#">Staff Report</a>
-          </li>
-          <li>
-            <a href="#">Video Archive</a>
-          </li>
-        </ul>
-      </article>
-
-      <article class="content-item col-md-6">
-        <div class="content-item-image">
-          <img src="http://lorempixel.com/400/200/business/3">
-        </div>
-        <h3 class="content-item-title h4">Board of County Commissioners Regular Meeting</h3>
-        <time class="content-item-date">Jan 20, 2014</time>
-        <ul class="content-item-list">
-          <li>
-            <a href="#">Some link</a>
-          </li>
-          <li>
-            <a href="#">Staff Report</a>
-          </li>
-          <li>
-            <a href="#">Video Archive</a>
-          </li>
-        </ul>
-      </article>
-
-      <article class="content-item col-md-6">
-        <div class="content-item-image">
-          <img src="http://lorempixel.com/400/200/business/8">
-        </div>
-        <h3 class="content-item-title h4">Joint information meeting with town council</h3>
-        <time class="content-item-date">Jan 20, 2014</time>
-        <ul class="content-item-list">
-          <li>
-            <a href="#">Some link</a>
-          </li>
-          <li>
-            <a href="#">Staff Report</a>
-          </li>
-          <li>
-            <a href="#">Video Archive</a>
-          </li>
-        </ul>
-      </article>
+      {{/each}}
     </section>
   </div>
   <div class="col-md-4 main-right">
