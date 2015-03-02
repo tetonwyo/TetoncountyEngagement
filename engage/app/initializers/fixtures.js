@@ -1,5 +1,7 @@
 import EventFixtures   from 'engage/fixtures/event';
 import EventModel   from 'engage/models/event';
+import LinkFixtures   from 'engage/fixtures/link';
+import LinkModel   from 'engage/models/link';
 import MediaFixtures   from 'engage/fixtures/media';
 import MediaModel   from 'engage/models/media';
 import MeetingFixtures from 'engage/fixtures/meeting';
@@ -19,6 +21,9 @@ export function initialize() {
   });
   EventModel.reopenClass({
     FIXTURES: EventFixtures
+  });
+  LinkModel.reopenClass({
+    FIXTURES: LinkFixtures
   });
   MediaModel.reopenClass({
     FIXTURES: MediaFixtures
