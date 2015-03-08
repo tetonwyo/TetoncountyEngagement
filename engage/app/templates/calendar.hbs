@@ -1,6 +1,7 @@
 <div class="row">
   <div class="col-md-8 main-left">
     <h2 class="page-header">Calendar</h2>
+    {{#each model as |event|}}
     <div class="media engage-media list-group-item engage-list-group-item">
       <div class="media-left">
         <a href="#">
@@ -8,72 +9,11 @@
         </a>
       </div>
       <div class="media-body">
-        <h4 class="media-heading">Sustainability Series</h4>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium ex maxime iure perspiciatis itaque aliquid ipsum.
-        </p>
+        <h4 class="media-heading">{{event.title}}</h4>
+        <p>{{event.description}}</p>
       </div>
     </div>
-    <div class="media engage-media list-group-item engage-list-group-item">
-      <div class="media-left">
-        <a href="#">
-          <img class="media-object" src="http://lorempixel.com/100/100/nature" alt="#">
-        </a>
-      </div>
-      <div class="media-body">
-        <h4 class="media-heading">County Commissioners' Voucher Meeting</h4>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium ex maxime iure perspiciatis itaque aliquid ipsum.
-        </p>
-      </div>
-    </div>
-    <div class="media engage-media list-group-item engage-list-group-item">
-      <div class="media-left">
-        <a href="#">
-          <img class="media-object" src="http://lorempixel.com/100/100/nature" alt="#">
-        </a>
-      </div>
-      <div class="media-body">
-        <h4 class="media-heading">Sustainability Series</h4>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium ex maxime iure perspiciatis itaque aliquid ipsum.
-        </p>
-      </div>
-    </div>
-    <div class="media engage-media list-group-item engage-list-group-item">
-      <div class="media-left">
-        <a href="#">
-          <img class="media-object" src="http://lorempixel.com/100/100/nature" alt="#">
-        </a>
-      </div>
-      <div class="media-body">
-        <h4 class="media-heading">Community Commissioners' Voucher Meeting</h4>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium ex maxime iure perspiciatis itaque aliquid ipsum.
-        </p>
-      </div>
-    </div>
-    <div class="media engage-media list-group-item engage-list-group-item">
-      <div class="media-left">
-        <a href="#">
-          <img class="media-object" src="http://lorempixel.com/100/100/nature" alt="#">
-        </a>
-      </div>
-      <div class="media-body">
-        <h4 class="media-heading">Sustainability Series</h4>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium ex maxime iure perspiciatis itaque aliquid ipsum.
-        </p>
-      </div>
-    </div>
-    <div class="media engage-media list-group-item engage-list-group-item">
-      <div class="media-left">
-        <a href="#">
-          <img class="media-object" src="http://lorempixel.com/100/100/nature" alt="#">
-        </a>
-      </div>
-      <div class="media-body">
-        <h4 class="media-heading">Sustainability Series</h4>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium ex maxime iure perspiciatis itaque aliquid ipsum.
-        </p>
-      </div>
-    </div>
-
+    {{/each}}
   </div>
   <div class="col-md-4 main-right">
     {{partial "section-briefs"}}

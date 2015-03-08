@@ -8,5 +8,5 @@ export default DS.Model.extend({
   start: DS.attr('date'),
   title: DS.attr('string'),
 
-  date: Ember.computed.alias('start')
+  date: DS.attr('start')
 });
