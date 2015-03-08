@@ -2,86 +2,25 @@
   <div class="col-md-8 main-left">
     <h2 class="page-header">News</h2>
 
+    {{#each model as |news|}}
+    <div class="media engage-media list-group-item engage-list-group-item">
+      <div class="media-left">
+        <a href="#">
+          <img class="media-object" src="http://lorempixel.com/250/175/nature" alt="#">
+        </a>
+      </div>
+      <div class="media-body">
+        <h4 class="media-heading">{{news.title}}</h4>
+        <p class="link-item-meta">{{news.date}}</p>
+        <p>{{news.body}}</p>
+        <a href="#">Read More</a>
+      </div>
+    </div>
+    {{/each}}
+  </div> {{!/main-left}}
 
-    <div class="media engage-media">
-      <div class="media-left">
-        <a href="#">
-          <img class="media-object" src="http://lorempixel.com/250/175/nature" alt="#">
-        </a>
-        <span class="content-item-logo"></span>
-      </div>
-      <div class="media-body">
-        <h4 class="media-heading">Sustainability Series</h4>
-        <p class="link-item-meta">January 24, 1868</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium ex maxime  aliquid adipisicing elit. Laudantium ex maxime  aliquid ipsum.
-        </p>
-        <a href="#">Read More</a>
-      </div>
-    </div>
-
-
-    <div class="media engage-media">
-      <div class="media-left">
-        <a href="#">
-          <img class="media-object" src="http://lorempixel.com/250/175/nature" alt="#">
-        </a>
-        <span class="content-item-logo"></span>
-      </div>
-      <div class="media-body">
-        <h4 class="media-heading">Sustainability Series</h4>
-        <p class="link-item-meta">January 24, 1868</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium ex maxime  aliquid adipisicing elit. Laudantium ex maxime  aliquid ipsum.
-        </p>
-        <a href="#">Read More</a>
-      </div>
-    </div>
-    <div class="media engage-media">
-      <div class="media-left">
-        <a href="#">
-          <img class="media-object" src="http://lorempixel.com/250/175/nature" alt="#">
-        </a>
-        <span class="content-item-logo"></span>
-      </div>
-      <div class="media-body">
-        <h4 class="media-heading">Sustainability Series</h4>
-        <p class="link-item-meta">January 24, 1868</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium ex maxime  aliquid adipisicing elit. Laudantium ex maxime  aliquid ipsum.
-        </p>
-        <a href="#">Read More</a>
-      </div>
-    </div>
-    <div class="media engage-media">
-      <div class="media-left">
-        <a href="#">
-          <img class="media-object" src="http://lorempixel.com/250/175/nature" alt="#">
-        </a>
-        <span class="content-item-logo"></span>
-      </div>
-      <div class="media-body">
-        <h4 class="media-heading">Sustainability Series</h4>
-        <p class="link-item-meta">January 24, 1868</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium ex maxime  aliquid adipisicing elit. Laudantium ex maxime  aliquid ipsum.
-        </p>
-        <a href="#">Read More</a>
-      </div>
-    </div>
-    <div class="media engage-media">
-      <div class="media-left">
-        <a href="#">
-          <img class="media-object" src="http://lorempixel.com/250/175/nature" alt="#">
-        </a>
-        <span class="content-item-logo"></span>
-      </div>
-      <div class="media-body">
-        <h4 class="media-heading">Sustainability Series</h4>
-        <p class="link-item-meta">January 24, 1868</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium ex maxime  aliquid adipisicing elit. Laudantium ex maxime  aliquid ipsum.
-        </p>
-        <a href="#">Read More</a>
-      </div>
-    </div>
-  </div>
   <div class="col-md-4 main-right">
     {{partial "section-briefs"}}
   </div>
+
 </div>
