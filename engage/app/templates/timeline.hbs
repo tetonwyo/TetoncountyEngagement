@@ -1,6 +1,21 @@
 <div class="row">
   <div class="col-md-8 main-left">
-    Timeline
+    <h2 class="page-header">Timeline</h2>
+    {{#each model as |thing|}}
+    <div class="media engage-media list-group-item engage-list-group-item">
+      <div class="media-left">
+        <a href="#">
+          <img class="media-object" src={{unbound timeline-icon-for thing}}>
+        </a>
+      </div>
+      <div class="media-body">
+        <h4 class="media-heading">{{thing.title}}</h4>
+        <p class="link-item-meta">{{thing.date}}</p>
+        <p>{{thing.body}}</p>
+        <a href="#">Read More</a>
+      </div>
+    </div>
+    {{/each}}
   </div>
   <div class="col-md-4 main-right">
     {{partial "section-briefs"}}

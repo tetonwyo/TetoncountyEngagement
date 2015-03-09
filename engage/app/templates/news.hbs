@@ -1,12 +1,11 @@
 <div class="row">
   <div class="col-md-8 main-left">
     <h2 class="page-header">News</h2>
-
     {{#each model as |news|}}
     <div class="media engage-media list-group-item engage-list-group-item">
       <div class="media-left">
         <a href="#">
-          <img class="media-object" src="http://lorempixel.com/250/175/nature" alt="#">
+          <img class="media-object" {{bind-attr src=news.media.url alt=news.media.title}} >
         </a>
       </div>
       <div class="media-body">

@@ -5,7 +5,7 @@
       {{#each model as |meeting|}}
       <article class="content-item col-md-6">
         <div class="content-item-image">
-          <img {{bind-attr src=meeting.media.url}}>
+          <img class="content-item-main-image" {{bind-attr src=meeting.media.url}}>
         </div>
         <h3 class="content-item-title h4">{{meeting.title}}</h3>
         <time class="content-item-date">{{meeting.date}}</time>

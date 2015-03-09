@@ -6,7 +6,8 @@ export default [
     date: 'April 17, 2015',
     allDay: false,
     start: '11:00',
-    end: '12:00'
+    end: '12:00',
+    image: 'assets/images/calendar-event1.png'
   },
   {
     id: 2,
@@ -15,7 +16,8 @@ export default [
     date: 'April 18, 2015',
     allDay: false,
     start: '11:00',
-    end: '12:00'
+    end: '12:00',
+    image: 'assets/images/calendar-event2.png'
   },
   {
     id: 3,
@@ -24,7 +26,8 @@ export default [
     date: 'April 19, 2015',
     allDay: false,
     start: '11:00',
-    end: '12:00'
+    end: '12:00',
+    image: 'assets/images/calendar-event3.png'
   },
   {
     id: 4,
@@ -33,7 +36,8 @@ export default [
     date: 'April 20, 2015',
     allDay: false,
     start: '11:00',
-    end: '12:00'
+    end: '12:00',
+    image: 'assets/images/calendar-event1.png'
   },
   {
     id: 5,
@@ -42,7 +46,8 @@ export default [
     date: 'April 21, 2015',
     allDay: false,
     start: '11:00',
-    end: '12:00'
+    end: '12:00',
+    image: 'assets/images/calendar-event2.png'
   },
   {
     id: 6,
@@ -51,7 +56,8 @@ export default [
     date: 'April 22, 2015',
     allDay: false,
     start: '11:00',
-    end: '12:00'
+    end: '12:00',
+    image: 'assets/images/calendar-event3.png'
   },
   {
     id: 7,
@@ -60,6 +66,7 @@ export default [
     date: 'April 23, 2015',
     allDay: false,
     start: '11:00',
-    end: '12:00'
+    end: '12:00',
+    image: 'assets/images/calendar-event1.png'
   }
 ];
