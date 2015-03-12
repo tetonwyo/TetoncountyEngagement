@@ -1,25 +1,16 @@
-<div class="row">
-  <div class="col-md-8 main-left">
-    <h2 class="page-header">News</h2>
-    {{#each model as |news|}}
-    <div class="media engage-media list-group-item engage-list-group-item">
-      <div class="media-left">
-        <a href="#">
-          <img class="media-object" {{bind-attr src=news.media.url alt=news.media.title}} >
-        </a>
-      </div>
-      <div class="media-body">
-        <h4 class="media-heading">{{news.title}}</h4>
-        <p class="link-item-meta">{{news.date}}</p>
-        <p>{{news.body}}</p>
-        {{link-to 'Read More' (query-params articleId=news.id)}}
-      </div>
-    </div>
-    {{/each}}
-  </div> {{!/main-left}}
-
-  <div class="col-md-4 main-right">
-    {{partial "section-briefs"}}
+<h2 class="page-header">News</h2>
+{{#each model as |news|}}
+<div class="media engage-media list-group-item engage-list-group-item">
+  <div class="media-left">
+    <a href="#">
+      <img class="media-object" {{bind-attr src=news.media.url alt=news.media.title}} >
+    </a>
   </div>
-
+  <div class="media-body">
+    <h4 class="media-heading">{{news.title}}</h4>
+    <p class="link-item-meta">{{news.date}}</p>
+    <p>{{news.body}}</p>
+    {{link-to 'Read More' (query-params articleId=news.id)}}
+  </div>
 </div>
+{{/each}}

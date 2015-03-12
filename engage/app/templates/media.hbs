@@ -1,16 +1,9 @@
-<div class="row">
-  <div class="col-md-8 main-left">
-    <h2 class="page-header">Project Photos</h2>
-    <section class="media-container row">
-      {{#each model as |media|}}
-      <article class="col-xs-6 media-item">
-        <img class="img-responsive" {{bind-attr src=media.url}}>
-      </article>
-      {{/each}}
+<h2 class="page-header">Project Photos</h2>
+<section class="media-container row">
+  {{#each model as |media|}}
+  <article class="col-xs-6 media-item">
+    <img class="img-responsive" {{bind-attr src=media.url}}>
+  </article>
+  {{/each}}
 {{!@TODO if we have an odd number, do we need to put in a filler element?}}
-    </section>
-  </div>
-  <div class="col-md-4 main-right">
-    {{partial "section-briefs"}}
-  </div>
-</div>
+</section>

@@ -1,16 +1,9 @@
-<div class="row">
-  <div class="col-md-8 main-left">
-    <h2 class="page-header">Related Pages</h2>
-    <div class="list-group">
-      {{#each model as |related|}}
-      <a {{bind-attr href=related.url}} class="engage-list-group-item list-group-item">
-        <p class="list-group-item-heading link-item-name">{{related.title}}</p>
-        <p class="list-group-item-text link-item-meta"><span class="link-item-url">{{related.url}}</span></p>
-      </a>
-      {{/each}}
-    </div>
-  </div>
-  <div class="col-md-4 main-right">
-    {{partial "section-briefs"}}
-  </div>
+<h2 class="page-header">Related Pages</h2>
+<div class="list-group">
+  {{#each model as |related|}}
+  <a {{bind-attr href=related.url}} class="engage-list-group-item list-group-item">
+    <p class="list-group-item-heading link-item-name">{{related.title}}</p>
+    <p class="list-group-item-text link-item-meta"><span class="link-item-url">{{related.url}}</span></p>
+  </a>
+  {{/each}}
 </div>

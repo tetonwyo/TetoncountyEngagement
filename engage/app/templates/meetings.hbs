@@ -1,26 +1,19 @@
-<div class="row">
-  <div class="col-md-8 main-left">
-    <h2 class="page-header">Meetings</h2>
-    <section class="row">
-      {{#each model as |meeting|}}
-      <article class="content-item col-md-6">
-        <div class="content-item-image">
-          <img class="content-item-main-image" {{bind-attr src=meeting.media.url}}>
-        </div>
-        <h3 class="content-item-title h4">{{meeting.title}}</h3>
-        <time class="content-item-date">{{meeting.date}}</time>
-        <ul class="content-item-list">
-          {{#each meeting.links as |link|}}
-          <li>
-            <a {{bind-attr href=link.url}}>{{link.description}}</a>
-          </li>
-          {{/each}}
-        </ul>
-      </article>
+<h2 class="page-header">Meetings</h2>
+<section class="row">
+  {{#each model as |meeting|}}
+  <article class="content-item col-md-6">
+    <div class="content-item-image">
+      <img class="content-item-main-image" {{bind-attr src=meeting.media.url}}>
+    </div>
+    <h3 class="content-item-title h4">{{meeting.title}}</h3>
+    <time class="content-item-date">{{meeting.date}}</time>
+    <ul class="content-item-list">
+      {{#each meeting.links as |link|}}
+      <li>
+        <a {{bind-attr href=link.url}}>{{link.description}}</a>
+      </li>
       {{/each}}
-    </section>
-  </div>
-  <div class="col-md-4 main-right">
-    {{partial "section-briefs"}}
-  </div>
-</div>
+    </ul>
+  </article>
+  {{/each}}
+</section>

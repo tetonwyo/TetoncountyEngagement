@@ -1,16 +1,9 @@
-<div class="row">
-  <div class="col-md-8 main-left">
-    <h2 class="page-header">Community Mentions</h2>
-    <div class="list-group">
-      {{#each model as |mention|}}
-      <a {{bind-attr href=mention.url}} class="engage-list-group-item list-group-item">
-        <p class="list-group-item-heading link-item-name">{{mention.body}}</p>
-        <p class="list-group-item-text link-item-meta"><span class="link-item-url">{{mention.title}}</span> <time class="link-item-date">on {{mention.date}}</time></p>
-      </a>
-      {{/each}}
-    </div>
-  </div>
-  <div class="col-md-4 main-right">
-    {{partial "section-briefs"}}
-  </div>
+<h2 class="page-header">Community Mentions</h2>
+<div class="list-group">
+  {{#each model as |mention|}}
+  <a {{bind-attr href=mention.url}} class="engage-list-group-item list-group-item">
+    <p class="list-group-item-heading link-item-name">{{mention.body}}</p>
+    <p class="list-group-item-text link-item-meta"><span class="link-item-url">{{mention.title}}</span> <time class="link-item-date">on {{mention.date}}</time></p>
+  </a>
+  {{/each}}
 </div>

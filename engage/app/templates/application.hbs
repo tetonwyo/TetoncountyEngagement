@@ -23,7 +23,17 @@
     <p class="project-desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maiores delectus nisi excepturi ducimus soluta, voluptatibus porro quos natus ad a perferendis aperiam! {{#link-to "about" class="read-more"}}Read more...{{/link-to}}</p>
   </header>
   <main class="container-fluid">
-    {{outlet}}
+    <div class="row">
+      <div {{bind-attr class="showSidebar:col-md-8 :main-left"}}>
+        {{outlet}}
+      </div>
+
+      <div class="col-md-4 main-right">
+        {{partial "section-briefs"}}
+      </div>
+
+    </div>
+
   </main>
 </div>
 <div id="footer">
