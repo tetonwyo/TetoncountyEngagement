@@ -1,6 +1,6 @@
-import Ember from 'ember';
+import Route from 'engage/routes/section-briefs-route';
 
-export default Ember.Route.extend({
+export default Route.extend({
   model () {
     return this.store.find('related');
   }
