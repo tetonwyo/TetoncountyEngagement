@@ -1,4 +1,12 @@
-<img class="pull-left media-object" {{bind-attr src=article.media.url alt=news.media.title}} >
-<h2>{{article.title}}</h2>
-<p class="link-item-meta clear">{{article.date}}</p>
-<p>{{article.body}}</p>
+<div class="media engage-media list-group-item engage-list-group-item">
+  <div class="media-left">
+    <a href="#">
+      <img class="media-object" {{bind-attr src=article.media.url alt=article.media.title}} >
+    </a>
+  </div>
+  <div class="media-body">
+    <h4 class="media-heading">{{article.title}}</h4>
+    <p class="link-item-meta">{{article.date}}</p>
+    <p>{{article.body}}</p>
+  </div>
+</div>
