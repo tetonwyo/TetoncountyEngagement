@@ -2,7 +2,9 @@
 <section class="media-container row">
   {{#each model as |media|}}
   <article class="col-xs-6 media-item">
+    {{#link-to (query-params image=media.id)}}
     <img class="img-responsive" {{bind-attr src=media.url}}>
+    {{/link-to}}
   </article>
   {{/each}}
 {{!@TODO if we have an odd number, do we need to put in a filler element?}}

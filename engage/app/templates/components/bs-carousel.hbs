@@ -1,0 +1,15 @@
+<div class="carousel-inner" role="listbox">
+  {{#each media as |image|}}
+  <div class="item">
+    <img alt="Group of people" src="{{unbound image.url}}">
+  </div>
+  {{/each}}
+</div>
+<a class="carousel-control left" role="button" {{action "prev"}}>
+  <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+  <span class="sr-only">Previous</span>
+</a>
+<a class="carousel-control right" role="button" {{action "next"}}>
+  <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+  <span class="sr-only">Next</span>
+</a>

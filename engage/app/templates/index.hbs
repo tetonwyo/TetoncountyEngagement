@@ -27,59 +27,42 @@
   <h2 class="col-xs-12 content-section-header">
     {{#link-to "news" class="content-section-header-text"}}News{{/link-to}}
   </h2>
+  {{#each model.news as |news|}}
   <article class="content-item col-md-6">
-    <div class="content-item-image">
-      <img class="content-item-main-image" src="http://lorempixel.com/400/200/nature/4">
+    {{#link-to "news" (query-params articleId=news.id) class="content-item-image"}}
+      <img class="content-item-main-image" {{bind-attr src=news.media.url}}>
       <img class="content-item-logo" src="assets/images/icon-bcc.png">
-    </div>
-    <h3 class="content-item-title">Approval of final alignment for Path 22 Middle Segment</h3>
-    <time class="content-item-date">Jan 20, 2014</time>
+    {{/link-to}}
+    <h3 class="content-item-title">{{news.title}}</h3>
+    <time class="content-item-date">{{news.date}}</time>
   </article>
-
-  <article class="content-item col-md-6">
-    <div class="content-item-image">
-      <img class="content-item-main-image" src="http://lorempixel.com/400/200/nature/2">
-      <img class="content-item-logo" src="assets/images/icon-pathways.png">
-    </div>
-    <h3 class="content-item-title">Region 4 - WY22 Plan</h3>
-    <time class="content-item-date">Jan 12, 2014</time>
-  </article>
+  {{/each}}
 </section>
+
 <section class="content-section row">
   <h2 class="col-xs-12 content-section-header">
     {{#link-to "meetings" class="content-section-header-text"}}Meetings{{/link-to}}
   </h2>
+  {{#each model.meetings as |meeting|}}
   <article class="content-item col-md-6">
-    <div class="content-item-image">
-      <img class="content-item-main-image" src="http://lorempixel.com/400/200/business/1">
+    {{#link-to "meetings" (query-params meeting=meeting.id) class="content-item-image"}}
+      <img class="content-item-main-image" {{bind-attr src=meeting.media.url}}>
       <img class="content-item-logo" src="assets/images/icon-plan.png">
-    </div>
-    <h3 class="content-item-title">Board of County Commissioners Regular Meeting</h3>
-    <time class="content-item-date">Jan 20, 2014</time>
+    {{/link-to}}
+    <h3 class="content-item-title">{{meeting.title}}</h3>
+    <time class="content-item-date">{{meeting.date}}</time>
     <ul class="content-item-list">
-      <li><a href="#">Some link</a></li>
-      <li><a href="#">Staff Report</a></li>
-      <li><a href="#">Video Archive</a></li>
+      {{#each meeting.links as |link|}}
+      <li><a {{bind-attr href=link.url}}>{{link.description}}</a></li>
+      {{/each}}
     </ul>
   </article>
-
-  <article class="content-item col-md-6">
-    <div class="content-item-image">
-      <img class="content-item-main-image" src="http://lorempixel.com/400/200/business/2">
-      <img class="content-item-logo" src="assets/images/icon-bcc.png">
-    </div>
-    <h3 class="content-item-title">Joint information meeting with town council</h3>
-    <time class="content-item-date">Jan 20, 2014</time>
-    <ul class="content-item-list">
-      <li><a href="#">Some link</a></li>
-      <li><a href="#">Staff Report</a></li>
-      <li><a href="#">Video Archive</a></li>
-    </ul>
-  </article>
+  {{/each}}
 </section>
+
 <section class="content-section row">
   <h2 class="col-xs-12 content-section-header">
     {{#link-to "media" class="content-section-header-text"}}Photos{{/link-to}}
   </h2>
-  {{partial "carousel"}}
+  {{bs-carousel media=model.media id="landing-page-carousel" class="col-xs-12 carousel slide"}}
 </section>

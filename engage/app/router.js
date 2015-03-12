@@ -9,7 +9,12 @@ Router.map(function() {
   //this.resource('project', { path: '/project/:id'}, function () {
     this.route('about');
     this.route('calendar');
-    this.route('media');
+    this.route('media', function () {
+      this.modal('bs-carousel', {
+        withParams: 'image',
+        otherParams: {model: 'media'}
+      });
+    });
     this.route('meetings');
     this.route('mentions');
     this.route('news', function () {
