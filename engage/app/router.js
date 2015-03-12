@@ -12,7 +12,12 @@ Router.map(function() {
     this.route('media');
     this.route('meetings');
     this.route('mentions');
-    this.route('news');
+    this.route('news', function () {
+      this.modal('article-modal', {
+        withParams: 'articleId',
+        otherParams: {'activeArticle': 'article'}
+      });
+    });
     this.route('timeline');
     this.route('related');
   //});
