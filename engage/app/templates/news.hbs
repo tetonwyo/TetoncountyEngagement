@@ -12,7 +12,7 @@
         <h4 class="media-heading">{{news.title}}</h4>
         <p class="link-item-meta">{{news.date}}</p>
         <p>{{news.body}}</p>
-        <a href="#" {{action "openModal" news}}>Read More</a>
+        {{link-to 'Read More' (query-params articleId=news.id)}}
       </div>
     </div>
     {{/each}}
