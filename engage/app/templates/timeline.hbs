@@ -1,19 +1,18 @@
 <h2 class="page-header">Timeline</h2>
 {{#each model as |thing|}}
-
 <div class="media engage-media list-group-item engage-list-group-item">
   <div class="timeline-icon">
     <img src="{{unbound timeline-icon-for thing}}">
-    <p class="link-item-meta">{{thing.date}}</p>
+    <p class="link-item-meta">{{ago thing.date}}</p>
   </div>
+  {{#if thing.media.url}}
   <div class="media-left">
-    <a href="#">
-      <img class="media-object" src="{{unbound thing.media.url}}">
-    </a>
+      <img class="media-object" style="width: auto; height: 100px;" {{bind-attr src=thing.media.url}}>
   </div>
+  {{/if}}
   <div class="media-body">
     <h4 class="media-heading">{{thing.title}}</h4>
-    <p class="link-item-meta">{{thing.date}}</p>
+    <p class="link-item-meta">{{moment thing.date "ll"}}</p>
     <p>{{thing.body}}</p>
     <a href="#">Read More</a>
   </div>

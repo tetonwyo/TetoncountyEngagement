@@ -24,7 +24,7 @@ export default [
     id: 4,
     body: 'Ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
     title: 'News Headline',
-    date: 'Dec 13, 2014',
+    date: 'Feb 13, 2015',
     media: {id: 104, url: 'assets/images/news-img4.jpg', title: 'news'}
   },
   {

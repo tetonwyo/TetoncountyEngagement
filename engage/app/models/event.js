@@ -7,6 +7,6 @@ export default DS.Model.extend({
   end: DS.attr('date'),
   start: DS.attr('date'),
   title: DS.attr('string'),
-  image: DS.attr('string'),
-  date: DS.attr('start')
+  media: DS.attr(),
+  date: DS.attr()
 });
