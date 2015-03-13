@@ -19,6 +19,18 @@
 {{partial "navigation"}}
 <div id="body">
   <header class="project-header container-fluid">
+    <nav class="project-nav">
+      <ul class="project-nav-links list-unstyled">
+        <li class="project-nav-link">{{link-to 'The Project' "about"}}</li>
+        <li class="project-nav-link">{{link-to 'Calendar' "calendar"}}</li>
+        <li class="project-nav-link">{{link-to 'News' "news"}}</li>
+        <li class="project-nav-link">{{link-to 'Meetings' "meetings"}}</li>
+        {{!-- <li class="project-nav-link">{{link-to 'Social' "related"}}</li> --}}
+        <li class="project-nav-link">{{link-to 'Mentions' "mentions"}}</li>
+        <li class="project-nav-link">{{link-to 'Related Pages' "related"}}</li>
+        <li class="project-nav-link">{{link-to 'Photos' "media"}}</li>
+      </ul>
+    </nav>
     <h1 class="project-title">{{#link-to "index"}}Path22 Project{{/link-to}}</h1>
     <p class="project-desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maiores delectus nisi excepturi ducimus soluta, voluptatibus porro quos natus ad a perferendis aperiam! {{#link-to "about" class="read-more"}}Read more...{{/link-to}}</p>
   </header>
