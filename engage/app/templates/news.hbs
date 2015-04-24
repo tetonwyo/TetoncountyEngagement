@@ -3,13 +3,15 @@
 <div class="media engage-media list-group-item engage-list-group-item">
   <div class="media-left">
     {{#link-to (query-params articleId=news.id)}}
-      <img class="media-object" {{bind-attr src=news.media.url alt=news.media.title}} >
+      <img class="media-object" style="max-width: 200px" {{bind-attr src=news.media}} >
     {{/link-to}}
   </div>
   <div class="media-body">
     <h4 class="media-heading">{{news.title}}</h4>
     <p class="link-item-meta">{{news.date}}</p>
+    {{#if news.body}}
     <p>{{news.body}}</p>
+    {{/if}}
     {{link-to 'Read More' (query-params articleId=news.id)}}
   </div>
 </div>
