@@ -5,7 +5,7 @@ let $ = Ember.$;
 
 const ResourceMap = {
   'news': 'news',
-  'events': 'calevents'
+  'event': 'calevents'
 };
 
 export default DS.Adapter.extend({
