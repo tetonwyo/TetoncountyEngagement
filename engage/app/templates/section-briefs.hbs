@@ -29,7 +29,7 @@
   <article class="col-xs-12 content-item calendar-item">
     {{! @TODO investigate using bootstrap media component}}
     {{#link-to "news" (query-params articleId=news.id) class="briefs-image"}}
-      <img class="img-responsive" {{bind-attr src=news.media.url}}>
+      <img class="img-responsive" {{bind-attr src=news.media}}>
     {{/link-to}}
     <h2 class="content-item-header">{{news.title}}</h2>
   </article>
