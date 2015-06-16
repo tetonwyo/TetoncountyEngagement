@@ -16,9 +16,10 @@
     <script type="text/javascript" src="/scripts/CCC.js"></script>
     <script type="text/javascript" src="/scripts/CCC.Misc.js"></script>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <script type="text/javascript" src="//use.typekit.net/aue3tqj.js"></script>
-    <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
-    <link href=http://fonts.googleapis.com/css?family =Roboto+Slab:400,300,700' rel='stylesheet' type='text/css' />
+    
+    <!-- <script type="text/javascript" src="//use.typekit.net/aue3tqj.js"></script>
+    <script type="text/javascript">try{Typekit.load();}catch(e){}</script> 
+    <link href=http://fonts.googleapis.com/css?family =Roboto+Slab:400,300,700' rel='stylesheet' type='text/css' /> -->
     <link href="//fonts.googleapis.com/css?family=Open+Sans:300italic,300,400italic,400,600italic,600,700italic,700,800italic,800" rel="stylesheet" type="text/css" />
     <link rel="shortcut icon" href="/images/TC.ico" />
     <link href="/css/megamenu.css" rel="stylesheet" type="text/css" />
@@ -32,13 +33,7 @@
     <script type="text/javascript" src="/js/hoverIntent.js"></script>
 
     <script type="text/javascript" src="/js/menu/js/megamenu.js"></script>
-    <script type="text/javascript">
-  jQuery(document).ready(function() {
-     jQuery(function() {
- jQuery(".wrapper_menu ul.menu").megaMenu('hover_fadein');
-});
-});
-    </script>
+ 
     <meta name="description" content=" home page" />
     <meta name="keywords" content="jackson hole teton county wyoming alta wyoming moose kelly moran hoback junction wilson teton village wyoming county government citizen access government" />
     <meta name="copyright" content="Copyright, Teton County, Wyoming" />
@@ -108,9 +103,6 @@
     <script type="text/javascript" src="/Scripts/AlertTicker.js"></script>
     <script type="text/javascript" src="/Scripts/CCC.GoogleMaps.js"></script>
     <script type="text/javascript" src="/Scripts/CCC.GoogleMaps.TC.js"></script>
-    <style type="text/css">
-        @import url('/');
-    </style>
 
     <meta name="keywords" content="teton county wyoming online government" />
     <meta name="description" content="Teton County Wyoming site search" />
@@ -350,54 +342,12 @@
             </div>
             <div id="bodyContent">
                 <div id="page">
-                    <form method="post" action="/SEARCH.ASPX" id="form1">
-                        <div class="aspNetHidden">
-                            <input type="hidden" name="RadScriptManager1_TSM" id="RadScriptManager1_TSM" value="" />
-                            <input type="hidden" name="__EVENTTARGET" id="__EVENTTARGET" value="" />
-                            <input type="hidden" name="__EVENTARGUMENT" id="__EVENTARGUMENT" value="" />
-                            <input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="/wEPDwUJNDMyNDU0NjAzD2QWAmYPZBYCZg9kFgICAw9kFgICAQ9kFgJmD2QWAmYPZBYIZg8PFgIeB1Zpc2libGVoZGQCAg8WAh4EVGV4dAVqPGEgaHJlZj0iL2FnZW5jeS8iPjxpbWcgc3JjPSIvYXNzZXRzL2FnZW5jeWxvZ29zLzMwLy5wbmciIHN0eWxlPSJmbG9hdDpsZWZ0O3BhZGRpbmc6IDJweCAxMHB4IDAgMDsiIC8+PC9hPmQCAw8PFgIfAGdkFgICAQ8WAh8BBb4nPGxpIGNsYXNzPSJmaXJzdF9yb3ciPjxhIGhyZWY9Ii9taW51dGVzIiBjbGFzcz0iZHJvcCIgdGFyZ2V0PSJfc2VsZiI+TUVFVElOR1M8L2E+DQo8IS0tIDxkaXYgY2xhc3M9ImRyb3Bkb3duXzFjb2x1bW4gZmlyc3RfY29sdW1uIj4NCjxkaXYgY2xhc3M9ImNvbF8xIj4NCjx1bCBjbGFzcz0ibGV2ZWxzIj4NCiAgICA8bGk+PGEgaHJlZj0iLi4uIiB0YXJnZXQ9Il9zZWxmIiBvbmNsaWNrPSJyZXR1cm4gZmFsc2U7Ij5MaXZlIFN0cmVhbWluZzwvYT4NCiAgICA8L2xpPg0KICAgIDxsaT48YSBocmVmPSIvLi4uIiB0YXJnZXQ9Il9zZWxmIiBvbmNsaWNrPSJyZXR1cm4gZmFsc2U7Ij5BcmNoaXZlZCBBdWRpbzwvYT4NCiAgICA8L2xpPg0KICAgIDxsaT48YSBocmVmPSIvbWludXRlcy8iIHRhcmdldD0iX3NlbGYiPkFnZW5kYXMgJmFtcDsgTWludXRlczwvYT4NCiAgICA8L2xpPg0KPC91bD4NCjwvZGl2Pg0KPC9kaXY+IC0tPg0KPC9saT4NCjxsaSBjbGFzcz0iZmlyc3Rfcm93Ij48YSBuYW1lPSJHb3Zlcm5tZW50IiBjbGFzcz0iZHJvcCIgdGFyZ2V0PSJibGFuayIgb25jbGljaz0icmV0dXJuIGZhbHNlOyI+R292ZXJubWVudDwvYT4NCjxkaXYgY2xhc3M9ImRyb3Bkb3duXzFjb2x1bW4iPg0KPGRpdiBjbGFzcz0iY29sXzEiPg0KPHVsIGNsYXNzPSJsZXZlbHMiPg0KICAgIDxsaT48YSBocmVmPSIvZHlucGFnZS9hZ2VuY3lwb3B1cC5hc3B4IiBjbGFzcz0iZHJvcCBhZ2VuY3lsaXN0IiBpZD0iYWdlbmN5bGlzdCIgc3R5bGU9ImJhY2tncm91bmQtaW1hZ2U6IG5vbmU7IiB0YXJnZXQ9Il9ibGFuayIgb25jbGljaz0icmV0dXJuIGZhbHNlOyI+QWdlbmNpZXM8L2E+DQogICAgPC9saT4NCiAgICA8bGk+PGEgaHJlZj0iL2NjL3RvcGljcy9lbGVjdGlvbnMvMTAwMDE4LyIgdGFyZ2V0PSJfc2VsZiI+RWxlY3Rpb25zPC9hPiA8L2xpPg0KICAgIDxsaT48YSBocmVmPSIvYmNjL3RvcGljcy9idWRnZXRzLWFuZC1maW5hbmNpYWwtc3RhdGVtZW50cy8yNTEyMTkvIiB0YXJnZXQ9Il9zZWxmIj5CdWRnZXRzIGFuZCBGaW5hbmNpYWwgU3RhdGVtZW50czwvYT48L2xpPg0KICAgIDxsaT48YSBuYW1lPSJQZXJtaXRzIiBjbGFzcz0icGFyZW50IiB0YXJnZXQ9ImJsYW5rIiBvbmNsaWNrPSJyZXR1cm4gZmFsc2U7Ij5QZXJtaXRzIC8gTGljZW5zZXM8L2E+DQogICAgPHVsPg0KICAgICAgICA8bGk+PGEgaHJlZj0iL3BkYmxkZy9mb3JtcyI+QnVpbGRpbmcgUGVybWl0czwvYT48L2xpPg0KICAgICAgICA8bGk+PGEgaHJlZj0iL3BkYmxkZy90b3BpY3MvYnVpbGRpbmctcGVybWl0LWFjdGl2aXR5LzIwMTkzNy8iPkJ1aWxkaW5nIFBlcm1pdCBBY3Rpdml0eTwvYT4gPC9saT4NCiAgICAgICAgPGxpPjxhIGhyZWY9Ii9maXJlL3RvcGljcy9lbGVjdHJpY2FsLXNhZmV0eS1kaXZpc2lvbi8yNTEzMzkvIiB0YXJnZXQ9ImJsYW5rIj5FbGVjdHJpY2FsIFBlcm1pdHM8L2E+IDwvbGk+DQogICAgICAgIDxsaT48YSBocmVmPSIvcGgvdG9waWNzL3B1YmxpYy1mb29kLXNlcnZpY2UvMjUyNDIzLyIgdGFyZ2V0PSJibGFuayI+Rm9vZCBTZXJ2aWNlPC9hPiA8L2xpPg0KICAgICAgICA8bGk+PGEgaHJlZj0iL2NjL3RvcGljcy9saXF1b3ItbGljZW5zZXMvMTAwMDMzLyIgdGFyZ2V0PSJibGFuayI+TGlxdW9yIExpY2Vuc2U8L2E+IDwvbGk+DQogICAgICAgIDxsaT48YSBocmVmPSIvY2MvdG9waWNzL21hcnJpYWdlLWxpY2Vuc2VzLzEwMDAyMy8iIHRhcmdldD0iYmxhbmsiPk1hcnJpYWdlIExpY2Vuc2U8L2E+IDwvbGk+DQogICAgICAgIDxsaT48YSBocmVmPSIvY29kYy90b3BpY3MvcGFzc3BvcnRzLzEwMDIwNC8iIHRhcmdldD0iYmxhbmsiPlBhc3Nwb3J0czwvYT4gPC9saT4NCiAgICAgICAgPGxpPjxhIGhyZWY9Ii9yb2FkL3RvcGljcy9jb3VudHktcm9hZC1hY2Nlc3MtcGVybWl0LXJlZ3VsYXRpb25zLzEwMDE2NS8iIHRhcmdldD0iYmxhbmsiPlJvYWQgQWNjZXNzPC9hPiA8L2xpPg0KICAgICAgICA8bGk+PGEgaHJlZj0iL2NjL3RvcGljcy90aXRsZXMvMTAwMDA2LyIgdGFyZ2V0PSJibGFuayI+VmVoaWNsZSBUaXRsZTwvYT4gPC9saT4NCiAgICAgICAgPGxpPjxhIGhyZWY9Ii90cmVhcy90b3BpY3MvbW90b3ItdmVoaWNsZS1yZWdpc3RyYXRpb24vMjUxNTIzLyIgdGFyZ2V0PSJibGFuayI+VmVoaWNsZSBSZWdpc3RyYXRpb248L2E+IDwvbGk+DQogICAgPC91bD4NCiAgICA8L2xpPg0KICAgIDxsaT48YSBuYW1lPSJQcm9wZXJ0eSIgY2xhc3M9InBhcmVudCIgdGFyZ2V0PSJibGFuayIgb25jbGljaz0icmV0dXJuIGZhbHNlOyI+UHJvcGVydHk8L2E+DQogICAgPHVsPg0KICAgICAgICA8bGk+PGEgaHJlZj0iaHR0cDovL21hcHMuZ3JlZW53b29kbWFwLmNvbS90ZXRvbnd5L21hcHNlcnZlci8iIHRhcmdldD0iYmxhbmsiPkdlb2dyYXBoaWMgSW5mb3JtYXRpb24gU3lzdGVtIE1hcCBTZXJ2ZXI8L2E+IDwvbGk+DQogICAgICAgIDxsaT48YSBocmVmPSIvZ2lzLyIgdGFyZ2V0PSJibGFuayI+R2VvZ3JhcGhpYyBJbmZvcm1hdGlvbiBTeXN0ZW0gV2ViIFNpdGU8L2E+IDwvbGk+DQogICAgICAgIDxsaT48YSBocmVmPSIvY2MvdG9waWNzL3JlY29yZHMvMTAwMDI4LyIgdGFyZ2V0PSJibGFuayI+UHVibGljIFJlY29yZHM8L2E+IDwvbGk+DQogICAgICAgIDxsaT48YSBocmVmPSIvYXNzZXNzL3RvcGljcy9hc3Nlc3NvciU2MHMtbGlzdC8xMDAwODQvIiB0YXJnZXQ9ImJsYW5rIj5Bc3Nlc3NvcidzIFRheCBSb2xsPC9hPiA8L2xpPg0KICAgICAgICA8bGk+PGEgaHJlZj0iL2Fzc2Vzcy90b3BpY3MvYXBwcmFpc2Fscy8yNTE1NDQvIiB0YXJnZXQ9ImJsYW5rIj5BcHByYWlzYWwnczwvYT4gPC9saT4NCiAgICAgICAgPGxpPjxhIGhyZWY9Ii90cmVhcy90b3BpY3MvcHJvcGVydHktdGF4LzI1MTUyMi8iIHRhcmdldD0iYmxhbmsiPlRheGVzPC9hPiA8L2xpPg0KICAgICAgICA8bGk+PGEgaHJlZj0iL3BkcGxhbi90b3BpY3MvamFja3NvbnRldG9uLWNvdW50eS1jb21wcmVoZW5zaXZlLXBsYW4tbGFuZC1kZXZlbG9wbWVudC1yZWd1bGF0aW9ucy8yMDE5NzYvIiB0YXJnZXQ9ImJsYW5rIj5Db21wcmVoZW5zaXZlIFBsYW4gJmFtcDsgTERScywgSmFja3NvbiAvIFRldG9uIENvdW50eTwvYT4gPC9saT4NCiAgICAgICAgPGxpPjxhIGhyZWY9Ii9wZGJsZGcvdG9waWNzL2J1aWxkaW5nLWVsZWN0cmljYWwtYW5kLWZpcmUtY29kZS1hbWVuZG1lbnRzLWFuZC1yZXNvbHV0aW9ucy8yMDE5MzUvIiB0YXJnZXQ9ImJsYW5rIj5CdWlsZGluZywgRWxlY3RyaWNhbCAmYW1wOyBGaXJlIENvZGVzPC9hPiA8L2xpPg0KICAgICAgICA8bGk+PGEgaHJlZj0iL3BkY29kZS8iIHRhcmdldD0iYmxhbmsiPkNvZGUgRW5mb3JjZW1lbnQ8L2E+IDwvbGk+DQogICAgICAgIDxsaT48YSBocmVmPSIvcGRibGRnL3RvcGljcy9wbGFucy8yMDIxOTUvIiB0YXJnZXQ9ImJsYW5rIj5CdWlsZGluZyBQbGFuczwvYT4gPC9saT4NCiAgICAgICAgPGxpPjxhIGhyZWY9Ii9ob3VzZS8iIHRhcmdldD0iYmxhbmsiPkFmZm9yZGFibGUgJmFtcDsgQXR0YWluYWJsZSBIb21lczwvYT4gPC9saT4NCiAgICAgICAgPGxpPjxhIGhyZWY9Ii9lbmdpbnIvdG9waWNzL3RldG9uLWNvdW50eS1mbG9vZHBsYWluLW1hbmFnZW1lbnQvMjAyNTc1LyIgdGFyZ2V0PSJibGFuayI+Rmxvb2RwbGFpbiBNYW5hZ2VtZW50PC9hPiA8L2xpPg0KICAgICAgICA8bGk+PGEgaHJlZj0iaHR0cDovL3d3dy50Y3dlZWQub3JnLyIgdGFyZ2V0PSJibGFuayI+V2VlZCAmYW1wOyBQZXN0PC9hPiA8L2xpPg0KICAgIDwvdWw+DQogICAgPC9saT4NCjwvdWw+DQo8L2Rpdj4NCjwvZGl2Pg0KPC9saT4NCjxsaSBjbGFzcz0iZmlyc3Rfcm93Ij48YSBuYW1lPSJNYXBzIiBjbGFzcz0iZHJvcCIgdGFyZ2V0PSJibGFuayIgb25jbGljaz0icmV0dXJuIGZhbHNlOyI+TUFQUzwvYT4NCjxkaXYgY2xhc3M9ImRyb3Bkb3duXzFjb2x1bW4iPg0KPGRpdiBjbGFzcz0iY29sXzEiPg0KPHVsIGNsYXNzPSJsZXZlbHMiPg0KICAgIDxsaT48YSBocmVmPSJodHRwOi8vbWFwcy5ncmVlbndvb2RtYXAuY29tL3RldG9ud3kvbWFwc2VydmVyLyIgdGFyZ2V0PSJibGFuayI+R0lTIE1hcCBTZXJ2ZXI8L2E+IDwvbGk+DQogICAgPGxpPjxhIGhyZWY9Ii9wYXRod2F5cy9kb2NzL01hcHMvV2ludGVyX0dyb29taW5nX01hcF8yMDEzLTE0X2Zyb250LnBkZiIgdGFyZ2V0PSJibGFuayI+V2ludGVyIEdyb29tZWQgVHJhaWxzICgxLjYgbWcpPC9hPiA8L2xpPg0KICAgIDxsaT48YSBocmVmPSIvcGF0aHdheXMvZG9jcy9tYXBzL1BhdGh3YXlfQ291bnR5XzIwMTMucGRmIiB0YXJnZXQ9ImJsYW5rIj5Db3VudHkgUGF0aHdheXMgKDIgbWcpPC9hPiA8L2xpPg0KICAgIDxsaT48YSBocmVmPSIvcGF0aHdheXMvZG9jcy9tYXBzL1BhdGh3YXlfVG93bl8yMDEzLnBkZiIgdGFyZ2V0PSJibGFuayI+VG93biBQYXRod2F5cyAoMSBtZyk8L2E+IDwvbGk+DQogICAgPGxpPjxhIGhyZWY9Ii9lbS90b3BpY3Mvd2VhdGhlci1ub2FhLXJhZGlvLzIwMjAzMi8iIHRhcmdldD0iYmxhbmsiPldlYXRoZXIgU3RhdGlvbnMgTWFwIHdpdGggQ3VycmVudCBDb25kaXRpb25zPC9hPiA8L2xpPg0KICAgIDxsaT48YSBocmVmPSIvaGlzdHByZXMvaW1hZ2VzLzIwMDhUb3duSGlzdG9yaWNhbE1hcC5wZGYiIHRhcmdldD0iYmxhbmsiPkNvdW50eSBCdWlsZGluZ3Mgb2YgSGlzdG9yaWNhbCBTaWduaWZpY2FuY2U8L2E+IDwvbGk+DQo8L3VsPg0KPC9kaXY+DQo8L2Rpdj4NCjwvbGk+DQo8bGkgY2xhc3M9ImZpcnN0X3JvdyI+PGEgaHJlZj0iL2NhbGVuZGFyIiBjbGFzcz0iZHJvcCIgdGFyZ2V0PSJfc2VsZiI+Q0FMRU5EQVI8L2E+DQo8L2xpPg0KPGxpIGNsYXNzPSJmaXJzdF9yb3ciPjxhIGhyZWY9Ii9uZXdzIiBjbGFzcz0iZHJvcCIgdGFyZ2V0PSJfc2VsZiI+TkVXUzwvYT4NCjwvbGk+DQo8bGkgY2xhc3M9ImZpcnN0X3JvdyI+PGEgaHJlZj0iL2Zvcm1zIiBjbGFzcz0iZHJvcCIgdGFyZ2V0PSJfc2VsZiI+Rk9STVM8L2E+PC9saT4NCjxsaSBjbGFzcz0iZmlyc3Rfcm93Ij48YSBocmVmPSIvU0VBUkNILkFTUFgiIGNsYXNzPSJkcm9wIiB0YXJnZXQ9Il9zZWxmIj5TRUFSQ0g8L2E+PC9saT5kAgQPDxYCHwBoZBYCAgEPZBYEAgEPZBYCAgEPFgIfAQUGaGVhZGVyZAIFD2QWAgIBD2QWAmYPFgIfAQUUPGRpdiBjbGFzcz0iIj48L2Rpdj5kZKni7iId62nGYjKkmDmBgbu7U5kc" />
-                        </div>
-
-                        <script type="text/javascript">
-//<![CDATA[
-var theForm = document.forms['form1'];
-if (!theForm) {
-    theForm = document.form1;
-}
-function __doPostBack(eventTarget, eventArgument) {
-    if (!theForm.onsubmit || (theForm.onsubmit() != false)) {
-        theForm.__EVENTTARGET.value = eventTarget;
-        theForm.__EVENTARGUMENT.value = eventArgument;
-        theForm.submit();
-    }
-}
-//]]>
-                        </script>
+               
 
 
-                        <script src="/WebResource.axd?d=ge1DU7U_DH1y9gBdy0ENpa0UYQP3eLHLy5HXv7VKj_xFl79DvQQgzs_xTIq1y1AQIYG9Rk-6pEJo1Onjo0Gms8I59KU1&amp;t=635586452020000000" type="text/javascript"></script>
 
 
-                        <script src="/Telerik.Web.UI.WebResource.axd?_TSM_HiddenField_=RadScriptManager1_TSM&amp;compress=1&amp;_TSM_CombinedScripts_=%3b%3bSystem.Web.Extensions%2c+Version%3d4.0.0.0%2c+Culture%3dneutral%2c+PublicKeyToken%3d31bf3856ad364e35%3aen-US%3a88fd0407-24cf-4abd-9df5-22f81b2bc835%3aea597d4b%3ab25378d2%3bTelerik.Web.UI%2c+Version%3d2013.3.1324.45%2c+Culture%3dneutral%2c+PublicKeyToken%3d121fae78165ba3d4%3aen-US%3a8eba4fba-1e52-483f-84fb-814e4efffde4%3a16e4e7cd%3aed16cbdc" type="text/javascript"></script>
-                        <script type="text/javascript">
-//<![CDATA[
-if (typeof(Sys) === 'undefined') throw new Error('ASP.NET Ajax client-side framework failed to load.');
-//]]>
-                        </script>
 
-                        <div class="aspNetHidden">
-
-                            <input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="BBBC20B8" />
-                        </div>
-                        <script type="text/javascript">
-//<![CDATA[
-Sys.WebForms.PageRequestManager._initialize('ctl00$ctl00$RadScriptManager1', 'form1', ['tctl00$ctl00$RadAjaxManager1SU','RadAjaxManager1SU'], [], [], 90, 'ctl00$ctl00');
-//]]>
-                        </script>
-
-                        <!-- 2013.3.1324.45 --><div id="RadAjaxManager1SU">
-                            <span id="ctl00_ctl00_RadAjaxManager1" style="display:none;"></span>
-                        </div>
 
 
                         <!-- 2ColLeft -->
@@ -434,14 +384,6 @@ Sys.WebForms.PageRequestManager._initialize('ctl00$ctl00$RadScriptManager1', 'fo
 
 
 
-                        <script type="text/javascript">
-//<![CDATA[
-Sys.Application.add_init(function() {
-    $create(Telerik.Web.UI.RadAjaxManager, {"_updatePanels":"","ajaxSettings":[],"clientEvents":{OnRequestStart:"",OnResponseEnd:""},"defaultLoadingPanelID":"","enableAJAX":true,"enableHistory":false,"links":[],"styles":[],"uniqueID":"ctl00$ctl00$RadAjaxManager1","updatePanelsRenderMode":0}, null, null, $get("ctl00_ctl00_RadAjaxManager1"));
-});
-//]]>
-                        </script>
-                    </form>
                 </div>
             </div>
             <div id="bodyFooter">
