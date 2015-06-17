@@ -34,11 +34,11 @@ function a_search(query){
     var queries = [{
         indexName: 'dev_tetonwyo',
         query: query,
-        params: {hitsPerPage: 3}
+        params: {hitsPerPage: 3, attributesToRetrieve: "Url,Description,SubTitle,Description,PublishDate,DepartmentName,Type"}
     }, {
         indexName: 'dev_tetonwyo_documents',
         query: query,
-        params: {hitsPerPage: 5, distinct: true}
+        params: {hitsPerPage: 5, distinct: true, attributesToRetrieve: "parentTitle,url,title,meetingTitle"}
     }];
 
     client.search(queries, searchMultiCallback);
