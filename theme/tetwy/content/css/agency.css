@@ -1,4 +1,7 @@
-﻿/************************************************************************
+﻿@import '../bootstrap_src/css/mixins';
+@import '../bootstrap_src/css/variables';
+@import 'variables';
+/************************************************************************
  * See the file ../bootstrap_src/css/variables.less for the variables
  * available to customize. Just put any customizations in here to
  * override the defaults, and add any custom variables.

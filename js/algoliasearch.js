@@ -6,61 +6,71 @@
  */
 
 
-
 var client = algoliasearch('P71J7RF23K', '20ceae787550b54ab727a6129342f4c1');
 
-//
-// Bind the searchBox search event to keyup.
-//
-jQuery("#searchInput").on('keyup', function(){
-    var queryString = jQuery("#searchInput").val();
+var initAndDisplayAlgoliaSearch = function ( targetElement ) {
 
-    if(queryString === ""){
-        jQuery("#searchResultsContainer").html("");
-    }
-    else{
-        a_search(queryString);
-    }
-});
+    var _target = $(targetElement)
+    // add all the DOM elements we need
+    _target.append('<div id="searchForm"><input id="searchInput" type="text" name="fname" placeholder="Enter Search Here"></div><div id="searchResultsContainer"></div>')
 
+    // get handlebar template and 'fill out'
+    $.get("/templates/algoliasearch_results.hbs", function ( source ) {
 
+        //
+        // Bind the searchBox search event to keyup.
+        //
+        jQuery("#searchInput").on('keyup', function(){
+            var queryString = jQuery("#searchInput").val();
 
-//
-// Function a_search
-// @query : string query for searching
-//
-function a_search(query){
+            if(queryString === ""){
+                jQuery("#searchResultsContainer").html("");
+            }
+            else{
+                a_search(queryString);
+            }
+        });
 
-    var queries = [{
-        indexName: 'dev_tetonwyo',
-        query: query,
-        params: {hitsPerPage: 3, attributesToRetrieve: "Url,Description,SubTitle,Description,PublishDate,DepartmentName,Type"}
-    }, {
-        indexName: 'dev_tetonwyo_documents',
-        query: query,
-        params: {hitsPerPage: 5, distinct: true, attributesToRetrieve: "parentTitle,url,title,meetingTitle"}
-    }];
+        //
+        // Function a_search
+        // @query : string query for searching
+        //
+        function a_search(query){
 
-    client.search(queries, searchMultiCallback);
+            var queries = [{
+                indexName: 'dev_tetonwyo',
+                query: query,
+                params: {hitsPerPage: 3, attributesToRetrieve: "Url,Description,SubTitle,Description,PublishDate,DepartmentName,Type"}
+            }, {
+                indexName: 'dev_tetonwyo_documents',
+                query: query,
+                params: {hitsPerPage: 5, distinct: true, attributesToRetrieve: "parentTitle,url,title,meetingTitle"}
+            }];
 
+            client.search(queries, searchMultiCallback);
+
+        }
+
+        function searchMultiCallback(err, content) {
+            if (err) {
+                console.error(err);
+                return;
+            }
+            var results = {};
+            results.web = content.results[0].hits;
+            results.docs = content.results[1].hits;
+
+            console.log(results);
+
+            var template = Handlebars.compile(source);
+
+            var context = results;
+            var html    = template(context);
+            jQuery("#searchResultsContainer").html(html);
+        }
+
+    })
 }
 
 
-function searchMultiCallback(err, content) {
-    if (err) {
-        console.error(err);
-        return;
-    }
-    var results = {};
-    results.web = content.results[0].hits;
-    results.docs = content.results[1].hits;
 
-    console.log(results);
-
-    var source   = $("#results-template").html();
-    var template = Handlebars.compile(source);
-
-    var context = results;
-    var html    = template(context);
-    jQuery("#searchResultsContainer").html(html);
-}
