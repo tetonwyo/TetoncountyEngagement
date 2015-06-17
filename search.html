@@ -185,30 +185,6 @@
         <!-- Sub Navigation -->
 
 
-        <script type="text/javascript">
-
-    function searchGo() {
-        var query = jQuery('#searchboxtext-main').val();
-        window.location = '/Search.aspx?searchText=' + query;
-    }
-
-	jQuery(document).ready(function(){
-		jQuery('#searchboxtext-main').bind('keypress', function(e) {
-			var code = (e.keyCode ? e.keyCode : e.which);
-			if(code == 13) { //Enter keycode
-				searchGo();
-			}
-		});
-		jQuery('#searchboxtext-main').focus(function(){
-            var query = jQuery('#searchboxtext-main').val();
-            if (query=='Site Search...') {
-                jQuery('#searchboxtext-main').val('');
-            }
-		});
-	});
-
-        </script>
-
 
         <!--nav...-->
         <div class="nav ">
@@ -308,17 +284,6 @@
         </div>
 
 
-
-        <!--  <div id='weatherPanel'>
-              <select id='weatherStations' onchange="GetCurrentWeather('weatherStations','weatherPanelData')" >
-                  <option value='none'>Loading...</option>
-              </select>
-              <div id='weatherPanelData'></div>
-              <div id='weatherPanelFooter'><a href='/AgencyTopic.asp?topicID=202032'>More weather...</a></div>
-          </div> -->
-
-
-
         <div id="body">
             <div id="bodyHeader">
             </div>
@@ -342,13 +307,7 @@
                                     <h1>Search</h1>
                                 </div>
                                 <div id="pageBody">
-                                    <div id="searchInstructions">
-                                        <p>
-                                            Type one or two words, then click the <em>Search</em> button. Refine the search by adding words, or a year, then click <em>Search</em> again.
-                                            Indicate a phrase with quotation marks. Clear the results by clicking the <em>X</em>.
-                                        </p>
-                                    </div>
-                                    <div id="searchControl" style="width: 100%;">Loading...</div>
+                             
                                 </div>
 
                                 <div style="clear:both"></div>
