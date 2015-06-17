@@ -351,41 +351,32 @@
     </div>
 
     <script src="//cdn.jsdelivr.net/algoliasearch/3/algoliasearch.min.js"></script>
-    <script src="/js/algoliasearch.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/3.0.3/handlebars.js"></script>
     <script id="results-template" type="text/x-handlebars-template">
       <div id="searchResults" class="">
-        {{#each hits}}
-        <div class="resultRow">
-            <h3>{{Title}}</h1>
-        </div>
+        {{#each web}}
+            <div class="resultRow">
+                <a href={{Url}}>
+                    <h2>{{Title}}</h2>
+                    <h2>{{SubTitle}}</h2>
+                    <h3>{{Description}}</h3>
+                    <h3>{{PublishDate}}</h3>
+                    <h3>{{Type}}</h3>
+                </a>
+            </div>
         {{/each}}
       </div>
     </script>
-    <script>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    <script id="docs-template" type="text/x-handlebars-template">
+      <div id="docsTemplate" class="">
+        {{#each web}}
+            <div class="resultRow">
+                <h3>{{Title}}</h3>
+            </div>
+        {{/each}}
+      </div>
     </script>
+    <script src="/js/algoliasearch.js"></script>
     <script type="text/javascript">
 $(document).ready(function() {
 	$('.agencylist').fancybox({
