@@ -32,7 +32,6 @@
     <link href="/css/tcBase.css" rel="stylesheet" type="text/css" />
     <link rel="Stylesheet" href="/css/style.css" type="text/css" media="all" />
     <script type="text/javascript" src="/js/hoverIntent.js"></script>
-
     <script type="text/javascript" src="/js/menu/js/megamenu.js"></script>
  
     <meta name="description" content=" home page" />
@@ -307,7 +306,7 @@
                                     <h1>Search</h1>
                                 </div>
                                 <div id="pageBody">
-                             
+                                    <div id="searchResultsContainer"></div>
                                 </div>
 
                                 <div style="clear:both"></div>
@@ -317,8 +316,6 @@
                                 <div style="clear:both"></div>
 
                             </div>
-
-
 
                         </div>
 
@@ -347,6 +344,16 @@
         </div>
     </div>
     <script src="//cdn.jsdelivr.net/algoliasearch/3/algoliasearch.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/3.0.3/handlebars.js"></script>
+    <script id="results-template" type="text/x-handlebars-template">
+      <div id="searchResults" class="">
+        {{#each hits}}
+        <div class="resultRow">
+            <h3>{{Title}}</h1>
+        </div>
+        {{/each}}
+      </div>
+    </script>
     <script>
 
 
@@ -382,13 +389,15 @@
             for (var i = 0; i < products.hits.length; ++i) {
                 console.log(products.hits[i]);
             }
+
+            var source   = $("#results-template").html();
+            var template = Handlebars.compile(source);
+
+            console.log(categories);
+            var context = categories;
+            var html    = template(context);
+            jQuery("#searchResultsContainer").html(html);
         }
-
-
-
-
-
-
 
 
 
