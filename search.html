@@ -12,7 +12,7 @@
         jQuery.noConflict();
     </script>
 
-    // STRIP MOOTOOLS
+    <!--STRIP MOOTOOLS-->
 
     <script type="text/javascript" src="/scripts/CCC.js"></script>
     <script type="text/javascript" src="/scripts/CCC.Misc.js"></script>
@@ -107,6 +107,9 @@
     <meta name="description" content="Teton County Wyoming site search" />
 
 
+
+    <!-- Bootstrap agency settings-->
+    <link href="/theme/tetwy/content/css/agency.css" rel=" stylesheet" type="text/css" />
     <link href="/css/tcSearch.css" rel="stylesheet" type="text/css" />
 
 
@@ -369,7 +372,7 @@
         }, {
             indexName: 'dev_tetonwyo_documents',
             query: 'Property Taxes',
-            params: {hitsPerPage: 5}
+            params: {hitsPerPage: 5, distinct: true}
         }];
 
         client.search(queries, searchMultiCallback);
