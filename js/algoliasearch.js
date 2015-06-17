@@ -51,21 +51,16 @@ function searchMultiCallback(err, content) {
         console.error(err);
         return;
     }
+    var results = {};
+    results.web = content.results[0].hits;
+    results.docs = content.results[1].hits;
 
-    var categories = content.results[0];
-    for (var i = 0; i < categories.hits.length; ++i) {
-        console.log(categories.hits[i]);
-    }
-
-    var products = content.results[1];
-    for (var i = 0; i < products.hits.length; ++i) {
-        console.log(products.hits[i]);
-    }
+    console.log(results);
 
     var source   = $("#results-template").html();
     var template = Handlebars.compile(source);
 
-    var context = categories;
+    var context = results;
     var html    = template(context);
     jQuery("#searchResultsContainer").html(html);
 }
