@@ -34,11 +34,11 @@ jQuery(document).ready(function(){
         var queries = [{
             indexName: 'dev_tetonwyo',
             query: query,
-            params: {hitsPerPage: 3}
+            params: {hitsPerPage: 3, attributesToRetrieve: "Url,Description,SubTitle,Description,PublishDate,DepartmentName,Type"}
         }, {
             indexName: 'dev_tetonwyo_documents',
             query: query,
-            params: {hitsPerPage: 5, distinct: true}
+            params: {hitsPerPage: 5, distinct: true, attributesToRetrieve: "parentTitle,url,title,meetingTitle"}
         }];
 
         client.search(queries, searchMultiCallback);
@@ -51,6 +51,7 @@ jQuery(document).ready(function(){
             console.error(err);
             return;
         }
+        
         var results = {};
         results.web = content.results[0].hits;
         results.docs = content.results[1].hits;
