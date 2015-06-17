@@ -14,8 +14,8 @@
 
     <!--STRIP MOOTOOLS-->
 
-    <script type="text/javascript" src="/scripts/CCC.js"></script>
-    <script type="text/javascript" src="/scripts/CCC.Misc.js"></script>
+    <!--<script type="text/javascript" src="/scripts/CCC.js"></script>-->
+    <!--<script type="text/javascript" src="/scripts/CCC.Misc.js"></script>-->
     <!--<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />-->
     
     <!-- <script type="text/javascript" src="//use.typekit.net/aue3tqj.js"></script>
@@ -38,9 +38,9 @@
     <meta name="keywords" content="jackson hole teton county wyoming alta wyoming moose kelly moran hoback junction wilson teton village wyoming county government citizen access government" />
     <meta name="copyright" content="Copyright, Teton County, Wyoming" />
     <link rel="stylesheet" href="/include/global950.css" type="text/css" />
-    <script type="text/javascript" src="/Scripts/AlertTicker.js"></script>
-    <script type="text/javascript" src="/Scripts/CCC.GoogleMaps.js"></script>
-    <script type="text/javascript" src="/Scripts/CCC.GoogleMaps.TC.js"></script>
+    <!--<script type="text/javascript" src="/Scripts/AlertTicker.js"></script>-->
+    <!--<script type="text/javascript" src="/Scripts/CCC.GoogleMaps.js"></script>-->
+    <!--<script type="text/javascript" src="/Scripts/CCC.GoogleMaps.TC.js"></script>-->
     <style type="text/css">
         @import "/include/AlertTicker.css";
     </style>
@@ -309,7 +309,7 @@
                                     <h1>Search</h1>
                                 </div>
                                 <div id="pageBody container">
-                                    <div id="searchForm">
+                                    <!-- <div id="searchForm">
                                         <input id="searchInput" type="text" name="fname" placeholder="Enter Search Here">
                                     </div>
                                     <div class="row">
@@ -320,7 +320,8 @@
                                     </div>
                                     <div class="row">
                                         <div id="moreResultsContainer"></div>
-                                    </div>
+                                    </div> -->
+
                                 </div>
 
                                 <div style="clear:both"></div>
@@ -353,71 +354,22 @@
             </div>
             <div id="footerCopyright">
                 Copyright &copy;
-                <script type="text/javascript">document.write(CCC.Misc.GetCurrentYear());</script> Teton County Wyoming. All rights reserved.
+                <!--<script type="text/javascript">document.write(CCC.Misc.GetCurrentYear());</script> Teton County Wyoming. All rights reserved.-->
             </div>
         </div>
     </div>
 
+    <!-- ALGOLIA INIT CODE ETC HERE -->
     <script src="//cdn.jsdelivr.net/algoliasearch/3/algoliasearch.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/3.0.3/handlebars.js"></script>
     <script src="/js/algoliasearch.js"></script>
-    <script id="webResultsTemplate" type="text/x-handlebars-template">
-      <div id="webResults" class="">
-        {{#each_upto web 0 3}}
-            <div class="web-result-row">
-                <a href={{Url}}>
-                    <h2>{{SubTitle}}</h2>
-                    <h3>{{PublishDate}}</h3>
-                    <h3>{{Type}}</h3>
-                    <p>{{Description}}</p>
-                </a>
-            </div>
-        {{/each_upto}}
-      </div>
-    </script>
-    <script id="docResultsTemplate" type="text/x-handlebars-template">
-      <div id="docResults" class="">
-        {{#each_upto docs 0 3}}
-            <div class="doc-result-row">
-                <a href={{url}}>
-                    <h2>{{title}}</h2>
-                    <h3>{{PublishDate}}</h3>
-                    <h3>{{meetingTitle}}</h3>
-                </a>
-            </div>
-        {{/each_upto}}
-      </div>
-    </script>
 
-    <!-- Definitely a more efficient way to do these more templates.. -->
+    <!-- this is a bit of a hack, but it works with the jumble of code we got going here...
+     It also sets us up for easily adding options to customize use in different places -->
+    <script>jQuery(document).ready(function(){initAndDisplayAlgoliaSearch("div#pageBody")});</script>
 
-    <script id="webResultsTemplateMore" type="text/x-handlebars-template">
-      <div id="moreResults" class="">
-        {{#each_upto web 4}}
-            <div class="web-result-row">
-                <a href={{Url}}>
-                    <h2>{{SubTitle}}</h2>
-                    <h3>{{PublishDate}}</h3>
-                    <h3>{{Type}}</h3>
-                    <p>{{Description}}</p>
-                </a>
-            </div>
-        {{/each_upto}}
-      </div>
-    </script>
-    <script id="docResultsTemplateMore" type="text/x-handlebars-template">
-      <div id="moreResults" class="">
-        {{#each_upto docs 4}}
-            <div class="doc-result-row">
-                <a href={{url}}>
-                    <h2>{{title}}</h2>
-                    <h3>{{PublishDate}}</h3>
-                    <h3>{{meetingTitle}}</h3>
-                </a>
-            </div>
-        {{/each_upto}}
-      </div>
-    </script>
+
+
     <script type="text/javascript">
 $(document).ready(function() {
 	$('.agencylist').fancybox({

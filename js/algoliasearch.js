@@ -20,7 +20,7 @@ Handlebars.registerHelper('each_upto', function(ary, start, max, options) {
 });
 
 
-jQuery(document).ready(function(){
+
     var moreResults = "web";
     var client = algoliasearch('P71J7RF23K', '20ceae787550b54ab727a6129342f4c1');
     var $templateContainers = jQuery("#docResultsContainer, #webResultsContainer");
@@ -40,29 +40,52 @@ jQuery(document).ready(function(){
     });
 
 
+var initAndDisplayAlgoliaSearch = function ( targetElement ) {
 
-    //
-    // Function a_search
-    // @query : string query for searching
-    //
-    function a_search(query){
+    var _target = $(targetElement)
+    // add all the DOM elements we need
+    _target.append('<div id="searchForm"><input id="searchInput" type="text" name="fname" placeholder="Enter Search Here"></div><div class="row">'+
+                +'<div id="webResultsContainer"></div></div><div class="row"><div id="docResultsContainer"></div></div><div class="row"><div id="moreResultsContainer"></div>'+
+                                +'</div></div>')
 
-        var queries = [{
-            indexName: 'dev_tetonwyo',
-            query: query,
-            params: {hitsPerPage: 10, attributesToRetrieve: "Url,Description,SubTitle,Description,PublishDate,DepartmentName,Type"}
-        }, {
-            indexName: 'dev_tetonwyo_documents',
-            query: query,
-            params: {hitsPerPage: 10, distinct: true, attributesToRetrieve: "parentTitle,url,title,meetingTitle"}
-        }];
+    // get handlebar template and 'fill out'
+    $.get("/templates/algoliasearch_results.hbs", function ( source ) {
 
-        client.search(queries, searchMultiCallback);
+        //
+        // Bind the searchBox search event to keyup.
+        //
+        jQuery("#searchInput").on('keyup', function(){
+            var queryString = jQuery("#searchInput").val();
 
-    }
+            if(queryString === ""){
+                jQuery("#searchResultsContainer").html("");
+            }
+            else{
+                a_search(queryString);
+            }
+        });
 
+        //
+        // Function a_search
+        // @query : string query for searching
+        //
+        function a_search(query){
 
-    function searchMultiCallback(err, content) {
+            var queries = [{
+                indexName: 'dev_tetonwyo',
+                query: query,
+                params: {hitsPerPage: 3, attributesToRetrieve: "Url,Description,SubTitle,Description,PublishDate,DepartmentName,Type"}
+            }, {
+                indexName: 'dev_tetonwyo_documents',
+                query: query,
+                params: {hitsPerPage: 5, distinct: true, attributesToRetrieve: "parentTitle,url,title,meetingTitle"}
+            }];
+
+            client.search(queries, searchMultiCallback);
+
+        }
+
+        function searchMultiCallback(err, content) {
         if (err) {
             console.error(err);
             return;
@@ -108,4 +131,9 @@ jQuery(document).ready(function(){
         }
 
     }
-});
+
+    });
+}
+
+
+
