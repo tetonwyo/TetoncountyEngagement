@@ -310,9 +310,8 @@
                                 </div>
                                 <div id="pageBody">
                                     <div id="searchForm">
-                                            <input id="searchInput" type="text" name="fname" placeholder="Enter Search Here">
+                                        <input class="typeahead" type="text" placeholder="Start typing" id="typeahead-algolia-template"  spellcheck="false"/>
                                     </div>
-                                    <div id="searchResultsContainer"></div>
                                 </div>
 
                                 <div style="clear:both"></div>
@@ -351,6 +350,7 @@
     </div>
     <script src="//cdn.jsdelivr.net/algoliasearch/3/algoliasearch.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/3.0.3/handlebars.js"></script>
+    <script src="//cdn.jsdelivr.net/typeahead.js/0.11.1/typeahead.bundle.min.js"></script>
     <script id="results-template" type="text/x-handlebars-template">
       <div id="searchResults" class="">
         {{#each hits}}
@@ -362,70 +362,80 @@
     </script>
     <script>
 
+        $(document).ready(function() {
+
+            var client = algoliasearch('P71J7RF23K', '20ceae787550b54ab727a6129342f4c1');
+
+            // Replace the following value by the name of the index you want to query.
+            var index = client.initIndex('dev_tetonwyo');
+
+
+            //
+            // Setup twitter typeahead
+            //
+            $('#typeahead-algolia').typeahead(null, {
+                name: 'searchInput',
+                source: algoliaSearch(),
+            });
+
+            $('#typeahead-algolia-template').typeahead(null, {
+              source: index.ttAdapter({ hitsPerPage: 10 }),
+              displayKey: 'email',
+              templates: {
+                suggestion: function(hit) {
+                    var source   = $("#results-template").html();
+                    var template = Handlebars.compile(source);
+
+                    var context = hit;
+                    var html    = template(context);
+                    jQuery("#searchResultsContainer").html(html);
+                }
+              }
+            });
 
 
 
-        var client = algoliasearch('P71J7RF23K', '20ceae787550b54ab727a6129342f4c1');
+            //
+            // Function a_search
+            // @query : string query for searching
+            //
+            function algoliaSearch(query){
 
-        jQuery("#searchInput").on('keyup', function(){
-            var queryString = jQuery("#searchInput").val();
+                var queries = [{
+                    indexName: 'dev_tetonwyo',
+                    query: query,
+                    params: {hitsPerPage: 3}
+                }, {
+                    indexName: 'dev_tetonwyo_documents',
+                    query: query,
+                    params: {hitsPerPage: 5, distinct: true}
+                }];
 
-            if(queryString === ""){
-                jQuery("#searchResultsContainer").html("");
+                client.search(queries, searchMultiCallback);
+
             }
-            else{
-                a_search(queryString);
-            }
-        });
 
-
-        function a_search(query){
-
-            var queries = [{
-                indexName: 'dev_tetonwyo',
-                query: query,
-                params: {hitsPerPage: 3}
-            }, {
-                indexName: 'dev_tetonwyo_documents',
-                query: query,
-                params: {hitsPerPage: 5, distinct: true}
-            }];
-
-            client.search(queries, searchMultiCallback);
 
             function searchMultiCallback(err, content) {
-                if (err) {
-                    console.error(err);
-                    return;
+                    if (err) {
+                        console.error(err);
+                        return;
+                    }
+
+                    var dev_tetonwyo = content.results[0];
+                    for (var i = 0; i < categories.hits.length; ++i) {
+                        console.log(categories.hits[i]);
+                    }
+
+                    var dev_tetonwyo_documents = content.results[1];
+                    for (var i = 0; i < products.hits.length; ++i) {
+                        console.log(products.hits[i]);
+                    }
+
+                    return { "dev_tetonwyo": dev_tetonwyo, "dev_tetonwyo_documents": dev_tetonwyo_documents }
                 }
 
-                var categories = content.results[0];
-                for (var i = 0; i < categories.hits.length; ++i) {
-                    console.log(categories.hits[i]);
-                }
-
-                var products = content.results[1];
-                for (var i = 0; i < products.hits.length; ++i) {
-                    console.log(products.hits[i]);
-                }
-
-                var source   = $("#results-template").html();
-                var template = Handlebars.compile(source);
-
-                console.log(categories);
-                console.log(products);
-                var context = categories;
-                var html    = template(context);
-                jQuery("#searchResultsContainer").html(html);
-            }
-        }
-
-
-
-
-
-
-
+        });
 
 
 
