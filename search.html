@@ -355,8 +355,13 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/3.0.3/handlebars.js"></script>
     <script src="/js/algoliasearch.js"></script>
     <!-- this is a bit of a hack, but it works with the jumble of code we got going here...
-     It also sets us up for easily adding options to customize use in different places -->
-    <script>initAndDisplayAlgoliaSearch("div#pageBody")</script>
+     It also sets us up for easily adding options to customize use in different places
+     (f.ex. specifying a different template !)  -->
+    <script>
+        $(document).ready(function() {
+            initAndDisplayAlgoliaSearch("div#pageBody", "");
+        })
+    </script>
 
 
     <script type="text/javascript">
