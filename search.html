@@ -11,11 +11,12 @@
     <script type="text/javascript">
         jQuery.noConflict();
     </script>
-    <script type="text/javascript" src="/scripts/mootools-1.2.1-core.js"></script>
-    <script type="text/javascript" src="/scripts/mootools-1.2-more-TC.js"></script>
+
+    // STRIP MOOTOOLS
+
     <script type="text/javascript" src="/scripts/CCC.js"></script>
     <script type="text/javascript" src="/scripts/CCC.Misc.js"></script>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <!--<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />-->
     
     <!-- <script type="text/javascript" src="//use.typekit.net/aue3tqj.js"></script>
     <script type="text/javascript">try{Typekit.load();}catch(e){}</script> 
@@ -100,9 +101,8 @@
             float: right;
         }
     </style>
-    <script type="text/javascript" src="/Scripts/AlertTicker.js"></script>
-    <script type="text/javascript" src="/Scripts/CCC.GoogleMaps.js"></script>
-    <script type="text/javascript" src="/Scripts/CCC.GoogleMaps.TC.js"></script>
+    <!--<script type="text/javascript" src="/Scripts/AlertTicker.js"></script>-->
+
 
     <meta name="keywords" content="teton county wyoming online government" />
     <meta name="description" content="Teton County Wyoming site search" />
@@ -349,6 +349,70 @@
             </div>
         </div>
     </div>
+    <script src="//cdn.jsdelivr.net/algoliasearch/3/algoliasearch.min.js"></script>
+    <script>
+
+
+
+
+        var client = algoliasearch('P71J7RF23K', '20ceae787550b54ab727a6129342f4c1');
+
+//        var query = 'Property Taxes ';
+        var queries = [{
+            indexName: 'dev_tetonwyo',
+            query: 'Property Taxes',
+            params: {hitsPerPage: 3}
+        }, {
+            indexName: 'dev_tetonwyo_documents',
+            query: 'Property Taxes',
+            params: {hitsPerPage: 5}
+        }];
+
+        client.search(queries, searchMultiCallback);
+
+        function searchMultiCallback(err, content) {
+            if (err) {
+                console.error(err);
+                return;
+            }
+
+            var categories = content.results[0];
+            for (var i = 0; i < categories.hits.length; ++i) {
+                console.log(categories.hits[i]);
+            }
+
+            var products = content.results[1];
+            for (var i = 0; i < products.hits.length; ++i) {
+                console.log(products.hits[i]);
+            }
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </script>
     <script type="text/javascript">
 $(document).ready(function() {
 	$('.agencylist').fancybox({
