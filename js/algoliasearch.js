@@ -44,8 +44,8 @@ var initAndDisplayAlgoliaSearch = function ( targetElement ) {
 
     var _target = $(targetElement)
     // add all the DOM elements we need
-    _target.append('<div id="searchForm"><input id="searchInput" type="text" name="fname" placeholder="Enter Search Here"></div><div class="row">'+
-                +'<div id="webResultsContainer"></div></div><div class="row"><div id="docResultsContainer"></div></div><div class="row"><div id="moreResultsContainer"></div>'+
+    _target.append('<div id="searchForm"><input id="searchInput" type="text" name="fname" placeholder="Enter Search Here"></div><div class="row">'
+                +'<div id="webResultsContainer"></div></div><div class="row"><div id="docResultsContainer"></div></div><div class="row"><div id="moreResultsContainer"></div>'
                                 +'</div></div>')
 
     // get handlebar template and 'fill out'
@@ -112,10 +112,10 @@ var initAndDisplayAlgoliaSearch = function ( targetElement ) {
         // Apply our doc results template
         jQuery("#docResultsContainer").html(docResultsHtml);
 
-        // Apply the rest of either docs or web based on variable.
+        // TODO: Apply the rest of either docs or web based on variable.
         if(moreResults == "docs")
         {
-            console.log("test");
+            console.log("doc");
             var docResultsMore = $("#docResultsTemplateMore").html();
             var docResultsTemplateMore = Handlebars.compile(docResultsMore);
             var docResultsMoreHtml    = docResultsTemplateMore(results);
@@ -123,7 +123,7 @@ var initAndDisplayAlgoliaSearch = function ( targetElement ) {
         }
         else if(moreResults == "web")
         {
-            console.log("test");
+            console.log("web");
             var webResultsMore = $("#webResultsTemplateMore").html();
             var webResultsTemplateMore = Handlebars.compile(webResultsMore);
             var webResultsMoreHtml    = webResultsTemplateMore(results);
