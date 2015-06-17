@@ -44,16 +44,16 @@ var initAndDisplayAlgoliaSearch = function ( targetElement ) {
 
     var _target = $(targetElement)
     // add all the DOM elements we need
+    // this is where the sorting button should be added
     _target.append('<div id="searchForm"><input id="searchInput" type="text" name="fname" placeholder="Enter Search Here"></div><div class="row">'
                 +'<div id="webResultsContainer"></div></div><div class="row"><div id="docResultsContainer"></div></div><div class="row"><div id="moreResultsContainer"></div>'
-                                +'</div></div>')
+                                +'</div></div>');
+
 
     // get handlebar template and 'fill out'
     $.get("/templates/algoliasearch_results.hbs", function ( source ) {
 
-        //
         // Bind the searchBox search event to keyup.
-        //
         jQuery("#searchInput").on('keyup', function(){
             var queryString = jQuery("#searchInput").val();
 
@@ -65,11 +65,31 @@ var initAndDisplayAlgoliaSearch = function ( targetElement ) {
             }
         });
 
+        // Pseudo code for binding a sirt function to a sort button
+        jQuery("#mySortingButton").on('click', function() {
+
+            var _this = $(this),
+                _indexAddon = _this.attr("data-addon");
+
+            var queryString = jQuery("#searchInput").val();
+            if(queryString === ""){
+                jQuery("#searchResultsContainer").html("");
+            }
+            else{
+                a_search(queryString, _indexAddon);
+            }
+        });
+
         //
         // Function a_search
         // @query : string query for searching
         //
-        function a_search(query){
+        function a_search(query, indexAddon){
+
+            // TODO: add indexAddon here
+            if ( indexAddon ) {
+                // create string for indexName attributes below
+            }
 
             var queries = [{
                 indexName: 'dev_tetonwyo',

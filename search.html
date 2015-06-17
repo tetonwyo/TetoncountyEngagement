@@ -366,7 +366,7 @@
 
     <!-- this is a bit of a hack, but it works with the jumble of code we got going here...
      It also sets us up for easily adding options to customize use in different places -->
-    <script>jQuery(document).ready(function(){initAndDisplayAlgoliaSearch("div#pageBody")});</script>
+    <script>jQuery(document).ready(function(){initAndDisplayAlgoliaSearch("div#pageBody", "")});</script>
     <script id="webResultsTemplate" type="text/x-handlebars-template">
       <div id="webResults" class="">
         {{#each_upto web 0 3}}
@@ -424,7 +424,6 @@
         {{/each_upto}}
       </div>
     </script>
-
 
 
     <script type="text/javascript">
