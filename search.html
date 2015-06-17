@@ -11,9 +11,12 @@
     <script type="text/javascript">
         jQuery.noConflict();
     </script>
+
+    // STRIP MOOTOOLS
+
     <script type="text/javascript" src="/scripts/CCC.js"></script>
     <script type="text/javascript" src="/scripts/CCC.Misc.js"></script>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <!--<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />-->
     
     <!-- <script type="text/javascript" src="//use.typekit.net/aue3tqj.js"></script>
     <script type="text/javascript">try{Typekit.load();}catch(e){}</script> 
@@ -98,32 +101,13 @@
             float: right;
         }
     </style>
-    <script type="text/javascript" src="/Scripts/AlertTicker.js"></script>
-    <script type="text/javascript" src="/Scripts/CCC.GoogleMaps.js"></script>
-    <script type="text/javascript" src="/Scripts/CCC.GoogleMaps.TC.js"></script>
+    <!--<script type="text/javascript" src="/Scripts/AlertTicker.js"></script>-->
+
 
     <meta name="keywords" content="teton county wyoming online government" />
     <meta name="description" content="Teton County Wyoming site search" />
 
 
-
-    <script src="http://www.google.com/jsapi" type="text/javascript"></script>
-    <script type="text/javascript">
-        google.load('search', '1', {language : 'en'});
-        google.setOnLoadCallback(function()
-        {
-            var customSearchControl = new google.search.CustomSearchControl('007590366890233832447:2w9urw0vgwm');
-            customSearchControl.setResultSetSize(google.search.Search.FILTERED_CSE_RESULTSET);
-
-	    customSearchControl.draw('searchControl');
-            var searchString = CCC.Misc.GetQueryString('searchText');
-            if (searchString != '') customSearchControl.execute(searchString);
-
-        }, true);
-    </script>
-
-    <!-- These links must be positioned after the Google search script or they will not override styles properly -->
-    <link href="http://www.google.com/cse/style/look/default.css" rel="stylesheet" type="text/css" />
     <link href="/css/tcSearch.css" rel="stylesheet" type="text/css" />
 
 
@@ -200,30 +184,6 @@
 
         <!-- Sub Navigation -->
 
-
-        <script type="text/javascript">
-
-    function searchGo() {
-        var query = jQuery('#searchboxtext-main').val();
-        window.location = '/Search.aspx?searchText=' + query;
-    }
-
-	jQuery(document).ready(function(){
-		jQuery('#searchboxtext-main').bind('keypress', function(e) {
-			var code = (e.keyCode ? e.keyCode : e.which);
-			if(code == 13) { //Enter keycode
-				searchGo();
-			}
-		});
-		jQuery('#searchboxtext-main').focus(function(){
-            var query = jQuery('#searchboxtext-main').val();
-            if (query=='Site Search...') {
-                jQuery('#searchboxtext-main').val('');
-            }
-		});
-	});
-
-        </script>
 
 
         <!--nav...-->
@@ -324,17 +284,6 @@
         </div>
 
 
-
-        <!--  <div id='weatherPanel'>
-              <select id='weatherStations' onchange="GetCurrentWeather('weatherStations','weatherPanelData')" >
-                  <option value='none'>Loading...</option>
-              </select>
-              <div id='weatherPanelData'></div>
-              <div id='weatherPanelFooter'><a href='/AgencyTopic.asp?topicID=202032'>More weather...</a></div>
-          </div> -->
-
-
-
         <div id="body">
             <div id="bodyHeader">
             </div>
@@ -358,13 +307,7 @@
                                     <h1>Search</h1>
                                 </div>
                                 <div id="pageBody">
-                                    <div id="searchInstructions">
-                                        <p>
-                                            Type one or two words, then click the <em>Search</em> button. Refine the search by adding words, or a year, then click <em>Search</em> again.
-                                            Indicate a phrase with quotation marks. Clear the results by clicking the <em>X</em>.
-                                        </p>
-                                    </div>
-                                    <div id="searchControl" style="width: 100%;">Loading...</div>
+                             
                                 </div>
 
                                 <div style="clear:both"></div>
@@ -403,6 +346,70 @@
             </div>
         </div>
     </div>
+    <script src="//cdn.jsdelivr.net/algoliasearch/3/algoliasearch.min.js"></script>
+    <script>
+
+
+
+
+        var client = algoliasearch('P71J7RF23K', '20ceae787550b54ab727a6129342f4c1');
+
+//        var query = 'Property Taxes ';
+        var queries = [{
+            indexName: 'dev_tetonwyo',
+            query: 'Property Taxes',
+            params: {hitsPerPage: 3}
+        }, {
+            indexName: 'dev_tetonwyo_documents',
+            query: 'Property Taxes',
+            params: {hitsPerPage: 5}
+        }];
+
+        client.search(queries, searchMultiCallback);
+
+        function searchMultiCallback(err, content) {
+            if (err) {
+                console.error(err);
+                return;
+            }
+
+            var categories = content.results[0];
+            for (var i = 0; i < categories.hits.length; ++i) {
+                console.log(categories.hits[i]);
+            }
+
+            var products = content.results[1];
+            for (var i = 0; i < products.hits.length; ++i) {
+                console.log(products.hits[i]);
+            }
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </script>
     <script type="text/javascript">
 $(document).ready(function() {
 	$('.agencylist').fancybox({
