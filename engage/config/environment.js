@@ -4,7 +4,7 @@ module.exports = function(environment) {
   var ENV = {
     modulePrefix: 'engage',
     environment: environment,
-    baseURL: '/',
+    baseURL: '/path22',
     locationType: 'auto',
     EmberENV: {
       FEATURES: {
