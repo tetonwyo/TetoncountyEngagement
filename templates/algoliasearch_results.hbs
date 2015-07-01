@@ -1,5 +1,6 @@
  <script id="webResultsTemplate" type="text/x-handlebars-template">
       <div id="webResults" class="">
+        <h2>Web Results</h2>
         {{#each_upto web 0 3}}
             <div class="web-result-row">
                 <a href={{Url}}>
@@ -14,6 +15,7 @@
     </script>
     <script id="docResultsTemplate" type="text/x-handlebars-template">
       <div id="docResults" class="">
+        <h2>Doc Results</h2>
         {{#each_upto docs 0 3}}
             <div class="doc-result-row">
                 <a href={{url}}>
@@ -29,8 +31,9 @@
     <!-- Definitely a more efficient way to do these more templates.. -->
 
     <script id="webResultsTemplateMore" type="text/x-handlebars-template">
-      <div id="webMoreResults" class="">
-        {{#each_upto web 4}}
+      <div id="webMoreResults" class="results web">
+        <h2>More Web Results</h2>
+        {{#each_upto web 4 100}}
             <div class="web-result-row">
                 <a href={{Url}}>
                     <h2>{{SubTitle}}</h2>
@@ -43,8 +46,9 @@
       </div>
     </script>
     <script id="docResultsTemplateMore" type="text/x-handlebars-template">
-      <div id="docMoreResults" class="">
-        {{#each_upto docs 4}}
+      <div id="docMoreResults" class="results doc">
+        <h2>More Doc Results</h2>
+        {{#each_upto docs 4 100}}
             <div class="doc-result-row">
                 <a href={{url}}>
                     <h2>{{title}}</h2>
