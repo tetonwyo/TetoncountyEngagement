@@ -21,96 +21,38 @@ Handlebars.registerHelper('each_upto', function(ary, start, max, options) {
 
 
 
-    var moreResults = "web";
-    var client = algoliasearch('P71J7RF23K', '20ceae787550b54ab727a6129342f4c1');
-    var $templateContainers = jQuery("#docResultsContainer, #webResultsContainer");
-
-    //
-    // Bind the searchBox search event to keyup.
-    //
-    jQuery("#searchInput").on('keyup', function(){
-        var queryString = jQuery("#searchInput").val();
-
-        if(queryString === ""){
-            $templateContainers.html("");
-        }
-        else{
-            a_search(queryString);
-        }
-    });
+var moreResults = "web";
+var client = algoliasearch('P71J7RF23K', '20ceae787550b54ab727a6129342f4c1');
+var $templateContainers = jQuery("#docResultsContainer, #webResultsContainer");
 
 
-var initAndDisplayAlgoliaSearch = function ( targetElement ) {
+//
+// Function a_search
+// @query : string query for searching
+//
+function a_search(query, indexAddon){
+    if ( !indexAddon ) indexAddon = "";
+    var queries = [{
+        indexName: 'dev_tetonwyo' + indexAddon,
+        query: query,
+        params: {hitsPerPage: 3, attributesToRetrieve: "Url,Description,SubTitle,Description,PublishDate,DepartmentName,Type"}
+    }, {
+        indexName: 'dev_tetonwyo_documents',
+        query: query,
+        params: {hitsPerPage: 5, distinct: true, attributesToRetrieve: "parentTitle,url,title,meetingTitle"}
+    }];
 
-    var _target = $(targetElement)
-    // add all the DOM elements we need
-    // this is where the sorting button should be added
-    _target.append('<div id="searchForm"><input id="searchInput" type="text" name="fname" placeholder="Enter Search Here"></div><div class="row">'
-                +'<div id="webResultsContainer"></div></div><div class="row"><div id="docResultsContainer"></div></div><div class="row"><div id="moreResultsContainer"></div>'
-                                +'</div></div>');
+    client.search(queries, searchMultiCallback);
 
+}
 
-    // get handlebar template and 'fill out'
-    $.get("/templates/algoliasearch_results.hbs", function ( source ) {
+function searchMultiCallback(err, content) {
+    if (err) {
+        console.error(err);
+        //return;
+    }
 
-        // Bind the searchBox search event to keyup.
-        jQuery("#searchInput").on('keyup', function(){
-            var queryString = jQuery("#searchInput").val();
-
-            if(queryString === ""){
-                jQuery("#searchResultsContainer").html("");
-            }
-            else{
-                a_search(queryString);
-            }
-        });
-
-        // Pseudo code for binding a sirt function to a sort button
-        jQuery("#mySortingButton").on('click', function() {
-
-            var _this = $(this),
-                _indexAddon = _this.attr("data-addon");
-
-            var queryString = jQuery("#searchInput").val();
-            if(queryString === ""){
-                jQuery("#searchResultsContainer").html("");
-            }
-            else{
-                a_search(queryString, _indexAddon);
-            }
-        });
-
-        //
-        // Function a_search
-        // @query : string query for searching
-        //
-        function a_search(query, indexAddon){
-
-            // TODO: add indexAddon here
-            if ( indexAddon ) {
-                // create string for indexName attributes below
-            }
-
-            var queries = [{
-                indexName: 'dev_tetonwyo',
-                query: query,
-                params: {hitsPerPage: 3, attributesToRetrieve: "Url,Description,SubTitle,Description,PublishDate,DepartmentName,Type"}
-            }, {
-                indexName: 'dev_tetonwyo_documents',
-                query: query,
-                params: {hitsPerPage: 5, distinct: true, attributesToRetrieve: "parentTitle,url,title,meetingTitle"}
-            }];
-
-            client.search(queries, searchMultiCallback);
-
-        }
-
-        function searchMultiCallback(err, content) {
-        if (err) {
-            console.error(err);
-            return;
-        }
-
+    if ( content && content.results ) {
         var results = {};
         results.web = content.results[0].hits;
         results.docs = content.results[1].hits;
@@ -125,7 +67,7 @@ var initAndDisplayAlgoliaSearch = function ( targetElement ) {
 
         var webResultsHtml    = webResultsTemplate(results);
         var docResultsHtml    = docResultsTemplate(results);
-        
+
         // Apply our web results template
         jQuery("#webResultsContainer").html(webResultsHtml);
 
@@ -149,8 +91,67 @@ var initAndDisplayAlgoliaSearch = function ( targetElement ) {
             var webResultsMoreHtml    = webResultsTemplateMore(results);
             jQuery("#moreResultsContainer").html(webResultsMoreHtml);
         }
-
     }
+
+}
+
+
+var initAndDisplayAlgoliaSearch = function ( targetElement ) {
+
+    var _target = $(targetElement)
+    // add all the DOM elements we need
+    // this is where the sorting button should be added
+    _target.append('<div id="searchForm"><input id="searchInput" type="text" name="fname" placeholder="Enter Search Here"></div><div class="row">'
+                +'<div id="webResultsContainer"></div></div><div class="row"><div id="docResultsContainer"></div></div><div class="row"><div id="moreResultsContainer"></div>'
+                                +'</div></div>');
+
+
+    // get handlebar template and 'fill out'
+    $.get("/templates/algoliasearch_results.hbs", function ( source ) {
+        $("body").append(source);
+
+        // Bind the searchBox search event to keyup.
+        jQuery("#searchInput").on('keyup', function(){
+            var queryString = jQuery("#searchInput").val();
+
+            if(queryString === ""){
+                jQuery("#searchResultsContainer").html("");
+            }
+            else{
+                a_search(queryString);
+            }
+        });
+
+        // Pseudo code for binding a sort function to a sort button
+        jQuery("button.sort").on('click', function() {
+            // if no search query present, just return
+            if ( $("#searchInput").val() === "" ) return
+
+            var _this = $(this),
+                _indexAddon = _this.attr("data-addon");
+
+            var queryString = jQuery("#searchInput").val();
+            if(queryString === ""){
+                jQuery("#searchResultsContainer").html("");
+            }
+            else{
+                a_search(queryString, _indexAddon);
+            }
+        });
+
+        //
+        // Bind the searchBox search event to keyup.
+        //
+        jQuery("#searchInput").on('keyup', function(){
+            var queryString = jQuery("#searchInput").val();
+
+            if(queryString === ""){
+                $templateContainers.html("");
+            }
+            else{
+                a_search(queryString);
+            }
+        });
 
     });
 }
