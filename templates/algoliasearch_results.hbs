@@ -1,7 +1,49 @@
-<div id="searchResults" class="">
-    {{#each web}}
-        <div class="resultRow">
-            <h3>{{SubTitle}}</h1>
-        </div>
-    {{/each}}
+<div id="webResults" class="">
+	{{#each_upto web 0 3}}
+	    <div class="web-result-row">
+	        <a href={{Url}}>
+	            <h2>{{SubTitle}}</h2>
+	            <h3>{{PublishDate}}</h3>
+	            <h3>{{Type}}</h3>
+	            <p>{{Description}}</p>
+	        </a>
+	    </div>
+	{{/each_upto}}
+</div>
+
+<div id="docResults" class="">
+	{{#each_upto docs 0 3}}
+	    <div class="doc-result-row">
+	        <a href={{url}}>
+	            <h2>{{title}}</h2>
+	            <h3>{{PublishDate}}</h3>
+	            <h3>{{meetingTitle}}</h3>
+	        </a>
+	    </div>
+	{{/each_upto}}
+</div>
+
+<div id="moreResults" class="">
+	{{#each_upto web 4}}
+	    <div class="web-result-row">
+	        <a href={{Url}}>
+	            <h2>{{SubTitle}}</h2>
+	            <h3>{{PublishDate}}</h3>
+	            <h3>{{Type}}</h3>
+	            <p>{{Description}}</p>
+	        </a>
+	    </div>
+	{{/each_upto}}
+</div>
+
+<div id="moreResults" class="">
+	{{#each_upto docs 4}}
+		<div class="doc-result-row">
+		    <a href={{url}}>
+		        <h2>{{title}}</h2>
+		        <h3>{{PublishDate}}</h3>
+		        <h3>{{meetingTitle}}</h3>
+		    </a>
+		</div>
+	{{/each_upto}}
 </div>

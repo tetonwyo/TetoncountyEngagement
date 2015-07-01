@@ -308,11 +308,20 @@
                                 <div id="pageHeader">
                                     <h1>Search</h1>
                                 </div>
-                                <div id="pageBody">
-                                    <!--<div id="searchForm">-->
-                                            <!--<input id="searchInput" type="text" name="fname" placeholder="Enter Search Here">-->
-                                    <!--</div>-->
-                                    <!--<div id="searchResultsContainer"></div>-->
+                                <div id="pageBody" class="container">
+                                    <!-- <div id="searchForm">
+                                        <input id="searchInput" type="text" name="fname" placeholder="Enter Search Here">
+                                    </div>
+                                    <div class="row">
+                                        <div id="webResultsContainer"></div>
+                                    </div>
+                                    <div class="row">
+                                        <div id="docResultsContainer"></div>
+                                    </div>
+                                    <div class="row">
+                                        <div id="moreResultsContainer"></div>
+                                    </div> -->
+
                                 </div>
 
                                 <div style="clear:both"></div>
@@ -354,13 +363,66 @@
     <script src="//cdn.jsdelivr.net/algoliasearch/3/algoliasearch.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/3.0.3/handlebars.js"></script>
     <script src="/js/algoliasearch.js"></script>
+
     <!-- this is a bit of a hack, but it works with the jumble of code we got going here...
-     It also sets us up for easily adding options to customize use in different places
-     (f.ex. specifying a different template !)  -->
-    <script>
-        $(document).ready(function() {
-            initAndDisplayAlgoliaSearch("div#pageBody", "");
-        })
+     It also sets us up for easily adding options to customize use in different places -->
+    <script>jQuery(document).ready(function(){initAndDisplayAlgoliaSearch("div#pageBody", "")});</script>
+    <script id="webResultsTemplate" type="text/x-handlebars-template">
+      <div id="webResults" class="">
+        {{#each_upto web 0 3}}
+            <div class="web-result-row">
+                <a href={{Url}}>
+                    <h2>{{SubTitle}}</h2>
+                    <h3>{{PublishDate}}</h3>
+                    <h3>{{Type}}</h3>
+                    <p>{{Description}}</p>
+                </a>
+            </div>
+        {{/each_upto}}
+      </div>
+    </script>
+    <script id="docResultsTemplate" type="text/x-handlebars-template">
+      <div id="docResults" class="">
+        {{#each_upto docs 0 3}}
+            <div class="doc-result-row">
+                <a href={{url}}>
+                    <h2>{{title}}</h2>
+                    <h3>{{PublishDate}}</h3>
+                    <h3>{{meetingTitle}}</h3>
+                </a>
+            </div>
+        {{/each_upto}}
+      </div>
+    </script>
+
+    <!-- Definitely a more efficient way to do these more templates.. -->
+
+    <script id="webResultsTemplateMore" type="text/x-handlebars-template">
+      <div id="webMoreResults" class="">
+        {{#each_upto web 4}}
+            <div class="web-result-row">
+                <a href={{Url}}>
+                    <h2>{{SubTitle}}</h2>
+                    <h3>{{PublishDate}}</h3>
+                    <h3>{{Type}}</h3>
+                    <p>{{Description}}</p>
+                </a>
+            </div>
+        {{/each_upto}}
+      </div>
+    </script>
+    <script id="docResultsTemplateMore" type="text/x-handlebars-template">
+      <div id="docMoreResults" class="">
+        {{#each_upto docs 4}}
+            <div class="doc-result-row">
+                <a href={{url}}>
+                    <h2>{{title}}</h2>
+                    <h3>{{PublishDate}}</h3>
+                    <h3>{{meetingTitle}}</h3>
+                </a>
+            </div>
+        {{/each_upto}}
+      </div>
     </script>
 
 
