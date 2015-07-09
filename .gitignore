@@ -44,3 +44,5 @@ Temporary Items
 
 # IDE files
 .idea/*
+
+.sass-cache/*

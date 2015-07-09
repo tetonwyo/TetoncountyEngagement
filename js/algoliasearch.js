@@ -1,11 +1,3 @@
-/**
- * Created with RubyMine.
- * By: superrunt
- * Date: 6/16/15
- * Time: 9:07 PM
- */
-
-
 Handlebars.registerHelper('each_upto', function(ary, start, max, options) {
 
     if(!ary || ary.length == 0)
@@ -52,6 +44,7 @@ function a_search(query, indexAddon, limit){
 }
 
 function searchMultiCallback(err, content) {
+    console.log(content);
     if (err) {
         console.error(err);
         //return;
@@ -124,9 +117,12 @@ var initAndDisplayAlgoliaSearch = function ( targetElement ) {
     var _target = $(targetElement)
     // add all the DOM elements we need
     // this is where the sorting button should be added
-    _target.append('<div id="searchForm"><input id="searchInput" type="text" name="fname" placeholder="Enter Search Here"></div><div class="row">'
-                +'<div id="webResultsContainer"></div><button class="more" data-moreof="web">More Web Results</button></div><div class="row"><div id="docResultsContainer"></div><button class="more" data-moreof="docs">More Doc Results</button></div><div class="row"><div id="moreResultsContainer"></div>'
-                                +'</div></div>');
+    _target.append('<div class="algoliasearch">'
+                + '<button class="sort desc" data-addon="_timestamp_desc">Sort By Date Desc</button><button class="sort asc" data-addon="_timestamp_asc">Sort By Date Asc</button>'
+                + '<div id="searchForm"><input id="searchInput" type="text" name="fname" placeholder="Enter Search Here"></div><div class="row">'
+                + '<div id="webResultsContainer"></div><button class="more" data-moreof="web">More Web Results</button></div><div class="row">'
+                + '<div id="docResultsContainer"></div><button class="more" data-moreof="docs">More Doc Results</button></div><div class="row"><div id="moreResultsContainer"></div>'
+                +'</div></div></div>');
 
 
     // get handlebar template and 'fill out'
@@ -186,6 +182,3 @@ var initAndDisplayAlgoliaSearch = function ( targetElement ) {
 
     });
 }
-
-
-

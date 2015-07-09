@@ -17,9 +17,9 @@
     <!--<script type="text/javascript" src="/scripts/CCC.js"></script>-->
     <!--<script type="text/javascript" src="/scripts/CCC.Misc.js"></script>-->
     <!--<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />-->
-    
+
     <!-- <script type="text/javascript" src="//use.typekit.net/aue3tqj.js"></script>
-    <script type="text/javascript">try{Typekit.load();}catch(e){}</script> 
+    <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
     <link href=http://fonts.googleapis.com/css?family =Roboto+Slab:400,300,700' rel='stylesheet' type='text/css' /> -->
     <link href="//fonts.googleapis.com/css?family=Open+Sans:300italic,300,400italic,400,600italic,600,700italic,700,800italic,800" rel="stylesheet" type="text/css" />
     <link rel="shortcut icon" href="/images/TC.ico" />
@@ -33,7 +33,7 @@
     <link rel="Stylesheet" href="/css/style.css" type="text/css" media="all" />
     <script type="text/javascript" src="/js/hoverIntent.js"></script>
     <script type="text/javascript" src="/js/menu/js/megamenu.js"></script>
- 
+
     <meta name="description" content=" home page" />
     <meta name="keywords" content="jackson hole teton county wyoming alta wyoming moose kelly moran hoback junction wilson teton village wyoming county government citizen access government" />
     <meta name="copyright" content="Copyright, Teton County, Wyoming" />
@@ -118,6 +118,7 @@
     <script async type="text/javascript" src="//www.tetonwyo.org/scripts/twbeacon.js?v=1"></script>
     <script async type="text/javascript" src="//www.tetonwyo.org/theme/countynav/tyotrckr.js?v=1"></script>
 
+    <link rel="stylesheet" href="/theme/tetwy/style/styles.css" type="text/css" />
 
 </head>
 <body>
@@ -291,7 +292,7 @@
             </div>
             <div id="bodyContent">
                 <div id="page">
-               
+
 
 
 
@@ -309,8 +310,6 @@
                                     <h1>Search</h1>
                                 </div>
                                 <div id="pageBody" class="container">
-                                    <button class="sort desc" data-addon="_timestamp_desc">Sort By Date Desc</button>
-                                    <button class="sort asc" data-addon="_timestamp_asc">Sort By Date Asc</button>
 
 
                                     <!-- <div id="searchForm">
@@ -365,12 +364,13 @@
 
     <!-- ALGOLIA INIT CODE ETC HERE -->
     <script src="//cdn.jsdelivr.net/algoliasearch/3/algoliasearch.min.js"></script>
+    <!-- <script src="//cdn.jsdelivr.net/algoliasearch.helper/2.0.0/algoliasearch.helper.min.js"></script> -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/3.0.3/handlebars.js"></script>
     <script src="/js/algoliasearch.js"></script>
 
     <!-- this is a bit of a hack, but it works with the jumble of code we got going here...
      It also sets us up for easily adding options to customize use in different places -->
-    <script>jQuery(document).ready(function(){initAndDisplayAlgoliaSearch("div#pageBody", "")});</script>
+    <script>jQuery(document).ready(function(){ initAndDisplayAlgoliaSearch("div#pageBody", "")});</script>
 
 
     <script type="text/javascript">
