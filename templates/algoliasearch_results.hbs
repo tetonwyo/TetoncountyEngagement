@@ -1,31 +1,31 @@
  <script id="webResultsTemplate" type="text/x-handlebars-template">
       <div id="webResults" class="">
-        <h2>Web Results</h2>
+        <!-- <h2>Web Results</h2> -->
         {{#each_upto web 0 3}}
             <div class="web-result-row">
-                <a href={{Url}}>
-                    <h2>{{SubTitle}}</h2>
-                    <h3>{{PublishDate}}</h3>
-                    <h3>{{Type}}</h3>
-                    <p>{{Description}}</p>
+                <a href="{{Url}}">
+                    <h2>{{Title}} <span class='tiny'><i class="fa fa-bars"></i> {{Type}}</span></h2>
                 </a>
+                <h4>{{formatDate PublishDate}}</h4>
+                <p>{{chop Description 200}}</p>
             </div>
         {{/each_upto}}
       </div>
     </script>
     <script id="docResultsTemplate" type="text/x-handlebars-template">
-      <div id="docResults" class="">
-        <h2>Doc Results</h2>
+      <ul id="docResults" class="">
+        <!-- <h2>Doc Results</h2> -->
         {{#each_upto docs 0 3}}
-            <div class="doc-result-row">
-                <a href={{url}}>
-                    <h2>{{title}}</h2>
-                    <h3>{{PublishDate}}</h3>
-                    <h3>{{meetingTitle}}</h3>
+            <li class="doc-result-row">
+                <a href="{{url}}">
+                    <i class="fa fa-file-text fa-4x"></i>
+                    <div class="title">{{chop title 25}}</div>
+                    <!-- <h3>{{formatDate PublishDate}}</h3> -->
+                    <div class="subtitle">{{meetingTitle}}</div>
                 </a>
-            </div>
+            </li>
         {{/each_upto}}
-      </div>
+      </ul>
     </script>
 
     <!-- Definitely a more efficient way to do these more templates.. -->
@@ -34,28 +34,28 @@
       <div id="webMoreResults" class="results web">
         <h2>More Web Results</h2>
         {{#each_upto web 4 100}}
-            <div class="web-result-row">
-                <a href={{Url}}>
-                    <h2>{{SubTitle}}</h2>
-                    <h3>{{PublishDate}}</h3>
-                    <h3>{{Type}}</h3>
-                    <p>{{Description}}</p>
-                </a>
-            </div>
+        <div class="web-result-row">
+            <a href="{{Url}}">
+                <h2>{{Title}} <span class='tiny'><i class="fa fa-bars"></i> {{Type}}</span></h2>
+            </a>
+            <h4>{{formatDate PublishDate}}</h4>
+            <p>{{chop Description 200}}</p>
+        </div>
         {{/each_upto}}
       </div>
     </script>
     <script id="docResultsTemplateMore" type="text/x-handlebars-template">
-      <div id="docMoreResults" class="results doc">
+      <ul id="docMoreResults" class="results doc">
         <h2>More Doc Results</h2>
         {{#each_upto docs 4 100}}
-            <div class="doc-result-row">
-                <a href={{url}}>
-                    <h2>{{title}}</h2>
-                    <h3>{{PublishDate}}</h3>
-                    <h3>{{meetingTitle}}</h3>
-                </a>
-            </div>
+        <li class="doc-result-row">
+            <a href="{{url}}">
+                <i class="fa fa-file-text fa-4x"></i>
+                <div class="title">{{title}}</div>
+                <!-- <h3>{{formatDate PublishDate}}</h3> -->
+                <div class="subtitle">{{meetingTitle}}</div>
+            </a>
+        </li>
         {{/each_upto}}
-      </div>
+    </ul>
     </script>
