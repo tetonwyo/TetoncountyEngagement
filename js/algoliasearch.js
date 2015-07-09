@@ -193,10 +193,10 @@ var initAndDisplayAlgoliaSearch = function ( targetElement ) {
     // add all the DOM elements we need
     // this is where the sorting button should be added
     _target.append('<div class="algoliasearch">'
-                + '<button class="sort desc" data-addon="_timestamp_desc">Sort By Date Desc</button><button class="sort asc" data-addon="_timestamp_asc">Sort By Date Asc</button>'
+                + '<button class="sort desc btn" data-addon="_timestamp_desc">Sort By Date Desc</button><button class="sort asc btn" data-addon="_timestamp_asc">Sort By Date Asc</button>'
                 + '<div id="searchForm"><input id="searchInput" type="text" name="fname" placeholder="Enter Search Here"></div><div class="row">'
-                + '<div id="webResultsContainer"></div><button class="more" data-moreof="web">More Web Results</button></div><div class="row">'
-                + '<div id="docResultsContainer"></div><button class="more" data-moreof="docs">More Doc Results</button></div><div class="row"><div id="moreResultsContainer"></div>'
+                + '<div id="webResultsContainer"></div><button class="more btn" data-moreof="web">More Web Results</button></div><div class="row">'
+                + '<div id="docResultsContainer"></div><button class="more btn" data-moreof="docs">More Doc Results</button></div><div class="row"><div id="moreResultsContainer"></div>'
                 +'</div></div></div>');
 
 
