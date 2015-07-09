@@ -140,9 +140,16 @@ function getFacetsInResults ( content ) {
         ];
 
     // Process facets
+
     var facets = [];
     for (var facetIndex = 0; facetIndex < facet_config.length; ++facetIndex) {
+
         var facetParams = facet_config[facetIndex];
+
+        // TODO: add for each here to cycle through all the results
+        // this code came from a algolia example that uses some helpers that I don't htink we need
+
+
         var facetResult = content[facetParams.name];
         if (facetResult) {
             var facetContent = {};
@@ -183,6 +190,8 @@ function getFacetsInResults ( content ) {
             }
             facets.push(facetContent);
         }
+
+        // end for each
     }
     console.log(facets)
 }
