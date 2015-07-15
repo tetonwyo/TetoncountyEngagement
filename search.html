@@ -14,12 +14,12 @@
 
     <!--STRIP MOOTOOLS-->
 
-    <script type="text/javascript" src="/scripts/CCC.js"></script>
-    <script type="text/javascript" src="/scripts/CCC.Misc.js"></script>
+    <!--<script type="text/javascript" src="/scripts/CCC.js"></script>-->
+    <!--<script type="text/javascript" src="/scripts/CCC.Misc.js"></script>-->
     <!--<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />-->
-    
+
     <!-- <script type="text/javascript" src="//use.typekit.net/aue3tqj.js"></script>
-    <script type="text/javascript">try{Typekit.load();}catch(e){}</script> 
+    <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
     <link href=http://fonts.googleapis.com/css?family =Roboto+Slab:400,300,700' rel='stylesheet' type='text/css' /> -->
     <link href="//fonts.googleapis.com/css?family=Open+Sans:300italic,300,400italic,400,600italic,600,700italic,700,800italic,800" rel="stylesheet" type="text/css" />
     <link rel="shortcut icon" href="/images/TC.ico" />
@@ -33,14 +33,14 @@
     <link rel="Stylesheet" href="/css/style.css" type="text/css" media="all" />
     <script type="text/javascript" src="/js/hoverIntent.js"></script>
     <script type="text/javascript" src="/js/menu/js/megamenu.js"></script>
- 
+
     <meta name="description" content=" home page" />
     <meta name="keywords" content="jackson hole teton county wyoming alta wyoming moose kelly moran hoback junction wilson teton village wyoming county government citizen access government" />
     <meta name="copyright" content="Copyright, Teton County, Wyoming" />
     <link rel="stylesheet" href="/include/global950.css" type="text/css" />
-    <script type="text/javascript" src="/Scripts/AlertTicker.js"></script>
-    <script type="text/javascript" src="/Scripts/CCC.GoogleMaps.js"></script>
-    <script type="text/javascript" src="/Scripts/CCC.GoogleMaps.TC.js"></script>
+    <!--<script type="text/javascript" src="/Scripts/AlertTicker.js"></script>-->
+    <!--<script type="text/javascript" src="/Scripts/CCC.GoogleMaps.js"></script>-->
+    <!--<script type="text/javascript" src="/Scripts/CCC.GoogleMaps.TC.js"></script>-->
     <style type="text/css">
         @import "/include/AlertTicker.css";
     </style>
@@ -118,6 +118,7 @@
     <script async type="text/javascript" src="//www.tetonwyo.org/scripts/twbeacon.js?v=1"></script>
     <script async type="text/javascript" src="//www.tetonwyo.org/theme/countynav/tyotrckr.js?v=1"></script>
 
+    <link rel="stylesheet" href="/theme/tetwy/style/styles.css" type="text/css" />
 
 </head>
 <body>
@@ -291,7 +292,7 @@
             </div>
             <div id="bodyContent">
                 <div id="page">
-               
+
 
 
 
@@ -308,11 +309,22 @@
                                 <div id="pageHeader">
                                     <h1>Search</h1>
                                 </div>
-                                <div id="pageBody">
-                                    <div id="searchForm">
-                                            <input id="searchInput" type="text" name="fname" placeholder="Enter Search Here">
+                                <div id="pageBody" class="container">
+
+
+                                    <!-- <div id="searchForm">
+                                        <input id="searchInput" type="text" name="fname" placeholder="Enter Search Here">
                                     </div>
-                                    <div id="searchResultsContainer"></div>
+                                    <div class="row">
+                                        <div id="webResultsContainer"></div>
+                                    </div>
+                                    <div class="row">
+                                        <div id="docResultsContainer"></div>
+                                    </div>
+                                    <div class="row">
+                                        <div id="moreResultsContainer"></div>
+                                    </div> -->
+
                                 </div>
 
                                 <div style="clear:both"></div>
@@ -345,47 +357,22 @@
             </div>
             <div id="footerCopyright">
                 Copyright &copy;
-                <script type="text/javascript">document.write(CCC.Misc.GetCurrentYear());</script> Teton County Wyoming. All rights reserved.
+                <!--<script type="text/javascript">document.write(CCC.Misc.GetCurrentYear());</script> Teton County Wyoming. All rights reserved.-->
             </div>
         </div>
     </div>
 
+    <!-- ALGOLIA INIT CODE ETC HERE -->
     <script src="//cdn.jsdelivr.net/algoliasearch/3/algoliasearch.min.js"></script>
-    <script src="/js/algoliasearch.js"></script>
+    <!-- <script src="//cdn.jsdelivr.net/algoliasearch.helper/2.0.0/algoliasearch.helper.min.js"></script> -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/3.0.3/handlebars.js"></script>
-    <script id="results-template" type="text/x-handlebars-template">
-      <div id="searchResults" class="">
-        {{#each hits}}
-        <div class="resultRow">
-            <h3>{{Title}}</h1>
-        </div>
-        {{/each}}
-      </div>
-    </script>
-    <script>
+    <script src="/js/algoliasearch.js"></script>
 
+    <!-- this is a bit of a hack, but it works with the jumble of code we got going here...
+     It also sets us up for easily adding options to customize use in different places -->
+    <script>jQuery(document).ready(function(){ initAndDisplayAlgoliaSearch("div#pageBody", "")});</script>
+    <!-- ALL HANDLEBAR TEMPLATES HAVE BEEN MOVED TO /templates -->
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    </script>
     <script type="text/javascript">
 $(document).ready(function() {
 	$('.agencylist').fancybox({
